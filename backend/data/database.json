@@ -1,0 +1,441 @@
+{
+  "users": [
+    {
+      "id": "usr_1787214342432_Kelas2-Ihrom_0",
+      "nama": "ADAM DWI ARDIANSYAH",
+      "jk": "L",
+      "peran": "Siswa",
+      "nomorInduk": "3184807822",
+      "kelas": "Kelas 2 - Ihrom"
+    },
+    {
+      "id": "usr_1787214342432_Kelas2-Ihrom_1",
+      "nama": "AMANDA CLARISSA EFENDI",
+      "jk": "P",
+      "peran": "Siswa",
+      "nomorInduk": "3191158519",
+      "kelas": "Kelas 2 - Ihrom"
+    },
+    {
+      "id": "usr_1787214342432_Kelas2-Ihrom_2",
+      "nama": "ARISHA YONNA MAULI",
+      "jk": "P",
+      "peran": "Siswa",
+      "nomorInduk": "3181252881",
+      "kelas": "Kelas 2 - Ihrom"
+    },
+    {
+      "id": "usr_1787214342432_Kelas2-Ihrom_3",
+      "nama": "ASYLLA LIQUEENA AMIRUDIN",
+      "jk": "P",
+      "peran": "Siswa",
+      "nomorInduk": "3189166638",
+      "kelas": "Kelas 2 - Ihrom"
+    },
+    {
+      "id": "usr_1787214342432_Kelas2-Ihrom_4",
+      "nama": "ATHA HAFIZH ALFAREZI",
+      "jk": "L",
+      "peran": "Siswa",
+      "nomorInduk": "3192764997",
+      "kelas": "Kelas 2 - Ihrom"
+    },
+    {
+      "id": "usr_1787214342432_Kelas2-Ihrom_5",
+      "nama": "ELHAZMI ZAFLAN AL FARIZI",
+      "jk": "L",
+      "peran": "Siswa",
+      "nomorInduk": "3191987260",
+      "kelas": "Kelas 2 - Ihrom"
+    },
+    {
+      "id": "usr_1787214342432_Kelas2-Ihrom_6",
+      "nama": "FARHANA NUR RIZKY",
+      "jk": "P",
+      "peran": "Siswa",
+      "nomorInduk": "3185363987",
+      "kelas": "Kelas 2 - Ihrom"
+    },
+    {
+      "id": "usr_1787214342432_Kelas2-Ihrom_7",
+      "nama": "HANA MIKHAYLA AFANDI",
+      "jk": "P",
+      "peran": "Siswa",
+      "nomorInduk": "3185940269",
+      "kelas": "Kelas 2 - Ihrom"
+    },
+    {
+      "id": "usr_1787214342432_Kelas2-Ihrom_8",
+      "nama": "KHOIRUNNISA SALSABILA PUTRI",
+      "jk": "P",
+      "peran": "Siswa",
+      "nomorInduk": "3183824136",
+      "kelas": "Kelas 2 - Ihrom"
+    },
+    {
+      "id": "usr_1787214342432_Kelas2-Ihrom_9",
+      "nama": "M. RASYID ASSIDIQI SUSANTO",
+      "jk": "L",
+      "peran": "Siswa",
+      "nomorInduk": "3189197064",
+      "kelas": "Kelas 2 - Ihrom"
+    },
+    {
+      "id": "usr_1787214342432_Kelas2-Ihrom_10",
+      "nama": "MUHAMAD CHOIRUL AZZAM",
+      "jk": "L",
+      "peran": "Siswa",
+      "nomorInduk": "3189082749",
+      "kelas": "Kelas 2 - Ihrom"
+    },
+    {
+      "id": "usr_1787214342432_Kelas2-Ihrom_11",
+      "nama": "MUHAMAD RIZKY PRATAMA",
+      "jk": "L",
+      "peran": "Siswa",
+      "nomorInduk": "3196515240",
+      "kelas": "Kelas 2 - Ihrom"
+    },
+    {
+      "id": "usr_1787214342432_Kelas2-Ihrom_12",
+      "nama": "MUHAMMAD FARHAN ALHAKIM",
+      "jk": "L",
+      "peran": "Siswa",
+      "nomorInduk": "3184600208",
+      "kelas": "Kelas 2 - Ihrom"
+    },
+    {
+      "id": "usr_1787214342432_Kelas2-Ihrom_13",
+      "nama": "MUHAMMAD FATIH MUBAROK",
+      "jk": "L",
+      "peran": "Siswa",
+      "nomorInduk": "3187468222",
+      "kelas": "Kelas 2 - Ihrom"
+    },
+    {
+      "id": "usr_1787214342432_Kelas2-Ihrom_14",
+      "nama": "MUHAMMAD SURYA DARUSALAM",
+      "jk": "L",
+      "peran": "Siswa",
+      "nomorInduk": "3187892806",
+      "kelas": "Kelas 2 - Ihrom"
+    },
+    {
+      "id": "usr_1787214342432_Kelas2-Ihrom_15",
+      "nama": "NARENDRA ALFARIZI",
+      "jk": "L",
+      "peran": "Siswa",
+      "nomorInduk": "3184943763",
+      "kelas": "Kelas 2 - Ihrom"
+    },
+    {
+      "id": "usr_1787214342432_Kelas2-Ihrom_16",
+      "nama": "NAYYARA SHAMSA RUBINA",
+      "jk": "P",
+      "peran": "Siswa",
+      "nomorInduk": "3184011670",
+      "kelas": "Kelas 2 - Ihrom"
+    },
+    {
+      "id": "usr_1787214342432_Kelas2-Ihrom_17",
+      "nama": "NIZAM MAULANA AZ ZAKI",
+      "jk": "L",
+      "peran": "Siswa",
+      "nomorInduk": "3199724091",
+      "kelas": "Kelas 2 - Ihrom"
+    },
+    {
+      "id": "usr_1787214342432_Kelas2-Ihrom_18",
+      "nama": "RARA ISMA KAHITNA",
+      "jk": "P",
+      "peran": "Siswa",
+      "nomorInduk": "3193921505",
+      "kelas": "Kelas 2 - Ihrom"
+    },
+    {
+      "id": "usr_1787214342432_Kelas2-Ihrom_19",
+      "nama": "SITI IDATUL KHOTMIAH AL-FAQIH",
+      "jk": "P",
+      "peran": "Siswa",
+      "nomorInduk": "3181471975",
+      "kelas": "Kelas 2 - Ihrom"
+    },
+    {
+      "id": "usr_1787214342432_Kelas2-Ihrom_20",
+      "nama": "TILAWATUL NUR AFIFAH",
+      "jk": "P",
+      "peran": "Siswa",
+      "nomorInduk": "3197774134",
+      "kelas": "Kelas 2 - Ihrom"
+    },
+    {
+      "id": "usr_1787214342433_Kelas2-Thawaf_0",
+      "nama": "ADIBA SHEZA ASTOMO",
+      "jk": "P",
+      "peran": "Siswa",
+      "nomorInduk": "3189703284",
+      "kelas": "Kelas 2 - Thawaf"
+    },
+    {
+      "id": "usr_1787214342433_Kelas2-Thawaf_1",
+      "nama": "ALIF HABIBI",
+      "jk": "L",
+      "peran": "Siswa",
+      "nomorInduk": "3180623454",
+      "kelas": "Kelas 2 - Thawaf"
+    },
+    {
+      "id": "usr_1787214342433_Kelas2-Thawaf_2",
+      "nama": "ARFAN KHALIF AL GHIFARI",
+      "jk": "L",
+      "peran": "Siswa",
+      "nomorInduk": "3183987299",
+      "kelas": "Kelas 2 - Thawaf"
+    },
+    {
+      "id": "usr_1787214342433_Kelas2-Thawaf_3",
+      "nama": "ARGA SATYA RAFARDHAN",
+      "jk": "L",
+      "peran": "Siswa",
+      "nomorInduk": "3198885510",
+      "kelas": "Kelas 2 - Thawaf"
+    },
+    {
+      "id": "usr_1787214342433_Kelas2-Thawaf_4",
+      "nama": "AUFA AHIMSA ARDHANI",
+      "jk": "P",
+      "peran": "Siswa",
+      "nomorInduk": "3185115676",
+      "kelas": "Kelas 2 - Thawaf"
+    },
+    {
+      "id": "usr_1787214342433_Kelas2-Thawaf_5",
+      "nama": "DEWI ANGGRAINI PUSPITASARI",
+      "jk": "P",
+      "peran": "Siswa",
+      "nomorInduk": "3197855768",
+      "kelas": "Kelas 2 - Thawaf"
+    },
+    {
+      "id": "usr_1787214342433_Kelas2-Thawaf_6",
+      "nama": "MUHAMMAD ADHA ULINNUHA",
+      "jk": "L",
+      "peran": "Siswa",
+      "nomorInduk": "3179202249",
+      "kelas": "Kelas 2 - Thawaf"
+    },
+    {
+      "id": "usr_1787214342433_Kelas2-Thawaf_7",
+      "nama": "RIDAUL MAGHFIROH",
+      "jk": "P",
+      "peran": "Siswa",
+      "nomorInduk": "3180194265",
+      "kelas": "Kelas 2 - Thawaf"
+    },
+    {
+      "id": "usr_1787214342433_Kelas2-Thawaf_8",
+      "nama": "HANIF ABIZARD AKIL",
+      "jk": "L",
+      "peran": "Siswa",
+      "nomorInduk": "3186561419",
+      "kelas": "Kelas 2 - Thawaf"
+    },
+    {
+      "id": "usr_1787214342433_Kelas2-Thawaf_9",
+      "nama": "HASNA AUFA HUSNIYAH",
+      "jk": "P",
+      "peran": "Siswa",
+      "nomorInduk": "3195274319",
+      "kelas": "Kelas 2 - Thawaf"
+    },
+    {
+      "id": "usr_1787214342433_Kelas2-Thawaf_10",
+      "nama": "MAHIRA KHORIK'ATUL NISA",
+      "jk": "P",
+      "peran": "Siswa",
+      "nomorInduk": "3182805748",
+      "kelas": "Kelas 2 - Thawaf"
+    },
+    {
+      "id": "usr_1787214342433_Kelas2-Thawaf_11",
+      "nama": "MUHAMMAD AKHMAL AFRUDIN",
+      "jk": "L",
+      "peran": "Siswa",
+      "nomorInduk": "3197683339",
+      "kelas": "Kelas 2 - Thawaf"
+    },
+    {
+      "id": "usr_1787214342433_Kelas2-Thawaf_12",
+      "nama": "MUHAMMAD AZMI KURNIAWAN",
+      "jk": "L",
+      "peran": "Siswa",
+      "nomorInduk": "3183018565",
+      "kelas": "Kelas 2 - Thawaf"
+    },
+    {
+      "id": "usr_1787214342433_Kelas2-Thawaf_13",
+      "nama": "MUHAMMAD KEVIN ASSEGAF",
+      "jk": "L",
+      "peran": "Siswa",
+      "nomorInduk": "3184029016",
+      "kelas": "Kelas 2 - Thawaf"
+    },
+    {
+      "id": "usr_1787214342433_Kelas2-Thawaf_14",
+      "nama": "NAJWA NUR HUSNA",
+      "jk": "P",
+      "peran": "Siswa",
+      "nomorInduk": "3195568989",
+      "kelas": "Kelas 2 - Thawaf"
+    },
+    {
+      "id": "usr_1787214342433_Kelas2-Thawaf_15",
+      "nama": "RAESHA SABHIRA MAULINDA",
+      "jk": "P",
+      "peran": "Siswa",
+      "nomorInduk": "3186283841",
+      "kelas": "Kelas 2 - Thawaf"
+    },
+    {
+      "id": "usr_1787214342433_Kelas2-Thawaf_16",
+      "nama": "ZUWIDA KHALWA AZZAMIY",
+      "jk": "P",
+      "peran": "Siswa",
+      "nomorInduk": "3187627665",
+      "kelas": "Kelas 2 - Thawaf"
+    },
+    {
+      "id": "usr_1787214342433_Kelas2-Thawaf_17",
+      "nama": "HAFIS FAKHRI ANANTA",
+      "jk": "L",
+      "peran": "Siswa",
+      "nomorInduk": "3186498083",
+      "kelas": "Kelas 2 - Thawaf"
+    },
+    {
+      "id": "usr_1787214342433_Kelas2-Thawaf_18",
+      "nama": "CHIKA UMU KHOLIFAH",
+      "jk": "P",
+      "peran": "Siswa",
+      "nomorInduk": "3182355159",
+      "kelas": "Kelas 2 - Thawaf"
+    },
+    {
+      "id": "usr_1787214342433_Kelas2-Thawaf_19",
+      "nama": "MUHAMMAD ZAFIF HAIDAR",
+      "jk": "L",
+      "peran": "Siswa",
+      "nomorInduk": "3181656627",
+      "kelas": "Kelas 2 - Thawaf"
+    },
+    {
+      "id": "usr_1787214342433_Kelas2-Thawaf_20",
+      "nama": "M.RAVI ZAED ABDILLAH",
+      "jk": "L",
+      "peran": "Siswa",
+      "nomorInduk": "3191812074",
+      "kelas": "Kelas 2 - Thawaf"
+    },
+    {
+      "id": "usr_1787214342433_Kelas2-Thawaf_21",
+      "nama": "MUHAMMAD RIDHO ARISKY",
+      "jk": "L",
+      "peran": "Siswa",
+      "nomorInduk": "3191715296",
+      "kelas": "Kelas 2 - Thawaf"
+    },
+    {
+      "id": "usr_1787214342433_Kelas2-Thawaf_22",
+      "nama": "AKMAL ATHARRAYHAN",
+      "jk": "L",
+      "peran": "Siswa",
+      "nomorInduk": "3182762387",
+      "kelas": "Kelas 2 - Thawaf"
+    },
+    {
+      "id": "usr_1787214342434_Kelas2-Thawaf_23",
+      "nama": "FARAH ADIBA KHUMAIROH",
+      "jk": "P",
+      "peran": "Siswa",
+      "nomorInduk": "3198381442",
+      "kelas": "Kelas 2 - Thawaf"
+    },
+    {
+      "id": "usr_1787214342434_TidakAktif_0",
+      "nama": "OKTA NAWALIA HUSNA",
+      "jk": "P",
+      "peran": "Siswa",
+      "nomorInduk": "3182129066",
+      "kelas": "Kelas 2"
+    }
+  ],
+  "attendance": {
+    "2026-08-20": {
+      "usr_1787212669957_Kelas2-Ihrom_0": "Hadir",
+      "usr_1787212669957_Kelas2-Ihrom_1": "Hadir",
+      "usr_1787212669957_Kelas2-Ihrom_2": "Hadir",
+      "usr_1787212669957_Kelas2-Ihrom_3": "Hadir",
+      "usr_1787212669957_Kelas2-Ihrom_5": "Hadir",
+      "usr_1787214342432_Kelas2-Ihrom_0": "Hadir",
+      "usr_1787214342432_Kelas2-Ihrom_1": "Hadir",
+      "usr_1787214342432_Kelas2-Ihrom_3": "Hadir",
+      "usr_1787214342432_Kelas2-Ihrom_2": "Hadir",
+      "usr_1787214342432_Kelas2-Ihrom_4": "Hadir",
+      "usr_1787214342432_Kelas2-Ihrom_5": "Hadir"
+    }
+  },
+  "holidays": [
+    {
+      "date": "2026-01-01",
+      "name": "Tahun Baru Masehi",
+      "type": "auto"
+    },
+    {
+      "date": "2026-04-03",
+      "name": "Wafat Isa Almasih",
+      "type": "auto"
+    },
+    {
+      "date": "2026-04-05",
+      "name": "Paskah",
+      "type": "auto"
+    },
+    {
+      "date": "2026-05-01",
+      "name": "Hari Buruh Internasional",
+      "type": "auto"
+    },
+    {
+      "date": "2026-05-14",
+      "name": "Kenaikan Isa Almasih",
+      "type": "auto"
+    },
+    {
+      "date": "2026-06-01",
+      "name": "Hari Lahir Pancasila",
+      "type": "auto"
+    },
+    {
+      "date": "2026-08-17",
+      "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia",
+      "type": "auto"
+    },
+    {
+      "date": "2026-12-25",
+      "name": "Hari Raya Natal",
+      "type": "auto"
+    }
+  ],
+  "pdfConfig": {
+    "title1": "DAFTAR HADIR SISWA",
+    "title2": "REKAPITULASI ABSENSI BULANAN",
+    "ttdTempatTanggal": "Tunggul Pawenang, 23 April 2026",
+    "ttdJabatan": "Kepala / Wali Kelas",
+    "ttdNama": "_________________________",
+    "ttdNip": "",
+    "ttdImage": null,
+    "ttdImageRatio": null,
+    "ttdImageSize": 72
+  },
+  "appSettings": {}
+}

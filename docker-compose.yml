@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  absensi-app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: absensi-madrasahv2
+    restart: always
+    ports:
+      - "5001:3000"
+    volumes:
+      - ./backend/data:/app/data

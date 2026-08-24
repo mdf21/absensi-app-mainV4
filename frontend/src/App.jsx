@@ -101,15 +101,31 @@ const [newHolidayName, setNewHolidayName] = useState('');
   const [newClientPassword, setNewClientPassword] = useState('');
   const [passwordChangeMessage, setPasswordChangeMessage] = useState('');
 
-  const handleLogin = (role) => {
-      const password = role === 'admin' ? adminPassword : clientPassword;
-      const input = loginPassword[role] || '';
-      if (input === password) {
-          setUserRole(role);
-          localStorage.setItem('absensi_userRole', role);
-          setLoginError('');
-      } else {
-          setLoginError('Password salah. Coba lagi.');
+  const handleLogin = async (role) => {
+      const inputPassword = loginPassword[role] || '';
+      
+      try {
+          // Ganti port 3000 dengan port backend Anda jika berbeda
+          const response = await fetch('/api/login', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ role, password: inputPassword })
+          });
+
+          const data = await response.json();
+
+          if (response.ok && data.success) {
+              setUserRole(role);
+              localStorage.setItem('absensi_userRole', role);
+              setLoginError('');
+              // Kosongkan form setelah berhasil
+              setLoginPassword({ admin: '', client: '' }); 
+          } else {
+              setLoginError(data.message || 'Password salah. Coba lagi.');
+          }
+      } catch (error) {
+          console.error("Error login:", error);
+          setLoginError('Gagal terhubung ke server. Periksa koneksi backend.');
       }
   };
 
@@ -1593,8 +1609,7 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                         </button>
                     </div>
                 </div>
-                <p className="text-[10px] text-slate-400 mt-3">Password default: admin = <b>admin123</b>, client = <b>client123</b>. Ganti secara berkala untuk keamanan.</p>
-            </div>
+               </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="md:col-span-1 space-y-6">
                     <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">

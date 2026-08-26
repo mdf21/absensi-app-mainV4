@@ -52,7 +52,7 @@ absensi-app/
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/USERNAME/absensi-app.git
+git clone https://github.com/mdf21/absensi-app-mainV2.git
 cd absensi-app-mainV2
 
 # 2. Build dan jalankan container
@@ -92,8 +92,8 @@ docker-compose up -d --build
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/USERNAME/absensi-app.git
-cd absensi-app
+git clone https://github.com/mdf21/absensi-app-mainV2.git
+cd absensi-app-mainV2
 
 # 2. Install dependencies backend
 cd backend
@@ -109,7 +109,7 @@ cd ../backend
 node server.js
 ```
 
-Akses aplikasi di `http://localhost:3000`.
+Akses aplikasi di `http://localhost:5001`.
 
 ## Konfigurasi
 
@@ -117,7 +117,7 @@ Akses aplikasi di `http://localhost:3000`.
 
 | Variabel | Default | Deskripsi |
 |----------|---------|-----------|
-| `PORT` | `3000` | Port aplikasi |
+| `PORT` | `5001` | Port aplikasi |
 | `GAS_URL` | - | URL Google Apps Script (opsional) |
 
 ### Volume Docker
@@ -156,7 +156,7 @@ Backup folder `backend/data` secara berkala (disarankan minimal mingguan).
 
 | Masalah | Solusi |
 |---------|--------|
-| Port 80 sudah dipakai | Ubah port di `docker-compose.yml`: `"8080:3000"` |
+| jika Port sudah dipakai | Ubah port di `docker-compose.yml`: `"5001:3000"` |
 | Data hilang setelah restart | Pastikan volume `./backend/data` tetap ada |
 | Frontend tidak muncul | Cek log Docker: `docker-compose logs` |
 | Import Excel gagal | Pastikan format kolom: Nama, Peran, Nomor Induk, Kelas |

@@ -8,6 +8,8 @@ Aplikasi pencatatan kehadiran siswa, guru, dan staff secara real-time dengan duk
 - Manajemen data peserta (Siswa, Guru, Staff)
 - Impor data massal dari Excel (Simpatika/EMIS)
 - Libur nasional otomatis + input manual
+- id card untuk scan kehadiran
+- laogin untuk admin dan clayen/guru
 - Rekap bulanan/kustom dalam format Excel dan PDF
 - Backup dan restore data JSON
 - Konfigurasi kop surat dan tanda tangan digital

@@ -53,7 +53,7 @@ absensi-app/
 ```bash
 # 1. Clone repository
 git clone https://github.com/USERNAME/absensi-app.git
-cd absensi-app
+cd absensi-app-mainV2
 
 # 2. Build dan jalankan container
 docker-compose up -d --build

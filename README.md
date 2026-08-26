@@ -96,12 +96,6 @@ Akses aplikasi di `http://localhost:5001`.
 
 ## Konfigurasi
 
-### Environment Variables
-
-| Variabel | Default | Deskripsi |
-|----------|---------|-----------|
-| `PORT` | `5001` | Port aplikasi |
-| `GAS_URL` | - | URL Google Apps Script (opsional) |
 
 ### Volume Docker
 

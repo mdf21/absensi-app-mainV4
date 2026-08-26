@@ -20,25 +20,6 @@ Aplikasi pencatatan kehadiran siswa, guru, dan staff secara real-time dengan duk
 - **Database**: JSON file (`backend/data/database.json`)
 - **Deployment**: Docker & Docker Compose
 
-## Struktur Proyek
-
-```
-absensi-app/
-├── backend/
-│   ├── server.js          # API server + serve static frontend
-│   ├── package.json
-│   └── data/              # Database JSON (dibuat otomatis)
-├── frontend/
-│   ├── src/
-│   │   ├── App.jsx        # Komponen utama aplikasi
-│   │   └── main.jsx
-│   ├── index.html
-│   ├── package.json
-│   └── vite.config.js
-├── Dockerfile             # Multi-stage build
-├── docker-compose.yml
-└── .gitignore
-```
 
 ## Cara Instalasi
 

@@ -1736,12 +1736,23 @@ const [bulkEditValue, setBulkEditValue] = useState('');
         {!userRole ? (
             <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 to-slate-100 p-4">
                 <div className="bg-white rounded-[32px] shadow-2xl p-8 w-full max-w-md text-center border border-slate-100">
-                    <div className="w-20 h-20 bg-indigo-100 rounded-3xl flex items-center justify-center mx-auto mb-6 text-indigo-600 text-3xl">
-                        <i className="fas fa-user-shield"></i>
-                    </div>
-                    <h1 className="text-2xl font-extrabold text-slate-800 mb-2">Sistem Absensi</h1>
-                    <p className="text-slate-500 text-sm mb-6">Masuk dengan password untuk melanjutkan.</p>
-                    
+
+                    <div className="w-20 h-20 bg-indigo-100 rounded-3xl flex items-center justify-center mx-auto">
+    <img
+        src={defaultLogoUrl}
+        alt="Logo"
+        className="w-16 h-16 object-contain"
+    />
+</div>
+
+                    <h1 className="text-2xl font-extrabold text-slate-800 mb-2">
+                        Sistem Absensi
+                    </h1>
+
+                    <p className="text-slate-500 text-sm mb-6">
+                        Masuk dengan password untuk melanjutkan.
+                    </p>
+
                     {loginError && (
                         <div className="mb-4 p-3 bg-rose-50 border border-rose-200 text-rose-700 rounded-xl text-sm font-bold">
                             {loginError}
@@ -1781,7 +1792,7 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                             <i className="fas fa-user"></i> Masuk sebagai Client
                         </button>
                     </div>
-                    <p className="text-[10px] text-slate-400 mt-6 font-medium">Default: admin = <b>admin123</b>, client = <b>client123</b></p>
+                    
                 </div>
             </div>
         ) : (

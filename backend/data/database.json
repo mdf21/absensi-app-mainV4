@@ -1,8 +1,6 @@
 {
   "users": [],
-  "attendance": {
-  }
-  },
+  "attendance": {},
   "holidays": [
     {
       "date": "2026-01-01",

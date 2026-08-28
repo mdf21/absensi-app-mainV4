@@ -154,7 +154,7 @@ Di Ubuntu jalankan:
 ```bash
 python3 -m json.tool backend/data/database.json
 
-# atau
+Atau
 
 python3 -m json.tool database.json
 ```

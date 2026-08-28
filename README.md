@@ -100,31 +100,31 @@ Berikut adalah cara mereset password Anda menjadi baru:
 Cara 1: Menggunakan Script Reset Otomatis (Paling Mudah)
 Masuk ke terminal Ubuntu Anda dan buat file script baru di folder backend:
 
-Bash
+# Bash
   cd ~/absensi-app-mainV2/backend
    nano generate-hash.js
    
 
 Salin dan tempel (paste) kode di bawah ini ke dalam file tersebut (ganti 'PasswordBaruAnda123' dengan password yang Anda inginkan):
 JavaScript
-  const bcrypt = require('bcrypt');
+ # const bcrypt = require('bcrypt');
 
-   async function makeHash() {
+  # async function makeHash() {
        const passwordBaru = 'PasswordBaruAnda123'; // Ganti dengan password pilihan Anda
        const hashed = await bcrypt.hash(passwordBaru, 10);
        console.log("----------------------------------------");
        console.log("Password Asli :", passwordBaru);
        console.log("Hash Baru     :", hashed);
        console.log("----------------------------------------");
-   }
+  # }
 
-   makeHash();
+  # makeHash();
    
 
 Simpan file (Ctrl + O, lalu Enter, lalu Ctrl + X).
 Jalankan script tersebut di terminal:
 
-Bash
+# Bash
   node generate-hash.js
    
 
@@ -132,23 +132,23 @@ Terminal akan menampilkan teks Hash Baru yang panjang (contoh: $2b$10$abcdef...)
 Cara 2: Masukkan Hash Baru ke database.json
 Buka file database Anda menggunakan nano:
 
-Bash
+# Bash
   nano data/database.json
    
 
 Cari bagian adminPassword atau clientPassword, lalu ganti isi teks di dalam tanda kutip dengan Hash Baru yang baru saja Anda copy dari terminal tadi.
 Contohnya akan menjadi seperti ini:
-JSON
-  "appSettings": {
+# JSON
+#  "appSettings": {
        "adminPassword": "$2b$10$SalinanHashBaruAndaDisini...",
        "clientPassword": "$2b$10$SalinanHashBaruAndaDisini..."
-   }
+#   }
    
 
 Simpan file database (Ctrl + O, lalu Enter, lalu Ctrl + X).
 Restart kontainer Docker Anda agar perubahan terbaca:
 
-Bash
+# Bash
   cd ~/absensi-app-mainV2
    docker-compose restart
    

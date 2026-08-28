@@ -23,9 +23,762 @@ const Toast = ({ message, type, onClose }) => {
     </div>
   );
 };
+const Dashboard = ({
+  users = [],
+  attendance = {},
+  selectedDate,
+  setSelectedDate
+}) => {
+  // =========================================================
+  // DATA PENGGUNA
+  // =========================================================
 
+  const siswa = users.filter(
+    u => String(u.peran || '').toLowerCase() === 'siswa'
+  );
+
+  const guru = users.filter(
+    u => String(u.peran || '').toLowerCase() === 'guru'
+  );
+
+  const tendik = users.filter(
+    u => {
+      const peran = String(u.peran || '').toLowerCase();
+      return (
+        peran === 'tenaga kependidikan' ||
+        peran === 'staff'
+      );
+    }
+  );
+
+  const totalSiswa = siswa.length;
+  const totalGuru = guru.length;
+  const totalTendik = tendik.length;
+  const totalSemua = totalSiswa + totalGuru + totalTendik;
+
+  // =========================================================
+  // JENIS KELAMIN SISWA
+  // =========================================================
+
+  const lakiLaki = siswa.filter(
+    u => String(u.jk || '').toUpperCase() === 'L'
+  ).length;
+
+  const perempuan = siswa.filter(
+    u => String(u.jk || '').toUpperCase() === 'P'
+  ).length;
+
+  // =========================================================
+  // KELAS
+  // KELAS BAWAH = 1,2,3
+  // KELAS ATAS  = 4,5,6
+  // =========================================================
+
+  const getNomorKelas = (kelas) => {
+    const match = String(kelas || '').match(/Kelas\s*(\d+)/i);
+    return match ? Number(match[1]) : null;
+  };
+
+  const jumlahKelas = {
+    1: siswa.filter(u => getNomorKelas(u.kelas) === 1).length,
+    2: siswa.filter(u => getNomorKelas(u.kelas) === 2).length,
+    3: siswa.filter(u => getNomorKelas(u.kelas) === 3).length,
+    4: siswa.filter(u => getNomorKelas(u.kelas) === 4).length,
+    5: siswa.filter(u => getNomorKelas(u.kelas) === 5).length,
+    6: siswa.filter(u => getNomorKelas(u.kelas) === 6).length
+  };
+
+  const kelasBawah =
+    jumlahKelas[1] +
+    jumlahKelas[2] +
+    jumlahKelas[3];
+
+  const kelasAtas =
+    jumlahKelas[4] +
+    jumlahKelas[5] +
+    jumlahKelas[6];
+
+  // =========================================================
+  // ABSENSI TANGGAL TERPILIH
+  // =========================================================
+
+  const dataTanggal = attendance[selectedDate] || {};
+
+  const semuaPengguna = [...siswa, ...guru, ...tendik];
+
+  const getStatus = (user) => {
+    return dataTanggal[user.id] || null;
+  };
+
+  const sudahAbsen = semuaPengguna.filter(
+    user => {
+      const status = getStatus(user);
+      return ['Hadir', 'Izin', 'Sakit', 'Alpha'].includes(status);
+    }
+  ).length;
+
+  const belumAbsen = Math.max(
+    totalSemua - sudahAbsen,
+    0
+  );
+
+  const jumlahHadir = semuaPengguna.filter(
+    user => getStatus(user) === 'Hadir'
+  ).length;
+
+  const jumlahIzin = semuaPengguna.filter(
+    user => getStatus(user) === 'Izin'
+  ).length;
+
+  const jumlahSakit = semuaPengguna.filter(
+    user => getStatus(user) === 'Sakit'
+  ).length;
+
+  const jumlahAlpha = semuaPengguna.filter(
+    user => getStatus(user) === 'Alpha'
+  ).length;
+
+  const persentaseLengkap =
+    totalSemua > 0
+      ? Math.round((sudahAbsen / totalSemua) * 100)
+      : 0;
+
+  const formatTanggal = (date) => {
+    if (!date) return '-';
+
+    const [tahun, bulan, hari] = date.split('-');
+
+    const namaBulan = [
+      'Januari',
+      'Februari',
+      'Maret',
+      'April',
+      'Mei',
+      'Juni',
+      'Juli',
+      'Agustus',
+      'September',
+      'Oktober',
+      'November',
+      'Desember'
+    ];
+
+    return `${Number(hari)} ${namaBulan[Number(bulan) - 1]} ${tahun}`;
+  };
+
+  // =========================================================
+  // DONUT SVG
+  // =========================================================
+
+  const radius = 70;
+  const circumference = 2 * Math.PI * radius;
+  const progress =
+    circumference - (persentaseLengkap / 100) * circumference;
+
+  // =========================================================
+  // CARD
+  // =========================================================
+
+  const StatCard = ({
+    icon,
+    title,
+    value,
+    subtitle,
+    iconBg,
+    iconColor,
+    valueColor
+  }) => (
+    <div className="bg-white rounded-3xl border border-slate-200 shadow-sm p-5 hover:shadow-md transition-shadow">
+      <div className="flex items-center gap-4">
+        <div
+          className={`w-16 h-16 rounded-2xl ${iconBg} flex items-center justify-center flex-shrink-0`}
+        >
+          <i
+            className={`fas ${icon} text-2xl ${iconColor}`}
+          ></i>
+        </div>
+
+        <div className="min-w-0">
+          <div
+            className={`text-sm font-bold uppercase tracking-wide ${valueColor}`}
+          >
+            {title}
+          </div>
+
+          <div className="text-3xl font-bold text-slate-800 mt-1">
+            {value}
+          </div>
+
+          <div className="text-xs text-slate-500 mt-1">
+            {subtitle}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  const ProgressCard = ({
+    icon,
+    title,
+    value,
+    subtitle,
+    percent,
+    iconBg,
+    iconColor,
+    barColor
+  }) => (
+    <div className="bg-white rounded-3xl border border-slate-200 shadow-sm p-5">
+      <div className="flex items-center gap-4">
+        <div
+          className={`w-16 h-16 rounded-2xl ${iconBg} flex items-center justify-center`}
+        >
+          <i
+            className={`fas ${icon} text-2xl ${iconColor}`}
+          ></i>
+        </div>
+
+        <div className="flex-1">
+          <div className="text-sm font-bold uppercase tracking-wide text-slate-700">
+            {title}
+          </div>
+
+          <div className="text-3xl font-bold text-slate-800 mt-1">
+            {value}
+          </div>
+
+          <div className="text-xs text-slate-500 mt-1">
+            {subtitle}
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-4 h-2 bg-slate-100 rounded-full overflow-hidden">
+        <div
+          className={`h-full ${barColor} rounded-full transition-all duration-700`}
+          style={{
+            width: `${Math.min(percent, 100)}%`
+          }}
+        ></div>
+      </div>
+    </div>
+  );
+
+  const statusData = [
+    {
+      label: 'Hadir',
+      value: jumlahHadir,
+      bg: 'bg-green-500'
+    },
+    {
+      label: 'Izin',
+      value: jumlahIzin,
+      bg: 'bg-blue-500'
+    },
+    {
+      label: 'Sakit',
+      value: jumlahSakit,
+      bg: 'bg-yellow-400'
+    },
+    {
+      label: 'Alpha',
+      value: jumlahAlpha,
+      bg: 'bg-red-500'
+    }
+  ];
+
+  const maxStatus = Math.max(
+    jumlahHadir,
+    jumlahIzin,
+    jumlahSakit,
+    jumlahAlpha,
+    1
+  );
+
+  return (
+    <div className="min-h-screen bg-slate-50 p-4 md:p-6">
+
+      {/* =====================================================
+          HEADER DASHBOARD
+      ====================================================== */}
+
+      <div className="max-w-[1600px] mx-auto">
+
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+
+          <div>
+            <h1 className="text-2xl md:text-3xl font-bold text-slate-800">
+              Dashboard Absensi
+            </h1>
+
+            <p className="text-sm text-slate-500 mt-1">
+              Ringkasan data absensi tanggal{' '}
+              <span className="font-semibold text-slate-700">
+                {formatTanggal(selectedDate)}
+              </span>
+            </p>
+          </div>
+
+          <div className="bg-white border border-slate-200 rounded-2xl px-4 py-3 shadow-sm">
+            <label className="block text-xs font-semibold text-slate-500 mb-1">
+              Tanggal Absensi
+            </label>
+
+            <div className="flex items-center gap-2">
+              <i className="fas fa-calendar-alt text-indigo-500"></i>
+
+              <input
+                type="date"
+                value={selectedDate}
+                onChange={e => setSelectedDate(e.target.value)}
+                className="border-0 outline-none text-sm font-semibold text-slate-700 bg-transparent cursor-pointer"
+              />
+            </div>
+          </div>
+
+        </div>
+
+        {/* =====================================================
+            ROW 1 - TOTAL SISWA GURU TENDIK SELURUHNYA
+        ====================================================== */}
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-4">
+
+          <StatCard
+            icon="fa-user-graduate"
+            title="Total Siswa"
+            value={totalSiswa}
+            subtitle={`Dari ${totalSiswa} siswa terdaftar`}
+            iconBg="bg-blue-50"
+            iconColor="text-blue-600"
+            valueColor="text-blue-600"
+          />
+
+          <StatCard
+            icon="fa-chalkboard-teacher"
+            title="Total Guru"
+            value={totalGuru}
+            subtitle={`Dari ${totalGuru} guru terdaftar`}
+            iconBg="bg-green-50"
+            iconColor="text-green-600"
+            valueColor="text-green-600"
+          />
+
+          <StatCard
+            icon="fa-briefcase"
+            title="Total Tendik"
+            value={totalTendik}
+            subtitle={`Dari ${totalTendik} tendik terdaftar`}
+            iconBg="bg-purple-50"
+            iconColor="text-purple-600"
+            valueColor="text-purple-600"
+          />
+
+          <StatCard
+            icon="fa-users"
+            title="Total Seluruhnya"
+            value={totalSemua}
+            subtitle="Siswa, Guru dan Tendik"
+            iconBg="bg-orange-50"
+            iconColor="text-orange-500"
+            valueColor="text-orange-500"
+          />
+
+        </div>
+
+        {/* =====================================================
+            ROW 2
+        ====================================================== */}
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
+
+          <div className="lg:col-span-1 space-y-4">
+
+            <ProgressCard
+              icon="fa-male"
+              title="Laki-laki"
+              value={lakiLaki}
+              subtitle={
+                totalSiswa
+                  ? `${((lakiLaki / totalSiswa) * 100).toFixed(1)}% dari total siswa`
+                  : '0% dari total siswa'
+              }
+              percent={
+                totalSiswa
+                  ? (lakiLaki / totalSiswa) * 100
+                  : 0
+              }
+              iconBg="bg-blue-50"
+              iconColor="text-blue-600"
+              barColor="bg-blue-500"
+            />
+
+            <ProgressCard
+              icon="fa-female"
+              title="Perempuan"
+              value={perempuan}
+              subtitle={
+                totalSiswa
+                  ? `${((perempuan / totalSiswa) * 100).toFixed(1)}% dari total siswa`
+                  : '0% dari total siswa'
+              }
+              percent={
+                totalSiswa
+                  ? (perempuan / totalSiswa) * 100
+                  : 0
+              }
+              iconBg="bg-pink-50"
+              iconColor="text-pink-500"
+              barColor="bg-pink-500"
+            />
+
+          </div>
+
+          <div className="lg:col-span-1 space-y-4">
+
+            <ProgressCard
+              icon="fa-school"
+              title="Kelas Bawah (1 • 2 • 3)"
+              value={kelasBawah}
+              subtitle={
+                totalSiswa
+                  ? `${((kelasBawah / totalSiswa) * 100).toFixed(1)}% dari total siswa`
+                  : '0% dari total siswa'
+              }
+              percent={
+                totalSiswa
+                  ? (kelasBawah / totalSiswa) * 100
+                  : 0
+              }
+              iconBg="bg-green-50"
+              iconColor="text-green-600"
+              barColor="bg-green-500"
+            />
+
+            <ProgressCard
+              icon="fa-graduation-cap"
+              title="Kelas Atas (4 • 5 • 6)"
+              value={kelasAtas}
+              subtitle={
+                totalSiswa
+                  ? `${((kelasAtas / totalSiswa) * 100).toFixed(1)}% dari total siswa`
+                  : '0% dari total siswa'
+              }
+              percent={
+                totalSiswa
+                  ? (kelasAtas / totalSiswa) * 100
+                  : 0
+              }
+              iconBg="bg-orange-50"
+              iconColor="text-orange-500"
+              barColor="bg-orange-500"
+            />
+
+          </div>
+
+          {/* ===================================================
+              KELENGKAPAN ABSENSI
+          ==================================================== */}
+
+          <div className="bg-white rounded-3xl border border-slate-200 shadow-sm p-5">
+
+            <h2 className="text-lg font-bold text-slate-800 mb-4">
+              Kelengkapan Absensi
+            </h2>
+
+            <div className="flex flex-col sm:flex-row items-center gap-6">
+
+              <div className="relative w-44 h-44 flex-shrink-0">
+
+                <svg
+                  viewBox="0 0 180 180"
+                  className="w-full h-full -rotate-90"
+                >
+                  <circle
+                    cx="90"
+                    cy="90"
+                    r={radius}
+                    fill="none"
+                    stroke="#e2e8f0"
+                    strokeWidth="16"
+                  />
+
+                  <circle
+                    cx="90"
+                    cy="90"
+                    r={radius}
+                    fill="none"
+                    stroke="#22c55e"
+                    strokeWidth="16"
+                    strokeLinecap="round"
+                    strokeDasharray={circumference}
+                    strokeDashoffset={progress}
+                    className="transition-all duration-700"
+                  />
+                </svg>
+
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                  <div className="text-4xl font-bold text-slate-800">
+                    {persentaseLengkap}%
+                  </div>
+
+                  <div className="text-sm text-slate-500">
+                    Lengkap
+                  </div>
+                </div>
+
+              </div>
+
+              <div className="flex-1 w-full">
+
+                <div className="flex items-center justify-between py-3 border-b border-slate-100">
+                  <div className="flex items-center gap-2">
+                    <span className="w-3 h-3 rounded-full bg-green-500"></span>
+                    <span className="font-semibold text-slate-700">
+                      Sudah Absen
+                    </span>
+                  </div>
+
+                  <span className="text-xl font-bold text-slate-800">
+                    {sudahAbsen}
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-between py-3">
+                  <div className="flex items-center gap-2">
+                    <span className="w-3 h-3 rounded-full bg-red-500"></span>
+                    <span className="font-semibold text-slate-700">
+                      Belum Absen
+                    </span>
+                  </div>
+
+                  <span className="text-xl font-bold text-slate-800">
+                    {belumAbsen}
+                  </span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div className="mt-4 bg-blue-50 text-blue-700 text-xs rounded-xl px-4 py-3">
+              <i className="fas fa-info-circle mr-2"></i>
+              Persentase dihitung dari seluruh pengguna
+              (Siswa, Guru, Tendik).
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* =====================================================
+            ROW 3 - SISWA PER KELAS + REKAP ABSENSI
+        ====================================================== */}
+
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
+
+          {/* SISWA PER KELAS */}
+
+          <div className="bg-white rounded-3xl border border-slate-200 shadow-sm p-5">
+
+            <div className="flex items-center justify-between mb-6">
+
+              <h2 className="text-lg font-bold text-slate-800">
+                Siswa Per Kelas
+              </h2>
+
+              <span className="text-xs text-slate-500">
+                Total {totalSiswa} siswa
+              </span>
+
+            </div>
+
+            <div className="space-y-4">
+
+              {[1, 2, 3, 4, 5, 6].map(kelas => {
+
+  const siswaKelas = siswa.filter(
+    u => getNomorKelas(u.kelas) === kelas
+  );
+
+  const jumlah = siswaKelas.length;
+
+  const jumlahLaki = siswaKelas.filter(
+    u => String(u.jk || '').toUpperCase() === 'L'
+  ).length;
+
+  const jumlahPerempuan = siswaKelas.filter(
+    u => String(u.jk || '').toUpperCase() === 'P'
+  ).length;
+
+  const persen =
+    totalSiswa > 0
+      ? (jumlah / totalSiswa) * 100
+      : 0;
+
+  return (
+    <div key={kelas}>
+
+      {/* Nama kelas + total */}
+      <div className="flex justify-between items-center mb-1">
+
+        <span className="font-semibold text-slate-700">
+          Kelas {kelas}
+        </span>
+
+        <span className="font-bold text-slate-800">
+          {jumlah}
+        </span>
+
+      </div>
+
+      {/* Laki-laki & perempuan */}
+      <div className="flex items-center gap-4 mb-2 text-xs">
+
+        <span className="flex items-center gap-1 text-blue-600 font-medium">
+          <i className="fas fa-male"></i>
+          Laki-laki:
+          <strong>{jumlahLaki}</strong>
+        </span>
+
+        <span className="flex items-center gap-1 text-pink-500 font-medium">
+          <i className="fas fa-female"></i>
+          Perempuan:
+          <strong>{jumlahPerempuan}</strong>
+        </span>
+
+      </div>
+
+      {/* Grafik */}
+      <div className="h-3 bg-slate-100 rounded-full overflow-hidden">
+
+        <div
+          className={`h-full rounded-full transition-all duration-700 ${
+            kelas <= 3
+              ? 'bg-green-500'
+              : 'bg-orange-500'
+          }`}
+          style={{
+            width: `${persen}%`
+          }}
+        ></div>
+
+      </div>
+
+    </div>
+  );
+})}
+
+            </div>
+
+            <div className="mt-5 bg-blue-50 text-blue-700 text-xs rounded-xl px-4 py-3">
+              <i className="fas fa-info-circle mr-2"></i>
+              Grafik ini hanya menampilkan data siswa.
+            </div>
+
+          </div>
+
+          {/* REKAP KEHADIRAN */}
+
+          <div className="bg-white rounded-3xl border border-slate-200 shadow-sm p-5">
+
+            <div className="flex items-center justify-between mb-6">
+
+              <h2 className="text-lg font-bold text-slate-800">
+                Rekap Kehadiran
+              </h2>
+
+              <span className="text-xs text-slate-500">
+                Semua pengguna
+              </span>
+
+            </div>
+
+            <div className="space-y-5">
+
+              {statusData.map(item => {
+
+                const persen =
+                  totalSemua > 0
+                    ? (item.value / totalSemua) * 100
+                    : 0;
+
+                const barWidth =
+                  maxStatus > 0
+                    ? (item.value / maxStatus) * 100
+                    : 0;
+
+                return (
+                  <div key={item.label}>
+
+                    <div className="flex items-center gap-3">
+
+                      <div className="w-14 text-sm font-semibold text-slate-700">
+                        {item.label}
+                      </div>
+
+                      <div className="flex-1">
+
+                        <div className="h-4 bg-slate-100 rounded-full overflow-hidden">
+
+                          <div
+                            className={`h-full ${item.bg} rounded-full transition-all duration-700`}
+                            style={{
+                              width: `${barWidth}%`
+                            }}
+                          ></div>
+
+                        </div>
+
+                      </div>
+
+                      <div className="w-28 text-right text-sm font-bold text-slate-800">
+                        {item.value}{' '}
+                        <span className="text-xs font-normal text-slate-500">
+                          ({persen.toFixed(1)}%)
+                        </span>
+                      </div>
+
+                    </div>
+
+                  </div>
+                );
+              })}
+
+            </div>
+
+            <div className="mt-6 grid grid-cols-2 gap-3">
+
+              <div className="bg-green-50 rounded-xl p-3">
+                <div className="text-xs text-green-700">
+                  Sudah Absen
+                </div>
+                <div className="text-xl font-bold text-green-700">
+                  {sudahAbsen}
+                </div>
+              </div>
+
+              <div className="bg-red-50 rounded-xl p-3">
+                <div className="text-xs text-red-700">
+                  Belum Absen
+                </div>
+                <div className="text-xl font-bold text-red-700">
+                  {belumAbsen}
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  );
+};
 export default function App() {
-  const [activeTab, setActiveTab] = useState('absensi');
+  const [activeTab, setActiveTab] = useState('dashboard');
   const dataLoadedRef = useRef(false);
 const fileInputRef = useRef(null);
 const backupInputRef = useRef(null);
@@ -1819,7 +2572,8 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                     
                     <nav className="flex bg-slate-100/80 p-1.5 rounded-2xl border border-slate-200/60 overflow-x-auto no-scrollbar shadow-inner">
                         {[
-                            { id: 'absensi', icon: 'fa-clipboard-check', label: 'Absensi' },
+ { id: 'dashboard', icon: 'fa-home', label: 'Dashboard' },                            
+{ id: 'absensi', icon: 'fa-clipboard-check', label: 'Absensi' },
                             ...(userRole === 'admin' ? [
                                 { id: 'data', icon: 'fa-address-book', label: 'Direktori' },
                                 { id: 'settings', icon: 'fa-sliders-h', label: 'Sistem' },
@@ -1845,6 +2599,14 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                 </div>
             ) : (
                 <>
+{activeTab === 'dashboard' && (
+  <Dashboard
+    users={users}
+    attendance={attendance}
+    selectedDate={selectedDate}
+    setSelectedDate={setSelectedDate}
+  />
+)}
                     {activeTab === 'absensi' && renderAbsensi()}
                     {activeTab === 'data' && userRole === 'admin' && (
                 <div className="space-y-6 text-left">
@@ -1853,7 +2615,7 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                             <div className="w-20 h-20 bg-emerald-50 rounded-2xl flex items-center justify-center mb-4 text-emerald-600 text-3xl"><i className="fas fa-users"></i></div>
                             <h3 className="text-3xl font-extrabold text-slate-800">{safeUsers.length}</h3>
                             <p className="text-slate-500 font-medium mb-6">Total Data Terdaftar</p>
-                            <button onClick={() => {
+                       <button onClick={() => {
                                 setEditingUserId(null);
                                 setUserForm({ nama: '', peran: 'Siswa', nomorInduk: '', kelas: '', jk: 'L' });
                                 setShowUserModal(true);

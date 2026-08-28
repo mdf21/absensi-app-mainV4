@@ -144,9 +144,20 @@ JSON
        "adminPassword": "$2b$10$SalinanHashBaruAndaDisini...",
        "clientPassword": "$2b$10$SalinanHashBaruAndaDisini..."
   }
-   ``` 
-
+   ```
 Simpan file database (Ctrl + O, lalu Enter, lalu Ctrl + X).
+
+Setelah Anda simpan, wajib cek
+
+Di Ubuntu jalankan:
+
+```bash
+python3 -m json.tool backend/data/database.json
+
+atau
+python3 -m json.tool database.json
+```
+
 Restart kontainer Docker Anda agar perubahan terbaca:
 
 ```bash

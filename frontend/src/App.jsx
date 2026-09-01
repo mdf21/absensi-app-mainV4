@@ -2616,56 +2616,58 @@ const [bulkEditValue, setBulkEditValue] = useState('');
 </h1>
                     </div>
                     
-                    <div className="flex items-center gap-3">
-                        <span className={`text-xs font-bold px-3 py-1.5 rounded-xl ${userRole === 'admin' ? 'bg-indigo-50 text-indigo-700' : 'bg-emerald-50 text-emerald-700'}`}>
-                            <i className={`fas ${userRole === 'admin' ? 'fa-user-cog' : 'fa-user'} mr-1`}></i>
-                            {userRole === 'admin' ? 'Admin' : 'Client'}
-                        </span>
+                    <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+                        <nav className="flex bg-slate-100/80 dark:bg-slate-800/80 p-1.5 rounded-2xl border border-slate-200/60 dark:border-slate-700/60 overflow-x-auto no-scrollbar shadow-inner">
+                            {[
+                                { id: 'dashboard', icon: 'fa-home', label: 'Dashboard' },                            
+                                { id: 'absensi', icon: 'fa-clipboard-check', label: 'Absensi' },
+                                ...(userRole === 'admin' ? [
+                                    { id: 'data', icon: 'fa-address-book', label: 'Direktori' },
+                                    { id: 'settings', icon: 'fa-sliders-h', label: 'Sistem' },
+                                ] : []),
+                            ].map((tab) => (
+                                <button key={tab.id} onClick={() => setActiveTab(tab.id)}
+                                    className={`flex items-center justify-center gap-2 py-2 px-5 rounded-xl font-bold text-[13px] transition-all duration-300 whitespace-nowrap ${
+                                        activeTab === tab.id
+        ? 'bg-white dark:bg-slate-700 text-indigo-700 dark:text-indigo-300 shadow-sm ring-1 ring-slate-200/50 dark:ring-slate-600'
+        : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-700/50'
+                                    }`}>
+                                    <i className={`fas ${tab.icon} text-sm ${activeTab===tab.id?'opacity-100':'opacity-60'}`}></i> {tab.label}
+                                </button>
+                            ))}
+                        </nav>
 
-                        {/* Tombol Dark / Light Mode */}
-<button
-    onClick={() => setDarkMode(!darkMode)}
-    className="w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200
-               dark:bg-slate-700 dark:hover:bg-slate-600
-               text-slate-600 dark:text-yellow-300
-               flex items-center justify-center transition-all"
-    title={darkMode ? 'Light Mode' : 'Dark Mode'}
->
-    <i className={`fas ${darkMode ? 'fa-sun' : 'fa-moon'} text-sm`}></i>
-</button>
+                        <div className="flex items-center gap-3">
+                            <span className={`text-xs font-bold px-3 py-1.5 rounded-xl ${userRole === 'admin' ? 'bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300' : 'bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300'}`}>
+                                <i className={`fas ${userRole === 'admin' ? 'fa-user-cog' : 'fa-user'} mr-1`}></i>
+                                {userRole === 'admin' ? 'Admin' : 'Client'}
+                            </span>
 
-{/* Tombol Keluar */}
-<button
-    onClick={handleLogout}
-    className="text-xs bg-slate-100 hover:bg-slate-200
-               dark:bg-slate-700 dark:hover:bg-slate-600
-               text-slate-600 dark:text-slate-200
-               px-3 py-2 rounded-xl font-bold transition-all
-               flex items-center gap-1"
->
-    <i className="fas fa-sign-out-alt"></i> Keluar
-</button>
-                    </div>
-                    
-                    <nav className="flex bg-slate-100/80 dark:bg-slate-800/80 p-1.5 rounded-2xl border border-slate-200/60 dark:border-slate-700/60 overflow-x-auto no-scrollbar shadow-inner">
-                        {[
- { id: 'dashboard', icon: 'fa-home', label: 'Dashboard' },                            
-{ id: 'absensi', icon: 'fa-clipboard-check', label: 'Absensi' },
-                            ...(userRole === 'admin' ? [
-                                { id: 'data', icon: 'fa-address-book', label: 'Direktori' },
-                                { id: 'settings', icon: 'fa-sliders-h', label: 'Sistem' },
-                            ] : []),
-                        ].map((tab) => (
-                            <button key={tab.id} onClick={() => setActiveTab(tab.id)}
-                                className={`flex items-center justify-center gap-2 py-2 px-5 rounded-xl font-bold text-[13px] transition-all duration-300 whitespace-nowrap ${
-                                    activeTab === tab.id
-    ? 'bg-white dark:bg-slate-700 text-indigo-700 dark:text-indigo-300 shadow-sm ring-1 ring-slate-200/50 dark:ring-slate-600'
-    : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-700/50'
-                                }`}>
-                                <i className={`fas ${tab.icon} text-sm ${activeTab===tab.id?'opacity-100':'opacity-60'}`}></i> {tab.label}
+                            {/* Tombol Dark / Light Mode */}
+                            <button
+                                onClick={() => setDarkMode(!darkMode)}
+                                className="w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200
+                                           dark:bg-slate-700 dark:hover:bg-slate-600
+                                           text-slate-600 dark:text-yellow-300
+                                           flex items-center justify-center transition-all"
+                                title={darkMode ? 'Light Mode' : 'Dark Mode'}
+                            >
+                                <i className={`fas ${darkMode ? 'fa-sun' : 'fa-moon'} text-sm`}></i>
                             </button>
-                        ))}
-                    </nav>
+
+                            {/* Tombol Keluar */}
+                            <button
+                                onClick={handleLogout}
+                                className="text-xs bg-slate-100 hover:bg-slate-200
+                                           dark:bg-slate-700 dark:hover:bg-slate-600
+                                           text-slate-600 dark:text-slate-200
+                                           px-3 py-2 rounded-xl font-bold transition-all
+                                           flex items-center gap-1"
+                            >
+                                <i className="fas fa-sign-out-alt"></i> Keluar
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>

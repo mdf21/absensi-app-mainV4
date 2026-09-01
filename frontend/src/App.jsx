@@ -523,11 +523,11 @@ return (
               KELENGKAPAN ABSENSI
           ==================================================== */}
 
-          <div className="bg-white rounded-3xl border border-slate-200 shadow-sm p-5">
+           <div className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm p-5">
 
-            <h2 className="text-lg font-bold text-slate-800 mb-4">
-              Kelengkapan Absensi
-            </h2>
+             <h2 className="text-lg font-bold text-slate-800 dark:text-slate-100 mb-4">
+               Kelengkapan Absensi
+             </h2>
 
             <div className="flex flex-col sm:flex-row items-center gap-6">
 
@@ -604,7 +604,7 @@ return (
 
             </div>
 
-            <div className="mt-4 bg-blue-50 text-blue-700 text-xs rounded-xl px-4 py-3">
+            <div className="mt-4 bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 text-xs rounded-xl px-4 py-3">
               <i className="fas fa-info-circle mr-2"></i>
               Persentase dihitung dari seluruh pengguna
               (Siswa, Guru, Tendik).
@@ -622,15 +622,15 @@ return (
 
           {/* SISWA PER KELAS */}
 
-          <div className="bg-white rounded-3xl border border-slate-200 shadow-sm p-5">
+          <div className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm p-5">
 
             <div className="flex items-center justify-between mb-6">
 
-              <h2 className="text-lg font-bold text-slate-800">
+              <h2 className="text-lg font-bold text-slate-800 dark:text-slate-100">
                 Siswa Per Kelas
               </h2>
 
-              <span className="text-xs text-slate-500">
+              <span className="text-xs text-slate-500 dark:text-slate-400">
                 Total {totalSiswa} siswa
               </span>
 
@@ -665,11 +665,11 @@ return (
       {/* Nama kelas + total */}
       <div className="flex justify-between items-center mb-1">
 
-        <span className="font-semibold text-slate-700">
+        <span className="font-semibold text-slate-700 dark:text-slate-300">
           Kelas {kelas}
         </span>
 
-        <span className="font-bold text-slate-800">
+        <span className="font-bold text-slate-800 dark:text-slate-100">
           {jumlah}
         </span>
 
@@ -678,13 +678,13 @@ return (
       {/* Laki-laki & perempuan */}
       <div className="flex items-center gap-4 mb-2 text-xs">
 
-        <span className="flex items-center gap-1 text-blue-600 font-medium">
+        <span className="flex items-center gap-1 text-blue-600 dark:text-blue-400 font-medium">
           <i className="fas fa-male"></i>
           Laki-laki:
           <strong>{jumlahLaki}</strong>
         </span>
 
-        <span className="flex items-center gap-1 text-pink-500 font-medium">
+        <span className="flex items-center gap-1 text-pink-500 dark:text-pink-400 font-medium">
           <i className="fas fa-female"></i>
           Perempuan:
           <strong>{jumlahPerempuan}</strong>
@@ -693,7 +693,7 @@ return (
       </div>
 
       {/* Grafik */}
-      <div className="h-3 bg-slate-100 rounded-full overflow-hidden">
+      <div className="h-3 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
 
         <div
           className={`h-full rounded-full transition-all duration-700 ${
@@ -714,7 +714,7 @@ return (
 
             </div>
 
-            <div className="mt-5 bg-blue-50 text-blue-700 text-xs rounded-xl px-4 py-3">
+            <div className="mt-5 bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 text-xs rounded-xl px-4 py-3">
               <i className="fas fa-info-circle mr-2"></i>
               Grafik ini hanya menampilkan data siswa.
             </div>
@@ -723,15 +723,15 @@ return (
 
           {/* REKAP KEHADIRAN */}
 
-          <div className="bg-white rounded-3xl border border-slate-200 shadow-sm p-5">
+          <div className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm p-5">
 
             <div className="flex items-center justify-between mb-6">
 
-              <h2 className="text-lg font-bold text-slate-800">
+              <h2 className="text-lg font-bold text-slate-800 dark:text-slate-100">
                 Rekap Kehadiran
               </h2>
 
-              <span className="text-xs text-slate-500">
+              <span className="text-xs text-slate-500 dark:text-slate-400">
                 Semua pengguna
               </span>
 
@@ -756,13 +756,13 @@ return (
 
                     <div className="flex items-center gap-3">
 
-                      <div className="w-14 text-sm font-semibold text-slate-700">
+                      <div className="w-14 text-sm font-semibold text-slate-700 dark:text-slate-300">
                         {item.label}
                       </div>
 
                       <div className="flex-1">
 
-                        <div className="h-4 bg-slate-100 rounded-full overflow-hidden">
+                        <div className="h-4 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
 
                           <div
                             className={`h-full ${item.bg} rounded-full transition-all duration-700`}
@@ -775,9 +775,9 @@ return (
 
                       </div>
 
-                      <div className="w-28 text-right text-sm font-bold text-slate-800">
+                      <div className="w-28 text-right text-sm font-bold text-slate-800 dark:text-slate-100">
                         {item.value}{' '}
-                        <span className="text-xs font-normal text-slate-500">
+                        <span className="text-xs font-normal text-slate-500 dark:text-slate-400">
                           ({persen.toFixed(1)}%)
                         </span>
                       </div>
@@ -792,20 +792,20 @@ return (
 
             <div className="mt-6 grid grid-cols-2 gap-3">
 
-              <div className="bg-green-50 rounded-xl p-3">
-                <div className="text-xs text-green-700">
+              <div className="bg-green-50 dark:bg-green-950/40 rounded-xl p-3">
+                <div className="text-xs text-green-700 dark:text-green-300">
                   Sudah Absen
                 </div>
-                <div className="text-xl font-bold text-green-700">
+                <div className="text-xl font-bold text-green-700 dark:text-green-300">
                   {sudahAbsen}
                 </div>
               </div>
 
-              <div className="bg-red-50 rounded-xl p-3">
-                <div className="text-xs text-red-700">
+              <div className="bg-red-50 dark:bg-red-950/40 rounded-xl p-3">
+                <div className="text-xs text-red-700 dark:text-red-300">
                   Belum Absen
                 </div>
-                <div className="text-xl font-bold text-red-700">
+                <div className="text-xl font-bold text-red-700 dark:text-red-300">
                   {belumAbsen}
                 </div>
               </div>
@@ -1632,11 +1632,11 @@ const [bulkEditValue, setBulkEditValue] = useState('');
 
     const getStatusStyle = (status) => {
         switch (status) {
-            case 'Hadir': return 'bg-emerald-50 text-emerald-700 ring-emerald-600/30 ring-inset ring-1 font-bold';
-            case 'Izin': return 'bg-sky-50 text-sky-700 ring-sky-600/30 ring-inset ring-1 font-bold';
-            case 'Sakit': return 'bg-amber-50 text-amber-700 ring-amber-600/30 ring-inset ring-1 font-bold';
-            case 'Alpha': return 'bg-rose-50 text-rose-700 ring-rose-600/30 ring-inset ring-1 font-bold';
-            default: return 'bg-slate-50 text-slate-500 border-slate-200 hover:bg-slate-100 font-medium';
+            case 'Hadir': return 'bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 ring-emerald-600/30 dark:ring-emerald-500/30 ring-inset ring-1 font-bold';
+            case 'Izin': return 'bg-sky-50 dark:bg-sky-950/50 text-sky-700 dark:text-sky-300 ring-sky-600/30 dark:ring-sky-500/30 ring-inset ring-1 font-bold';
+            case 'Sakit': return 'bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-300 ring-amber-600/30 dark:ring-amber-500/30 ring-inset ring-1 font-bold';
+            case 'Alpha': return 'bg-rose-50 dark:bg-rose-950/50 text-rose-700 dark:text-rose-300 ring-rose-600/30 dark:ring-rose-500/30 ring-inset ring-1 font-bold';
+            default: return 'bg-slate-50 dark:bg-slate-700 text-slate-500 dark:text-slate-400 border-slate-200 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-600 font-medium';
         }
     };
 
@@ -1956,11 +1956,11 @@ const [bulkEditValue, setBulkEditValue] = useState('');
 
                     <div className="flex gap-2 w-full xl:w-auto justify-end">
                         {isAdmin && (
-                            <button onClick={() => setShowBulkMonthModal(true)} className="flex-1 xl:flex-none items-center justify-center gap-2 bg-white text-indigo-600 border border-indigo-200 px-5 py-2.5 rounded-2xl hover:bg-indigo-50 hover:border-indigo-300 transition-all shadow-sm font-semibold text-sm">
+                             <button onClick={() => setShowBulkMonthModal(true)} className="flex-1 xl:flex-none items-center justify-center gap-2 bg-white dark:bg-slate-700 text-indigo-600 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-700/50 px-5 py-2.5 rounded-2xl hover:bg-indigo-50 dark:hover:bg-indigo-950/50 hover:border-indigo-300 dark:hover:border-indigo-600 transition-all shadow-sm font-semibold text-sm">
                                 <i className="fas fa-calendar-check"></i> <span>Isi Sebulan</span>
                             </button>
                         )}
-                        <button onClick={() => setShowScannerModal(true)} className="flex-1 xl:flex-none items-center justify-center gap-2 bg-white text-emerald-600 border border-emerald-200 px-5 py-2.5 rounded-2xl hover:bg-emerald-50 hover:border-emerald-300 transition-all shadow-sm font-semibold text-sm">
+                        <button onClick={() => setShowScannerModal(true)} className="flex-1 xl:flex-none items-center justify-center gap-2 bg-white dark:bg-slate-700 text-emerald-600 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-700/50 px-5 py-2.5 rounded-2xl hover:bg-emerald-50 dark:hover:bg-emerald-950/50 hover:border-emerald-300 dark:hover:border-emerald-600 transition-all shadow-sm font-semibold text-sm">
                             <i className="fas fa-qrcode"></i> <span>Scan QR</span>
                         </button>
                         {isAdmin && (
@@ -1972,17 +1972,17 @@ const [bulkEditValue, setBulkEditValue] = useState('');
               </div>
           </div>
 
-          {holidayInfo.isHoliday && (
-              <div className="bg-gradient-to-r from-sky-50 to-blue-50 border border-sky-100 p-5 rounded-3xl flex items-center gap-4 shadow-sm animate-fade-in-up">
-                  <div className="bg-sky-100 text-sky-600 w-12 h-12 rounded-2xl flex items-center justify-center shrink-0">
-                      <i className="fas fa-calendar-star text-2xl"></i>
-                  </div>
-                  <div>
-                      <h3 className="font-bold text-sky-900 tracking-tight text-left">Hari Libur Nasional / Terjadwal</h3>
-                      <p className="text-sky-700 text-sm mt-0.5 text-left">Tanggal <b>{formatDateIndo(selectedDate)}</b> ditandai sebagai libur: <strong>{holidayInfo.name}</strong></p>
-                  </div>
-              </div>
-          )}
+           {holidayInfo.isHoliday && (
+               <div className="bg-gradient-to-r from-sky-50 to-blue-50 dark:from-sky-950/50 dark:to-blue-950/50 border border-sky-100 dark:border-sky-800 p-5 rounded-3xl flex items-center gap-4 shadow-sm animate-fade-in-up">
+                   <div className="bg-sky-100 dark:bg-sky-900/40 text-sky-600 dark:text-sky-400 w-12 h-12 rounded-2xl flex items-center justify-center shrink-0">
+                       <i className="fas fa-calendar-star text-2xl"></i>
+                   </div>
+                   <div>
+                       <h3 className="font-bold text-sky-900 dark:text-sky-200 tracking-tight text-left">Hari Libur Nasional / Terjadwal</h3>
+                       <p className="text-sky-700 dark:text-sky-300 text-sm mt-0.5 text-left">Tanggal <b>{formatDateIndo(selectedDate)}</b> ditandai sebagai libur: <strong>{holidayInfo.name}</strong></p>
+                   </div>
+               </div>
+           )}
 
            {isAdmin && selectedUsers.length > 0 && !holidayInfo.isHoliday && (
               <div className="bg-slate-900 p-4 rounded-3xl shadow-xl flex flex-col sm:flex-row items-center justify-between gap-4 animate-fade-in-up sticky top-24 z-20 mx-2">
@@ -2001,302 +2001,302 @@ const [bulkEditValue, setBulkEditValue] = useState('');
               </div>
           )}
 
-          {safeUsers.length === 0 ? (
-              <div className="text-center py-20 bg-white rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center">
-                  <div className="w-24 h-24 bg-slate-50 rounded-full flex items-center justify-center mb-6">
-                      <i className="fas fa-users-slash text-4xl text-slate-300"></i>
-                  </div>
-                   <h3 className="text-xl font-bold text-slate-700">Sistem Masih Kosong</h3>
-                   <p className="text-slate-500 mt-2 mb-6 max-w-sm">Silakan unggah data Siswa dan Guru melalui menu Direktori terlebih dahulu.</p>
-                   {isAdmin && (
-                       <button onClick={() => setActiveTab('data')} className="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-6 py-3 rounded-2xl font-semibold shadow-lg shadow-indigo-500/30 hover:-translate-y-0.5 transition-all">
-                           Masuk ke Direktori <i className="fas fa-arrow-right ml-2"></i>
-                       </button>
-                   )}
-              </div>
-          ) : filteredUsers.length === 0 ? (
-              <div className="text-center py-20 bg-white rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center">
-                  <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mb-5">
-                      <i className="fas fa-search text-3xl text-slate-300"></i>
-                  </div>
-                  <h3 className="text-lg font-bold text-slate-700">Data Tidak Ditemukan</h3>
-                  <p className="text-slate-500 mt-1">Tidak ada entri yang cocok dengan filter kelas/peran Anda.</p>
-              </div>
-          ) : (
-              <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
-                  <div className="overflow-x-auto">
-                      <table className="w-full text-left border-collapse min-w-[800px]">
-                           <thead className="bg-slate-50/80 backdrop-blur border-b border-slate-200">
-                               <tr>
-                                   {isAdmin && (
-                                       <th className="p-5 w-16 text-center">
-                                           <input type="checkbox" disabled={holidayInfo.isHoliday} checked={filteredUsers.length > 0 && selectedUsers.length === filteredUsers.length}
-                                               onChange={(e) => setSelectedUsers(e.target.checked ? filteredUsers.map(u => u.id) : [])}
-                                               className="w-5 h-5 rounded-md border-slate-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer transition-all" />
-                                       </th>
-                                   )}
-                                   <th className="p-5 font-bold text-slate-600 text-xs uppercase tracking-wider">Identitas Lengkap</th>
-                                   <th className="p-5 font-bold text-slate-600 text-xs uppercase tracking-wider w-32">Kelas</th>
-                                   <th className="p-5 font-bold text-slate-600 text-xs uppercase tracking-wider w-32">Peran</th>
-                                   {isAdmin && (
-                                       <th className="p-5 font-bold text-slate-600 text-xs uppercase tracking-wider text-center w-[340px]">Tandai Kehadiran</th>
-                                   )}
-                               </tr>
-                           </thead>
-                           <tbody className="divide-y divide-slate-100">
-                               {filteredUsers.map(user => {
-                                   const status = (safeAttendance[selectedDate] || {})[user.id] || 'Belum diisi';
-                                   const isSelected = selectedUsers.includes(user.id);
-                                   return (
-                                       <tr key={user.id} className={`transition-all duration-200 ${isSelected ? 'bg-indigo-50/40' : 'hover:bg-slate-50/70'}`}>
-                                           {isAdmin && (
-                                               <td className="p-5 text-center">
-                                                   <input type="checkbox" disabled={holidayInfo.isHoliday} checked={isSelected}
-                                                       onChange={(e) => {
-                                                           if(e.target.checked) setSelectedUsers(p => [...p, user.id]);
-                                                           else setSelectedUsers(p => p.filter(id => id !== user.id));
-                                                       }} className="w-5 h-5 rounded-md border-slate-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer transition-all" />
-                                               </td>
-                                           )}
-                                           <td className="p-5 text-left" {...(isAdmin ? { onClick: () => !holidayInfo.isHoliday && document.getElementById(`chk-${user.id}`).click() } : {})}>
-                                              <div className="font-bold text-slate-800 dark:text-slate-100 text-[15px] cursor-pointer group-hover:text-indigo-600 transition-colors text-left">
-                                                  {String(user.nama || '')} 
-                                                  <span className="inline-flex ml-2 items-center justify-center bg-slate-100 text-slate-500 rounded-full w-5 h-5 text-[10px] font-bold">
-                                                      {String(user.jk || 'L')}
-                                                  </span>
-                                              </div>
-                                              <div className="text-xs text-slate-400 mt-1 font-medium tracking-wide text-left">ID: {String(user.nomorInduk || '-')}</div>
-                                          </td>
-                                          <td className="p-5 text-left">
-                                              <span className="text-sm font-bold text-slate-600">{(String(user.peran || '').toLowerCase() === 'guru' || String(user.peran || '').toLowerCase() === 'staff') ? '-' : String(user.kelas || '-')}</span>
-                                          </td>
-                                          <td className="p-5 text-left">
-                                              <span className={`px-3 py-1.5 rounded-xl text-xs font-bold inline-block border ${String(user.peran).toLowerCase() === 'guru' ? 'bg-purple-50 text-purple-700 border-purple-200' : 'bg-blue-50 text-blue-700 border-blue-200'}`}>{String(user.peran || '-')}</span>
-                                          </td>
-                                           {isAdmin ? (
-                                               <td className="p-5">
-                                                   <div className="flex justify-center gap-1.5 bg-slate-100/50 p-1 rounded-xl">
-                                                       {['Hadir', 'Izin', 'Sakit', 'Alpha'].map(opt => (
-                                                           <button key={opt} onClick={(e) => { e.stopPropagation(); handleMarkAttendance(user.id, opt); }} disabled={holidayInfo.isHoliday}
-                                                               className={`flex-1 py-2 rounded-lg text-sm transition-all duration-200 ${status === opt ? getStatusStyle(opt) : 'bg-transparent text-slate-500 hover:bg-white hover:shadow-sm hover:text-slate-700 dark:text-slate-300 disabled:opacity-40 disabled:cursor-not-allowed font-medium'}`}>
-                                                               {opt}
-                                                           </button>
-                                                       ))}
-                                                   </div>
-                                               </td>
-                                           ) : (
-                                               <td className="p-5 text-center">
-                                                   <span className={`px-3 py-1.5 rounded-xl text-xs font-bold inline-block ${getStatusStyle(status)}`}>
-                                                       {status}
+           {safeUsers.length === 0 ? (
+               <div className="text-center py-20 bg-white dark:bg-slate-800 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col items-center">
+                   <div className="w-24 h-24 bg-slate-50 dark:bg-slate-900 rounded-full flex items-center justify-center mb-6">
+                       <i className="fas fa-users-slash text-4xl text-slate-300 dark:text-slate-600"></i>
+                   </div>
+                    <h3 className="text-xl font-bold text-slate-700 dark:text-slate-200">Sistem Masih Kosong</h3>
+                    <p className="text-slate-500 dark:text-slate-400 mt-2 mb-6 max-w-sm">Silakan unggah data Siswa dan Guru melalui menu Direktori terlebih dahulu.</p>
+                    {isAdmin && (
+                        <button onClick={() => setActiveTab('data')} className="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-6 py-3 rounded-2xl font-semibold shadow-lg shadow-indigo-500/30 hover:-translate-y-0.5 transition-all">
+                            Masuk ke Direktori <i className="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    )}
+               </div>
+           ) : filteredUsers.length === 0 ? (
+               <div className="text-center py-20 bg-white dark:bg-slate-800 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col items-center">
+                   <div className="w-20 h-20 bg-slate-50 dark:bg-slate-900 rounded-full flex items-center justify-center mb-5">
+                       <i className="fas fa-search text-3xl text-slate-300 dark:text-slate-600"></i>
+                   </div>
+                   <h3 className="text-lg font-bold text-slate-700 dark:text-slate-200">Data Tidak Ditemukan</h3>
+                   <p className="text-slate-500 dark:text-slate-400 mt-1">Tidak ada entri yang cocok dengan filter kelas/peran Anda.</p>
+               </div>
+           ) : (
+               <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
+                   <div className="overflow-x-auto">
+                       <table className="w-full text-left border-collapse min-w-[800px]">
+                            <thead className="bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur border-b border-slate-200 dark:border-slate-700">
+                                <tr>
+                                    {isAdmin && (
+                                        <th className="p-5 w-16 text-center">
+                                            <input type="checkbox" disabled={holidayInfo.isHoliday} checked={filteredUsers.length > 0 && selectedUsers.length === filteredUsers.length}
+                                                onChange={(e) => setSelectedUsers(e.target.checked ? filteredUsers.map(u => u.id) : [])}
+                                                className="w-5 h-5 rounded-md border-slate-300 dark:border-slate-600 text-indigo-600 focus:ring-indigo-500 cursor-pointer transition-all" />
+                                        </th>
+                                    )}
+                                    <th className="p-5 font-bold text-slate-600 dark:text-slate-300 text-xs uppercase tracking-wider">Identitas Lengkap</th>
+                                    <th className="p-5 font-bold text-slate-600 dark:text-slate-300 text-xs uppercase tracking-wider w-32">Kelas</th>
+                                    <th className="p-5 font-bold text-slate-600 dark:text-slate-300 text-xs uppercase tracking-wider w-32">Peran</th>
+                                    {isAdmin && (
+                                        <th className="p-5 font-bold text-slate-600 dark:text-slate-300 text-xs uppercase tracking-wider text-center w-[340px]">Tandai Kehadiran</th>
+                                    )}
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y divide-slate-100 dark:divide-slate-700">
+                                {filteredUsers.map(user => {
+                                    const status = (safeAttendance[selectedDate] || {})[user.id] || 'Belum diisi';
+                                    const isSelected = selectedUsers.includes(user.id);
+                                    return (
+                                        <tr key={user.id} className={`transition-all duration-200 ${isSelected ? 'bg-indigo-50/40 dark:bg-indigo-950/30' : 'hover:bg-slate-50/70 dark:hover:bg-slate-700/50'}`}>
+                                            {isAdmin && (
+                                                <td className="p-5 text-center">
+                                                    <input type="checkbox" disabled={holidayInfo.isHoliday} checked={isSelected}
+                                                        onChange={(e) => {
+                                                            if(e.target.checked) setSelectedUsers(p => [...p, user.id]);
+                                                            else setSelectedUsers(p => p.filter(id => id !== user.id));
+                                                        }} className="w-5 h-5 rounded-md border-slate-300 dark:border-slate-600 text-indigo-600 focus:ring-indigo-500 cursor-pointer transition-all" />
+                                                </td>
+                                            )}
+                                            <td className="p-5 text-left" {...(isAdmin ? { onClick: () => !holidayInfo.isHoliday && document.getElementById(`chk-${user.id}`).click() } : {})}>
+                                               <div className="font-bold text-slate-800 dark:text-slate-100 text-[15px] cursor-pointer group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors text-left">
+                                                   {String(user.nama || '')} 
+                                                   <span className="inline-flex ml-2 items-center justify-center bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 rounded-full w-5 h-5 text-[10px] font-bold">
+                                                       {String(user.jk || 'L')}
                                                    </span>
-                                               </td>
-                                           )}
-                                      </tr>
-                                  );
-                              })}
-                          </tbody>
-                      </table>
-                  </div>
+                                               </div>
+                                               <div className="text-xs text-slate-400 dark:text-slate-500 mt-1 font-medium tracking-wide text-left">ID: {String(user.nomorInduk || '-')}</div>
+                                           </td>
+                                           <td className="p-5 text-left">
+                                               <span className="text-sm font-bold text-slate-600 dark:text-slate-300">{(String(user.peran || '').toLowerCase() === 'guru' || String(user.peran || '').toLowerCase() === 'staff') ? '-' : String(user.kelas || '-')}</span>
+                                           </td>
+                                           <td className="p-5 text-left">
+                                               <span className={`px-3 py-1.5 rounded-xl text-xs font-bold inline-block border ${String(user.peran).toLowerCase() === 'guru' ? 'bg-purple-50 dark:bg-purple-950/50 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-700/50' : 'bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700/50'}`}>{String(user.peran || '-')}</span>
+                                           </td>
+                                            {isAdmin ? (
+                                                <td className="p-5">
+                                                    <div className="flex justify-center gap-1.5 bg-slate-100/50 dark:bg-slate-700/50 p-1 rounded-xl">
+                                                        {['Hadir', 'Izin', 'Sakit', 'Alpha'].map(opt => (
+                                                            <button key={opt} onClick={(e) => { e.stopPropagation(); handleMarkAttendance(user.id, opt); }} disabled={holidayInfo.isHoliday}
+                                                                className={`flex-1 py-2 rounded-lg text-sm transition-all duration-200 ${status === opt ? getStatusStyle(opt) : 'bg-transparent text-slate-500 dark:text-slate-400 hover:bg-white dark:hover:bg-slate-600 hover:shadow-sm hover:text-slate-700 dark:hover:text-slate-200 disabled:opacity-40 disabled:cursor-not-allowed font-medium'}`}>
+                                                                {opt}
+                                                            </button>
+                                                        ))}
+                                                    </div>
+                                                </td>
+                                            ) : (
+                                                <td className="p-5 text-center">
+                                                    <span className={`px-3 py-1.5 rounded-xl text-xs font-bold inline-block ${getStatusStyle(status)}`}>
+                                                        {status}
+                                                    </span>
+                                                </td>
+                                            )}
+                                       </tr>
+                                   );
+                               })}
+                           </tbody>
+                       </table>
+                   </div>
               </div>
           )}
 
            {isAdmin && showBulkMonthModal && (
               <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center z-[80] p-4 overflow-y-auto">
-                  <div className="bg-white rounded-[24px] shadow-2xl w-full max-w-md p-8 animate-fade-in-up my-auto border border-slate-100 text-left">
-                      <div className="flex justify-between items-center mb-6">
-                          <h3 className="text-xl font-extrabold text-slate-800 flex items-center gap-3">
-                              <div className="w-10 h-10 rounded-2xl flex items-center justify-center bg-indigo-100 text-indigo-600"><i className="fas fa-calendar-check"></i></div>
-                              Isi Sebulan
-                          </h3>
-                          <button onClick={() => setShowBulkMonthModal(false)} className="w-9 h-9 rounded-full bg-slate-100 text-slate-400 hover:bg-slate-200 hover:text-slate-600 flex items-center justify-center transition-all"><i className="fas fa-times text-base"></i></button>
-                      </div>
-                      <p className="text-slate-500 mb-6 text-sm leading-relaxed text-left">Otomatis mengisi absensi pada seluruh hari kerja dalam 1 bulan penuh. Sistem akan <strong>melewati hari minggu dan libur</strong>.</p>
-                      
-                      <div className="space-y-5 mb-8">
-                          <div>
-                              <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Pilih Bulan</label>
-                              <input type="month" value={bulkMonthDate} onChange={e => setBulkMonthDate(e.target.value)} className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-indigo-500 outline-none font-semibold text-slate-700" />
-                          </div>
-                          <div>
-                              <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Status Kehadiran</label>
-                              <select value={bulkMonthStatus} onChange={(e) => setBulkMonthStatus(e.target.value)} className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-indigo-500 outline-none font-semibold text-slate-700 cursor-pointer">
-                                  <option value="Hadir">Hadir</option>
-                                  <option value="Izin">Izin</option>
-                                  <option value="Sakit">Sakit</option>
-                                  <option value="Alpha">Alpha</option>
-                              </select>
-                          </div>
-                      </div>
-                      
-                      <div className="flex justify-end gap-3 pt-4 border-t border-slate-100">
-                          <button onClick={() => setShowBulkMonthModal(false)} className="px-5 py-3 rounded-xl font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-all">Batal</button>
-                          <button onClick={executeBulkMonthAttendance} className="px-6 py-3 rounded-xl font-bold bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-600/30 transition-all">Eksekusi Otomatis</button>
-                      </div>
-                  </div>
+                   <div className="bg-white dark:bg-slate-800 rounded-[24px] shadow-2xl w-full max-w-md p-8 animate-fade-in-up my-auto border border-slate-100 dark:border-slate-700 text-left">
+                       <div className="flex justify-between items-center mb-6">
+                           <h3 className="text-xl font-extrabold text-slate-800 dark:text-slate-100 flex items-center gap-3">
+                               <div className="w-10 h-10 rounded-2xl flex items-center justify-center bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400"><i className="fas fa-calendar-check"></i></div>
+                               Isi Sebulan
+                           </h3>
+                           <button onClick={() => setShowBulkMonthModal(false)} className="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-600 hover:text-slate-600 flex items-center justify-center transition-all"><i className="fas fa-times text-base"></i></button>
+                       </div>
+                       <p className="text-slate-500 dark:text-slate-400 mb-6 text-sm leading-relaxed text-left">Otomatis mengisi absensi pada seluruh hari kerja dalam 1 bulan penuh. Sistem akan <strong>melewati hari minggu dan libur</strong>.</p>
+                       
+                       <div className="space-y-5 mb-8">
+                           <div>
+                               <label className="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Pilih Bulan</label>
+                               <input type="month" value={bulkMonthDate} onChange={e => setBulkMonthDate(e.target.value)} className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-3 focus:ring-2 focus:ring-indigo-500 outline-none font-semibold text-slate-700 dark:text-slate-200" />
+                           </div>
+                           <div>
+                               <label className="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Status Kehadiran</label>
+                               <select value={bulkMonthStatus} onChange={(e) => setBulkMonthStatus(e.target.value)} className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-3 focus:ring-2 focus:ring-indigo-500 outline-none font-semibold text-slate-700 dark:text-slate-200 cursor-pointer">
+                                   <option value="Hadir">Hadir</option>
+                                   <option value="Izin">Izin</option>
+                                   <option value="Sakit">Sakit</option>
+                                   <option value="Alpha">Alpha</option>
+                               </select>
+                           </div>
+                       </div>
+                       
+                       <div className="flex justify-end gap-3 pt-4 border-t border-slate-100 dark:border-slate-700">
+                           <button onClick={() => setShowBulkMonthModal(false)} className="px-5 py-3 rounded-xl font-bold text-slate-600 dark:text-slate-200 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 transition-all">Batal</button>
+                           <button onClick={executeBulkMonthAttendance} className="px-6 py-3 rounded-xl font-bold bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-600/30 transition-all">Eksekusi Otomatis</button>
+                       </div>
+                   </div>
               </div>
           )}
 
            {isAdmin && showRecapModal && (
               <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center z-[80] p-4 overflow-y-auto">
-                  <div className="bg-white rounded-[24px] shadow-2xl w-full max-w-4xl p-8 animate-fade-in-up my-auto border border-slate-100 text-left">
-                      <div className="flex justify-between items-center mb-8">
-                          <h3 className="text-2xl font-extrabold text-slate-800 flex items-center gap-3">
-                              <div className="w-12 h-12 rounded-2xl flex items-center justify-center bg-emerald-100 text-emerald-600"><i className="fas fa-print"></i></div>
-                              Cetak Rekap Absensi
-                          </h3>
-                          <button onClick={() => setShowRecapModal(false)} className="w-10 h-10 rounded-full bg-slate-100 text-slate-400 hover:bg-slate-200 hover:text-slate-600 flex items-center justify-center transition-all"><i className="fas fa-times text-lg"></i></button>
-                      </div>
-                      
-                      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-                          <div className="lg:col-span-2 space-y-8">
-                              <div className="bg-slate-50 border border-slate-200 p-6 rounded-2xl">
-                                  <h4 className="font-bold text-slate-700 flex items-center gap-2 mb-4"><i className="far fa-calendar-alt text-indigo-500"></i> 1. Rentang Waktu</h4>
-                                  <div className="flex bg-white p-1 rounded-xl border border-slate-200 mb-4 shadow-sm">
-                                      <button onClick={() => setRecapType('month')} className={`flex-1 py-1.5 rounded-lg text-sm font-bold transition-all ${recapType==='month'?'bg-indigo-50 text-indigo-600 shadow-sm':'text-slate-500 hover:bg-slate-50'}`}>Bulanan</button>
-                                      <button onClick={() => setRecapType('range')} className={`flex-1 py-1.5 rounded-lg text-sm font-bold transition-all ${recapType==='range'?'bg-indigo-50 text-indigo-600 shadow-sm':'text-slate-500 hover:bg-slate-50'}`}>Kustom</button>
-                                  </div>
-                                  {recapType === 'month' ? (
-                                      <input type="month" value={recapMonth} onChange={e => setRecapMonth(e.target.value)} className="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-indigo-500 outline-none font-medium" />
-                                  ) : (
-                                      <div className="flex gap-3">
-                                          <input type="date" value={recapStartDate} onChange={e => setRecapStartDate(e.target.value)} className="w-full bg-white border border-slate-300 rounded-xl px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-500 outline-none font-medium" />
-                                          <input type="date" value={recapEndDate} onChange={e => setRecapEndDate(e.target.value)} className="w-full bg-white border border-slate-300 rounded-xl px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-500 outline-none font-medium" />
+                   <div className="bg-white dark:bg-slate-800 rounded-[24px] shadow-2xl w-full max-w-4xl p-8 animate-fade-in-up my-auto border border-slate-100 dark:border-slate-700 text-left">
+                       <div className="flex justify-between items-center mb-8">
+                           <h3 className="text-2xl font-extrabold text-slate-800 dark:text-slate-100 flex items-center gap-3">
+                               <div className="w-12 h-12 rounded-2xl flex items-center justify-center bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400"><i className="fas fa-print"></i></div>
+                               Cetak Rekap Absensi
+                           </h3>
+                           <button onClick={() => setShowRecapModal(false)} className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-600 hover:text-slate-600 flex items-center justify-center transition-all"><i className="fas fa-times text-lg"></i></button>
+                       </div>
+                       
+                       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                           <div className="lg:col-span-2 space-y-8">
+                               <div className="bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 p-6 rounded-2xl">
+                                   <h4 className="font-bold text-slate-700 dark:text-slate-200 flex items-center gap-2 mb-4"><i className="far fa-calendar-alt text-indigo-500"></i> 1. Rentang Waktu</h4>
+                                   <div className="flex bg-white dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700 mb-4 shadow-sm">
+                                       <button onClick={() => setRecapType('month')} className={`flex-1 py-1.5 rounded-lg text-sm font-bold transition-all ${recapType==='month'?'bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-300 shadow-sm':'text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700'}`}>Bulanan</button>
+                                       <button onClick={() => setRecapType('range')} className={`flex-1 py-1.5 rounded-lg text-sm font-bold transition-all ${recapType==='range'?'bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-300 shadow-sm':'text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700'}`}>Kustom</button>
+                                   </div>
+                                   {recapType === 'month' ? (
+                                       <input type="month" value={recapMonth} onChange={e => setRecapMonth(e.target.value)} className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-indigo-500 outline-none font-medium text-slate-700 dark:text-slate-200" />
+                                   ) : (
+                                       <div className="flex gap-3">
+                                           <input type="date" value={recapStartDate} onChange={e => setRecapStartDate(e.target.value)} className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-500 outline-none font-medium text-slate-700 dark:text-slate-200" />
+                                           <input type="date" value={recapEndDate} onChange={e => setRecapEndDate(e.target.value)} className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-500 outline-none font-medium text-slate-700 dark:text-slate-200" />
+                                       </div>
+                                   )}
+                               </div>
+                               
+                                 <div>
+                                     <h4 className="font-bold text-slate-700 dark:text-slate-200 flex items-center gap-2 mb-4"><i className="fas fa-columns text-indigo-500"></i> 2. Kolom Ekstra</h4>
+                                     <div className="space-y-3 bg-white dark:bg-slate-800 p-2 rounded-xl border border-slate-200 dark:border-slate-700">
+                                         {[ {id: 'jk', label: 'Tampilkan L/P (Jenis Kelamin)'}, {id: 'nomorInduk', label: 'Tampilkan Nomor Induk/NIP/NUPTK'}, {id: 'kelas', label: 'Tampilkan Kelas'}, {id: 'peran', label: 'Tampilkan Peran'} ].map(opt => (
+                                             <label key={opt.id} className="flex items-center gap-3 cursor-pointer group">
+                                                 <input type="checkbox" checked={exportCols[opt.id]} onChange={e => setExportCols(p => ({...p, [opt.id]: e.target.checked}))} className="w-5 h-5 rounded-md border-slate-300 dark:border-slate-600 text-indigo-600 focus:ring-indigo-500 cursor-pointer" />
+                                                 <span className="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-slate-800 dark:group-hover:text-slate-100 transition-colors">{opt.label}</span>
+                                             </label>
+                                         ))}
+                                     </div>
+                                 </div>
+
+                                  <div>
+                                      <h4 className="font-bold text-slate-700 dark:text-slate-200 flex items-center gap-2 mb-4"><i className="fas fa-school text-indigo-500"></i> 3. Pilih Kelas</h4>
+                                      <div className="bg-white dark:bg-slate-800 p-2 rounded-xl border border-slate-200 dark:border-slate-700">
+                                          <div className="flex gap-2 mb-3">
+                                              <button onClick={() => setRecapSelectedClasses(availableClasses.filter(c => c !== 'Semua'))} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 hover:bg-indigo-100 dark:hover:bg-indigo-900/60 transition-all">Pilih Semua</button>
+                                              <button onClick={() => setRecapSelectedClasses([])} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600 transition-all">Kosongkan</button>
+                                          </div>
+                                          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 max-h-40 overflow-y-auto">
+                                              {availableClasses.filter(c => c !== 'Semua').map(c => (
+                                                  <label key={c} className="flex items-center gap-2 cursor-pointer group">
+                                                      <input type="checkbox" checked={recapSelectedClasses.includes(c)} onChange={e => setRecapSelectedClasses(prev => e.target.checked ? [...prev, c] : prev.filter(x => x !== c))} className="w-4 h-4 rounded border-slate-300 dark:border-slate-600 text-indigo-600 focus:ring-indigo-500 cursor-pointer" />
+                                                      <span className="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-slate-800 dark:group-hover:text-slate-100 transition-colors">{c}</span>
+                                                  </label>
+                                              ))}
+                                          </div>
+                                          <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-2">{recapSelectedClasses.length === 0 ? 'Semua kelas akan dicetak.' : `${recapSelectedClasses.length} kelas dipilih.`}</p>
                                       </div>
-                                  )}
-                              </div>
-                              
-                                <div>
-                                    <h4 className="font-bold text-slate-700 flex items-center gap-2 mb-4"><i className="fas fa-columns text-indigo-500"></i> 2. Kolom Ekstra</h4>
-                                    <div className="space-y-3 bg-white p-2">
-                                        {[ {id: 'jk', label: 'Tampilkan L/P (Jenis Kelamin)'}, {id: 'nomorInduk', label: 'Tampilkan Nomor Induk/NIP/NUPTK'}, {id: 'kelas', label: 'Tampilkan Kelas'}, {id: 'peran', label: 'Tampilkan Peran'} ].map(opt => (
-                                            <label key={opt.id} className="flex items-center gap-3 cursor-pointer group">
-                                                <input type="checkbox" checked={exportCols[opt.id]} onChange={e => setExportCols(p => ({...p, [opt.id]: e.target.checked}))} className="w-5 h-5 rounded-md border-slate-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer" />
-                                                <span className="text-sm font-medium text-slate-600 group-hover:text-slate-800 transition-colors">{opt.label}</span>
-                                            </label>
-                                        ))}
+                                  </div>
+
+                                  <div>
+                                      <h4 className="font-bold text-slate-700 dark:text-slate-200 flex items-center gap-2 mb-4"><i className="fas fa-user-tag text-indigo-500"></i> 4. Pilih Peran</h4>
+                                      <div className="bg-white dark:bg-slate-800 p-2 rounded-xl border border-slate-200 dark:border-slate-700">
+                                          <div className="flex gap-2 mb-3">
+                                              <button onClick={() => setRecapSelectedRoles(['Siswa', 'Guru', 'Staff'])} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 hover:bg-indigo-100 dark:hover:bg-indigo-900/60 transition-all">Pilih Semua</button>
+                                              <button onClick={() => setRecapSelectedRoles([])} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600 transition-all">Kosongkan</button>
+                                          </div>
+                                          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 max-h-40 overflow-y-auto">
+                                              {['Siswa', 'Guru', 'Staff'].map(r => (
+                                                  <label key={r} className="flex items-center gap-2 cursor-pointer group">
+                                                      <input type="checkbox" checked={recapSelectedRoles.includes(r)} onChange={e => setRecapSelectedRoles(prev => e.target.checked ? [...prev, r] : prev.filter(x => x !== r))} className="w-4 h-4 rounded border-slate-300 dark:border-slate-600 text-indigo-600 focus:ring-indigo-500 cursor-pointer" />
+                                                      <span className="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-slate-800 dark:group-hover:text-slate-100 transition-colors">{r}</span>
+                                                  </label>
+                                              ))}
+                                          </div>
+                                          <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-2">{recapSelectedRoles.length === 0 ? 'Semua peran akan dicetak.' : `${recapSelectedRoles.length} peran dipilih.`}</p>
+                                      </div>
+                                  </div>
+
+                                  <div>
+                                      <h4 className="font-bold text-slate-700 dark:text-slate-200 flex items-center gap-2 mb-4"><i className="fas fa-search text-indigo-500"></i> 5. Pencarian & Pengurutan</h4>
+                                    <div className="space-y-3 bg-white dark:bg-slate-800 p-2 rounded-xl border border-slate-200 dark:border-slate-700">
+                                        <div>
+                                            <label className="block text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Cari Siswa (Nama / Nomor Induk)</label>
+                                            <input type="text" value={recapSearchQuery} onChange={e => setRecapSearchQuery(e.target.value)} placeholder="Ketik nama atau nomor induk..." className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium text-slate-700 dark:text-slate-200" />
+                                            <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">{getRecapUsers().length} dari {filteredUsers.length} data cocok.</p>
+                                        </div>
+                                        <label className="flex items-center gap-3 cursor-pointer group">
+                                            <input type="checkbox" checked={recapSortByClass} onChange={e => setRecapSortByClass(e.target.checked)} className="w-5 h-5 rounded-md border-slate-300 dark:border-slate-600 text-indigo-600 focus:ring-indigo-500 cursor-pointer" />
+                                            <span className="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-slate-800 dark:group-hover:text-slate-100 transition-colors">Urutkan per Kelas (A-Z), lalu per Nama</span>
+                                        </label>
                                     </div>
                                 </div>
-
-                                 <div>
-                                     <h4 className="font-bold text-slate-700 flex items-center gap-2 mb-4"><i className="fas fa-school text-indigo-500"></i> 3. Pilih Kelas</h4>
-                                     <div className="bg-white p-2 rounded-xl border border-slate-200">
-                                         <div className="flex gap-2 mb-3">
-                                             <button onClick={() => setRecapSelectedClasses(availableClasses.filter(c => c !== 'Semua'))} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-indigo-50 text-indigo-700 hover:bg-indigo-100 transition-all">Pilih Semua</button>
-                                             <button onClick={() => setRecapSelectedClasses([])} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">Kosongkan</button>
-                                         </div>
-                                         <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 max-h-40 overflow-y-auto">
-                                             {availableClasses.filter(c => c !== 'Semua').map(c => (
-                                                 <label key={c} className="flex items-center gap-2 cursor-pointer group">
-                                                     <input type="checkbox" checked={recapSelectedClasses.includes(c)} onChange={e => setRecapSelectedClasses(prev => e.target.checked ? [...prev, c] : prev.filter(x => x !== c))} className="w-4 h-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer" />
-                                                     <span className="text-sm font-medium text-slate-600 group-hover:text-slate-800 transition-colors">{c}</span>
-                                                 </label>
-                                             ))}
-                                         </div>
-                                         <p className="text-[10px] text-slate-400 mt-2">{recapSelectedClasses.length === 0 ? 'Semua kelas akan dicetak.' : `${recapSelectedClasses.length} kelas dipilih.`}</p>
-                                     </div>
-                                 </div>
-
-                                 <div>
-                                     <h4 className="font-bold text-slate-700 flex items-center gap-2 mb-4"><i className="fas fa-user-tag text-indigo-500"></i> 4. Pilih Peran</h4>
-                                     <div className="bg-white p-2 rounded-xl border border-slate-200">
-                                         <div className="flex gap-2 mb-3">
-                                             <button onClick={() => setRecapSelectedRoles(['Siswa', 'Guru', 'Staff'])} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-indigo-50 text-indigo-700 hover:bg-indigo-100 transition-all">Pilih Semua</button>
-                                             <button onClick={() => setRecapSelectedRoles([])} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">Kosongkan</button>
-                                         </div>
-                                         <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 max-h-40 overflow-y-auto">
-                                             {['Siswa', 'Guru', 'Staff'].map(r => (
-                                                 <label key={r} className="flex items-center gap-2 cursor-pointer group">
-                                                     <input type="checkbox" checked={recapSelectedRoles.includes(r)} onChange={e => setRecapSelectedRoles(prev => e.target.checked ? [...prev, r] : prev.filter(x => x !== r))} className="w-4 h-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer" />
-                                                     <span className="text-sm font-medium text-slate-600 group-hover:text-slate-800 transition-colors">{r}</span>
-                                                 </label>
-                                             ))}
-                                         </div>
-                                         <p className="text-[10px] text-slate-400 mt-2">{recapSelectedRoles.length === 0 ? 'Semua peran akan dicetak.' : `${recapSelectedRoles.length} peran dipilih.`}</p>
-                                     </div>
-                                 </div>
-
-                                 <div>
-                                     <h4 className="font-bold text-slate-700 flex items-center gap-2 mb-4"><i className="fas fa-search text-indigo-500"></i> 5. Pencarian & Pengurutan</h4>
-                                   <div className="space-y-3 bg-white p-2">
+                           </div>
+                           
+                              <div className="lg:col-span-3 bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 p-7 rounded-2xl">
+                                  <h4 className="font-bold text-slate-700 dark:text-slate-200 flex items-center gap-2 mb-5 border-b border-slate-200 dark:border-slate-700 pb-4"><i className="fas fa-file-signature text-indigo-500"></i> 6. Format Surat PDF</h4>
+                               
+                               <div className="space-y-4">
+                                   <div className="grid grid-cols-1 gap-4">
                                        <div>
-                                           <label className="block text-[11px] font-bold text-slate-500 uppercase mb-1">Cari Siswa (Nama / Nomor Induk)</label>
-                                           <input type="text" value={recapSearchQuery} onChange={e => setRecapSearchQuery(e.target.value)} placeholder="Ketik nama atau nomor induk..." className="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium" />
-                                           <p className="text-[10px] text-slate-400 mt-1">{getRecapUsers().length} dari {filteredUsers.length} data cocok.</p>
+                                           <label className="block text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Kop Utama / Judul</label>
+                                           <input type="text" value={pdfConfig?.title1 || ""} onChange={e => handlePdfConfigChange('title1', e.target.value)} className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium text-slate-700 dark:text-slate-200" />
                                        </div>
-                                       <label className="flex items-center gap-3 cursor-pointer group">
-                                           <input type="checkbox" checked={recapSortByClass} onChange={e => setRecapSortByClass(e.target.checked)} className="w-5 h-5 rounded-md border-slate-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer" />
-                                           <span className="text-sm font-medium text-slate-600 group-hover:text-slate-800 transition-colors">Urutkan per Kelas (A-Z), lalu per Nama</span>
-                                       </label>
+                                       <div>
+                                           <label className="block text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Sub Judul Laporan</label>
+                                           <input type="text" value={pdfConfig?.title2 || ""} onChange={e => handlePdfConfigChange('title2', e.target.value)} className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium text-slate-700 dark:text-slate-200" />
+                                       </div>
                                    </div>
+                                   
+                                   <div>
+                                       <label className="block text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Tempat & Tanggal Surat</label>
+                                       <input type="text" value={pdfConfig?.ttdTempatTanggal || ""} onChange={e => handlePdfConfigChange('ttdTempatTanggal', e.target.value)} className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium text-slate-700 dark:text-slate-200" placeholder="Tunggul Pawenang, 20 April 2026" />
+                                   </div>
+                                   
+                                   <div className="grid grid-cols-2 gap-4">
+                                       <div>
+                                           <label className="block text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Jabatan Penandatangan</label>
+                                           <input type="text" value={pdfConfig?.ttdJabatan || ""} onChange={e => handlePdfConfigChange('ttdJabatan', e.target.value)} className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium text-slate-700 dark:text-slate-200" placeholder="Kepala Madrasah" />
+                                       </div>
+                                       <div>
+                                           <label className="block text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Nama Penandatangan</label>
+                                           <input type="text" value={pdfConfig?.ttdNama || ""} onChange={e => handlePdfConfigChange('ttdNama', e.target.value)} className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium text-slate-700 dark:text-slate-200" placeholder="Nama..." />
+                                       </div>
+                                   </div>
+                                   
+                                   <div>
+                                       <label className="block text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">NIP (Opsional)</label>
+                                       <input type="text" value={pdfConfig?.ttdNip || ""} onChange={e => handlePdfConfigChange('ttdNip', e.target.value)} className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium text-slate-700 dark:text-slate-200" />
+                                   </div>
+                                   
+                                    <div className="pt-4 mt-2 border-t border-slate-200 dark:border-slate-700">
+                                        <label className="block text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase mb-2">Stempel / TTD (PNG Transparan)</label>
+                                        <input type="file" accept="image/png" className="hidden" ref={ttdInputRef} onChange={handleTtdUpload} />
+                                        <div className="flex items-center gap-4">
+                                            <button onClick={() => ttdInputRef.current.click()} className="bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-600 px-4 py-2 rounded-xl text-sm font-bold text-slate-600 dark:text-slate-200 hover:border-indigo-400 dark:hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-300 flex items-center gap-2 transition-all">
+                                                <i className="fas fa-upload text-indigo-500"></i> Upload Foto TTD
+                                            </button>
+                                            {pdfConfig?.ttdImage && <div className="flex items-center gap-2 text-sm bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 px-3 py-2 rounded-xl font-bold border border-emerald-100 dark:border-emerald-800"><i className="fas fa-check-circle"></i> Terpasang <button onClick={() => handlePdfConfigChange('ttdImage', null)} className="ml-2 text-rose-500"><i className="fas fa-times"></i></button></div>}
+                                        </div>
+                                        {pdfConfig?.ttdImage && (
+                                        <div className="mt-4">
+                                            <label className="block text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Ukuran Lebar Stempel (mm)</label>
+                                            <input type="number" min="30" max="200" step="1" value={pdfConfig?.ttdImageSize || 72} onChange={e => handlePdfConfigChange('ttdImageSize', parseInt(e.target.value) || 72)} className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium text-slate-700 dark:text-slate-200" />
+                                            <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">Lebar 72mm (default), tinggi menyesuaikan otomatis.</p>
+                                        </div>
+                                        )}
+                                    </div>
                                </div>
-                          </div>
-                          
-                             <div className="lg:col-span-3 bg-slate-50 border border-slate-200 p-7 rounded-2xl">
-                                 <h4 className="font-bold text-slate-700 flex items-center gap-2 mb-5 border-b border-slate-200 pb-4"><i className="fas fa-file-signature text-indigo-500"></i> 6. Format Surat PDF</h4>
-                              
-                              <div className="space-y-4">
-                                  <div className="grid grid-cols-1 gap-4">
-                                      <div>
-                                          <label className="block text-[11px] font-bold text-slate-500 uppercase mb-1">Kop Utama / Judul</label>
-                                          <input type="text" value={pdfConfig?.title1 || ""} onChange={e => handlePdfConfigChange('title1', e.target.value)} className="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium" />
-                                      </div>
-                                      <div>
-                                          <label className="block text-[11px] font-bold text-slate-500 uppercase mb-1">Sub Judul Laporan</label>
-                                          <input type="text" value={pdfConfig?.title2 || ""} onChange={e => handlePdfConfigChange('title2', e.target.value)} className="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium" />
-                                      </div>
-                                  </div>
-                                  
-                                  <div>
-                                      <label className="block text-[11px] font-bold text-slate-500 uppercase mb-1">Tempat & Tanggal Surat</label>
-                                      <input type="text" value={pdfConfig?.ttdTempatTanggal || ""} onChange={e => handlePdfConfigChange('ttdTempatTanggal', e.target.value)} className="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium" placeholder="Tunggul Pawenang, 20 April 2026" />
-                                  </div>
-                                  
-                                  <div className="grid grid-cols-2 gap-4">
-                                      <div>
-                                          <label className="block text-[11px] font-bold text-slate-500 uppercase mb-1">Jabatan Penandatangan</label>
-                                          <input type="text" value={pdfConfig?.ttdJabatan || ""} onChange={e => handlePdfConfigChange('ttdJabatan', e.target.value)} className="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium" placeholder="Kepala Madrasah" />
-                                      </div>
-                                      <div>
-                                          <label className="block text-[11px] font-bold text-slate-500 uppercase mb-1">Nama Penandatangan</label>
-                                          <input type="text" value={pdfConfig?.ttdNama || ""} onChange={e => handlePdfConfigChange('ttdNama', e.target.value)} className="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium" placeholder="Nama..." />
-                                      </div>
-                                  </div>
-                                  
-                                  <div>
-                                      <label className="block text-[11px] font-bold text-slate-500 uppercase mb-1">NIP (Opsional)</label>
-                                      <input type="text" value={pdfConfig?.ttdNip || ""} onChange={e => handlePdfConfigChange('ttdNip', e.target.value)} className="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium" />
-                                  </div>
-                                  
-                                   <div className="pt-4 mt-2 border-t border-slate-200">
-                                       <label className="block text-[11px] font-bold text-slate-500 uppercase mb-2">Stempel / TTD (PNG Transparan)</label>
-                                       <input type="file" accept="image/png" className="hidden" ref={ttdInputRef} onChange={handleTtdUpload} />
-                                       <div className="flex items-center gap-4">
-                                           <button onClick={() => ttdInputRef.current.click()} className="bg-white border-2 border-slate-200 px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:border-indigo-400 hover:text-indigo-600 flex items-center gap-2 transition-all">
-                                               <i className="fas fa-upload text-indigo-500"></i> Upload Foto TTD
-                                           </button>
-                                           {pdfConfig?.ttdImage && <div className="flex items-center gap-2 text-sm bg-emerald-50 text-emerald-700 px-3 py-2 rounded-xl font-bold border border-emerald-100"><i className="fas fa-check-circle"></i> Terpasang <button onClick={() => handlePdfConfigChange('ttdImage', null)} className="ml-2 text-rose-500"><i className="fas fa-times"></i></button></div>}
-                                       </div>
-                                       {pdfConfig?.ttdImage && (
-                                       <div className="mt-4">
-                                           <label className="block text-[11px] font-bold text-slate-500 uppercase mb-1">Ukuran Lebar Stempel (mm)</label>
-                                           <input type="number" min="30" max="200" step="1" value={pdfConfig?.ttdImageSize || 72} onChange={e => handlePdfConfigChange('ttdImageSize', parseInt(e.target.value) || 72)} className="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium" />
-                                           <p className="text-[10px] text-slate-400 mt-1">Lebar 72mm (default), tinggi menyesuaikan otomatis.</p>
-                                       </div>
-                                       )}
-                                   </div>
-                              </div>
-                          </div>
-                      </div>
-                      
-                      <div className="flex flex-col sm:flex-row justify-end gap-3 pt-6 mt-8 border-t border-slate-100">
-                          <button onClick={() => setShowRecapModal(false)} className="py-3 px-6 rounded-xl text-slate-600 font-bold bg-slate-100 hover:bg-slate-200 transition-all mr-auto">Batal</button>
-                          <button onClick={executeDownloadExcel} className="py-3 px-6 rounded-xl font-bold bg-[#107c41] hover:bg-[#0c5c30] text-white flex items-center justify-center gap-2 transition-all shadow-md shadow-green-600/20">
-                              <i className="fas fa-file-excel text-lg"></i> Excel
-                          </button>
-                          <button onClick={executeDownloadPdf} className="py-3 px-6 rounded-xl font-bold bg-rose-600 hover:bg-rose-700 text-white flex items-center justify-center gap-2 transition-all shadow-md shadow-rose-600/20">
-                              <i className="fas fa-file-pdf text-lg"></i> PDF
-                          </button>
-                      </div>
+                           </div>
+                       </div>
+                       
+                       <div className="flex flex-col sm:flex-row justify-end gap-3 pt-6 mt-8 border-t border-slate-100 dark:border-slate-700">
+                           <button onClick={() => setShowRecapModal(false)} className="py-3 px-6 rounded-xl text-slate-600 dark:text-slate-200 font-bold bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 transition-all mr-auto">Batal</button>
+                           <button onClick={executeDownloadExcel} className="py-3 px-6 rounded-xl font-bold bg-[#107c41] hover:bg-[#0c5c30] text-white flex items-center justify-center gap-2 transition-all shadow-md shadow-green-600/20">
+                               <i className="fas fa-file-excel text-lg"></i> Excel
+                           </button>
+                           <button onClick={executeDownloadPdf} className="py-3 px-6 rounded-xl font-bold bg-rose-600 hover:bg-rose-700 text-white flex items-center justify-center gap-2 transition-all shadow-md shadow-rose-600/20">
+                               <i className="fas fa-file-pdf text-lg"></i> PDF
+                           </button>
+                       </div>
                   </div>
               </div>
           )}
@@ -2381,7 +2381,7 @@ const [bulkEditValue, setBulkEditValue] = useState('');
             <div className="bg-white dark:bg-slate-800 p-6 rounded-3xl shadow-sm border border-slate-100">
                 <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2 mb-4"><i className="fas fa-lock text-indigo-500"></i> Keamanan - Ganti Password</h3>
                 {passwordChangeMessage && (
-                    <div className="mb-4 p-3 bg-emerald-50 border border-emerald-200 text-emerald-700 rounded-xl text-sm font-bold">
+                    <div className="mb-4 p-3 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 rounded-xl text-sm font-bold">
                         {passwordChangeMessage}
                     </div>
                 )}
@@ -2393,7 +2393,7 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                             value={newAdminPassword} 
                             onChange={(e) => setNewAdminPassword(e.target.value)}
                             placeholder="Password admin baru" 
-                            className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 font-semibold text-slate-700 outline-none focus:ring-2 focus:ring-indigo-500" 
+                            className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-2.5 font-semibold text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-indigo-500" 
                         />
                         <button onClick={() => { if (newAdminPassword.trim()) { updatePassword('admin', newAdminPassword.trim()); setNewAdminPassword(''); } }} className="mt-2 w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 rounded-xl transition-all text-sm">
                             Simpan Password Admin
@@ -2406,7 +2406,7 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                             value={newClientPassword} 
                             onChange={(e) => setNewClientPassword(e.target.value)}
                             placeholder="Password client baru" 
-                            className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 font-semibold text-slate-700 outline-none focus:ring-2 focus:ring-emerald-500" 
+                            className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-2.5 font-semibold text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-emerald-500" 
                         />
                         <button onClick={() => { if (newClientPassword.trim()) { updatePassword('client', newClientPassword.trim()); setNewClientPassword(''); } }} className="mt-2 w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 rounded-xl transition-all text-sm">
                             Simpan Password Client
@@ -2416,16 +2416,16 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="md:col-span-1 space-y-6">
-                    <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
-                        <h3 className="text-lg font-bold text-slate-800 flex items-center gap-2 mb-4"><i className="fas fa-calendar-day text-indigo-500"></i> Tambah Hari Libur</h3>
+                    <div className="bg-white dark:bg-slate-800 p-6 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700">
+                        <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2 mb-4"><i className="fas fa-calendar-day text-indigo-500"></i> Tambah Hari Libur</h3>
                         <form onSubmit={addManualHoliday} className="space-y-4">
                             <div>
-                                <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Tanggal Libur</label>
-                                <input type="date" value={newHolidayDate} onChange={e => setNewHolidayDate(e.target.value)} className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 font-semibold text-slate-700 outline-none focus:ring-2 focus:ring-indigo-500" required />
+                                <label className="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Tanggal Libur</label>
+                                <input type="date" value={newHolidayDate} onChange={e => setNewHolidayDate(e.target.value)} className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-2.5 font-semibold text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-indigo-500" required />
                             </div>
                             <div>
-                                <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Keterangan</label>
-                                <input type="text" placeholder="Contoh: Libur Semester" value={newHolidayName} onChange={e => setNewHolidayName(e.target.value)} className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 font-semibold text-slate-700 outline-none focus:ring-2 focus:ring-indigo-500" required />
+                                <label className="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Keterangan</label>
+                                <input type="text" placeholder="Contoh: Libur Semester" value={newHolidayName} onChange={e => setNewHolidayName(e.target.value)} className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-2.5 font-semibold text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-indigo-500" required />
                             </div>
                             <button type="submit" className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 rounded-xl transition-all shadow-md shadow-indigo-600/20 flex items-center justify-center gap-2">
                                 <i className="fas fa-plus"></i> Simpan Libur
@@ -2433,50 +2433,50 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                         </form>
                     </div>
 
-                    <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
-                        <h3 className="text-lg font-bold text-slate-800 flex items-center gap-2 mb-4"><i className="fas fa-sync-alt text-indigo-500"></i> Sinkronisasi Libur</h3>
+                    <div className="bg-white dark:bg-slate-800 p-6 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700">
+                        <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2 mb-4"><i className="fas fa-sync-alt text-indigo-500"></i> Sinkronisasi Libur</h3>
                         <div className="space-y-3">
                             <div>
-                                <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Tahun Libur Nasional</label>
-                                <input type="number" value={selectedHolidayYear} onChange={e => setSelectedHolidayYear(e.target.value)} className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 font-semibold text-slate-700 outline-none focus:ring-2 focus:ring-indigo-500" />
+                                <label className="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Tahun Libur Nasional</label>
+                                <input type="number" value={selectedHolidayYear} onChange={e => setSelectedHolidayYear(e.target.value)} className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-2.5 font-semibold text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-indigo-500" />
                             </div>
                             <button onClick={refreshHolidays} className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl transition-all shadow-md shadow-emerald-600/20 flex items-center justify-center gap-2">
                                 <i className="fas fa-cloud-download-alt"></i> Ambil Libur Nasional
                             </button>
-                            <button onClick={exportHolidaysToCsv} className="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2">
+                            <button onClick={exportHolidaysToCsv} className="w-full bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2">
                                 <i className="fas fa-file-csv"></i> Export CSV
                             </button>
                             <div>
-                                <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Import dari Google Sheets</label>
-                                <input type="url" placeholder="https://docs.google.com/spreadsheets/d/..." onChange={importHolidaysFromGoogleSheets} className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 font-semibold text-slate-700 outline-none focus:ring-2 focus:ring-indigo-500 text-xs" />
-                                <p className="text-[10px] text-slate-400 mt-1">Tempel URL spreadsheet yang sudah dipublikasikan.</p>
+                                <label className="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Import dari Google Sheets</label>
+                                <input type="url" placeholder="https://docs.google.com/spreadsheets/d/..." onChange={importHolidaysFromGoogleSheets} className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-2.5 font-semibold text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-indigo-500 text-xs" />
+                                <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">Tempel URL spreadsheet yang sudah dipublikasikan.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
-                        <h3 className="text-lg font-bold text-slate-800 flex items-center gap-2 mb-4"><i className="fas fa-cog text-indigo-500"></i> Tampilan Aplikasi</h3>
+                    <div className="bg-white dark:bg-slate-800 p-6 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700">
+                        <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2 mb-4"><i className="fas fa-cog text-indigo-500"></i> Tampilan Aplikasi</h3>
                         <div className="space-y-4">
                             <div>
-                                <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Nama Institusi / Aplikasi</label>
+                                <label className="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Nama Institusi / Aplikasi</label>
                                 <input type="text" value={(appSettings && appSettings.appName) || ''} onChange={(e) => {
                                     const newSettings = { ...(appSettings || {}), appName: e.target.value };
                                     setAppSettings(newSettings);
                                     saveToBackend({ appSettings: newSettings });
-                                }} className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 font-bold text-slate-700 outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Sistem Absensi" />
+                                }} className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-2.5 font-bold text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Sistem Absensi" />
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div className="md:col-span-2">
-                    <div className="bg-white rounded-3xl shadow-sm border border-slate-100 h-full p-6 flex flex-col">
-                        <div className="flex justify-between items-center mb-6 pb-3 border-b border-slate-100">
+                    <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 h-full p-6 flex flex-col">
+                        <div className="flex justify-between items-center mb-6 pb-3 border-b border-slate-100 dark:border-slate-700">
                             <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
     <i className="fas fa-calendar-alt text-indigo-500"></i>
     Daftar Hari Libur Nasional & Manual
 </h3>
-                            <span className="bg-indigo-50 text-indigo-700 px-3.5 py-1.5 rounded-2xl text-xs font-extrabold">Total: {validHolidays.length} Hari</span>
+                            <span className="bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 px-3.5 py-1.5 rounded-2xl text-xs font-extrabold">Total: {validHolidays.length} Hari</span>
                         </div>
                         
                         <div className="overflow-y-auto flex-1 max-h-[500px] pr-2 space-y-3">
@@ -2487,7 +2487,7 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                                     {[...validHolidays].sort((a,b)=> new Date(a.date)-new Date(b.date)).map(h => (
                                         <div key={h.date} className="p-4 rounded-2xl bg-slate-50/80 hover:bg-slate-100/80 dark:bg-slate-800/80 border border-slate-200/60 flex justify-between items-center transition-all">
                                             <div className="flex items-start gap-4">
-                                                <div className={`w-11 h-11 rounded-2xl flex items-center justify-center shrink-0 ${h.type === 'auto' ? 'bg-amber-100 text-amber-600' : 'bg-indigo-100 text-indigo-600'}`}>
+                                                 <div className={`w-11 h-11 rounded-2xl flex items-center justify-center shrink-0 ${h.type === 'auto' ? 'bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400' : 'bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400'}`}>
                                                     <i className="fas fa-calendar-day text-lg"></i>
                                                 </div>
                                                 <div>
@@ -2497,7 +2497,7 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                                                     <p className="text-sm text-slate-600 dark:text-slate-300 font-medium mt-0.5">
     {String(h.name || '-')}
 </p>
-                                                    <span className={`text-[10px] uppercase tracking-wider font-extrabold px-2.5 py-0.5 rounded-full inline-block mt-1.5 ${h.type === 'auto' ? 'bg-amber-50 text-amber-700 border border-amber-200/50' : 'bg-indigo-50 text-indigo-700 border border-indigo-200/50'}`}>
+                                                    <span className={`text-[10px] uppercase tracking-wider font-extrabold px-2.5 py-0.5 rounded-full inline-block mt-1.5 ${h.type === 'auto' ? 'bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-300 border border-amber-200/50 dark:border-amber-700/50' : 'bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 border border-indigo-200/50 dark:border-indigo-700/50'}`}>
                                                         {h.type === 'auto' ? 'Nasional (API)' : 'Manual'}
                                                     </span>
                                                 </div>
@@ -2508,7 +2508,7 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                                                     setHolidays(nh);
                                                     saveToBackend({holidays: nh});
                                                     showToastMessage("Hari libur dihapus.", "success");
-                                                }} className="w-10 h-10 rounded-xl bg-rose-50 text-rose-500 hover:bg-rose-100 hover:text-rose-600 flex items-center justify-center transition-all" title="Hapus Libur">
+                                                 }} className="w-10 h-10 rounded-xl bg-rose-50 dark:bg-rose-950/40 text-rose-500 dark:text-rose-400 hover:bg-rose-100 dark:hover:bg-rose-900/60 hover:text-rose-600 dark:hover:text-rose-300 flex items-center justify-center transition-all" title="Hapus Libur">
                                                     <i className="fas fa-trash text-sm"></i>
                                                 </button>
                                             )}
@@ -2521,10 +2521,10 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                 </div>
             </div>
 
-            <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="bg-white dark:bg-slate-800 p-6 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div>
-                    <h4 className="font-bold text-slate-800">Cadangkan & Pulihkan Sistem</h4>
-                    <p className="text-sm text-slate-500">Amankan seluruh data absensi dan pegawai ke format file JSON.</p>
+                    <h4 className="font-bold text-slate-800 dark:text-slate-100">Cadangkan & Pulihkan Sistem</h4>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Amankan seluruh data absensi dan pegawai ke format file JSON.</p>
                 </div>
                 <div className="flex gap-3 w-full sm:w-auto">
                     <button onClick={handleBackupData} className="flex-1 sm:flex-none bg-slate-800 hover:bg-slate-900 text-white font-bold px-5 py-3 rounded-2xl transition-all shadow-sm text-sm flex items-center justify-center gap-2">
@@ -2541,12 +2541,12 @@ const [bulkEditValue, setBulkEditValue] = useState('');
   };
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] font-sans text-slate-800 selection:bg-indigo-100 selection:text-indigo-900">
+    <div className="min-h-screen bg-[#f8fafc] dark:bg-slate-950 font-sans text-slate-800 dark:text-slate-100 selection:bg-indigo-100 selection:text-indigo-900">
         {!userRole ? (
-            <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 to-slate-100 p-4">
-                <div className="bg-white rounded-[32px] shadow-2xl p-8 w-full max-w-md text-center border border-slate-100">
+            <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 to-slate-100 dark:from-slate-900 dark:to-slate-950 p-4">
+                <div className="bg-white dark:bg-slate-800 rounded-[32px] shadow-2xl p-8 w-full max-w-md text-center border border-slate-100 dark:border-slate-700">
 
-                    <div className="w-20 h-20 bg-indigo-100 rounded-3xl flex items-center justify-center mx-auto">
+                    <div className="w-20 h-20 bg-indigo-100 dark:bg-indigo-900/40 rounded-3xl flex items-center justify-center mx-auto">
     <img
         src={defaultLogoUrl}
         alt="Logo"
@@ -2554,50 +2554,50 @@ const [bulkEditValue, setBulkEditValue] = useState('');
     />
 </div>
 
-                    <h1 className="text-2xl font-extrabold text-slate-800 mb-2">
+                    <h1 className="text-2xl font-extrabold text-slate-800 dark:text-slate-100 mb-2">
                         Sistem Absensi
                     </h1>
 
-                    <p className="text-slate-500 text-sm mb-6">
+                    <p className="text-slate-500 dark:text-slate-400 text-sm mb-6">
                         Masuk dengan password untuk melanjutkan.
                     </p>
 
                     {loginError && (
-                        <div className="mb-4 p-3 bg-rose-50 border border-rose-200 text-rose-700 rounded-xl text-sm font-bold">
+                        <div className="mb-4 p-3 bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-800 text-rose-700 dark:text-rose-300 rounded-xl text-sm font-bold">
                             {loginError}
                         </div>
                     )}
 
                     <div className="space-y-3">
                         <div className="text-left">
-                            <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Password Admin</label>
+                            <label className="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Password Admin</label>
                             <input 
                                 type="password" 
                                 value={loginPassword.admin} 
                                 onChange={(e) => setLoginPassword(p => ({...p, admin: e.target.value}))}
                                 onKeyDown={(e) => e.key === 'Enter' && handleLogin('admin')}
                                 placeholder="Masukkan password admin" 
-                                className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 font-semibold text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-indigo-500" 
+                                className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-3 font-semibold text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-indigo-500" 
                             />
                         </div>
                         <button onClick={() => handleLogin('admin')} className="w-full bg-gradient-to-r from-indigo-600 to-indigo-700 text-white py-3 rounded-2xl font-bold text-base shadow-lg shadow-indigo-500/30 hover:from-indigo-700 hover:to-indigo-800 transition-all flex items-center justify-center gap-2">
                             <i className="fas fa-user-cog"></i> Masuk sebagai Admin
                         </button>
                         
-                        <div className="border-t border-slate-200 my-4"></div>
+                        <div className="border-t border-slate-200 dark:border-slate-700 my-4"></div>
                         
                         <div className="text-left">
-                            <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Password Client</label>
+                            <label className="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Password Client</label>
                             <input 
                                 type="password" 
                                 value={loginPassword.client} 
                                 onChange={(e) => setLoginPassword(p => ({...p, client: e.target.value}))}
                                 onKeyDown={(e) => e.key === 'Enter' && handleLogin('client')}
                                 placeholder="Masukkan password client" 
-                                className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 font-semibold text-slate-700 outline-none focus:ring-2 focus:ring-emerald-500" 
+                                className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-3 font-semibold text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-emerald-500" 
                             />
                         </div>
-                        <button onClick={() => handleLogin('client')} className="w-full bg-white border-2 border-slate-200 text-slate-700 py-3 rounded-2xl font-bold text-base hover:border-emerald-300 hover:text-emerald-700 transition-all flex items-center justify-center gap-2">
+                        <button onClick={() => handleLogin('client')} className="w-full bg-white dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 py-3 rounded-2xl font-bold text-base hover:border-emerald-300 dark:hover:border-emerald-500 hover:text-emerald-700 dark:hover:text-emerald-300 transition-all flex items-center justify-center gap-2">
                             <i className="fas fa-user"></i> Masuk sebagai Client
                         </button>
                     </div>
@@ -2692,10 +2692,10 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                     {activeTab === 'data' && userRole === 'admin' && (
                 <div className="space-y-6 text-left">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center">
-                            <div className="w-20 h-20 bg-emerald-50 rounded-2xl flex items-center justify-center mb-4 text-emerald-600 text-3xl"><i className="fas fa-users"></i></div>
-                            <h3 className="text-3xl font-extrabold text-slate-800">{safeUsers.length}</h3>
-                            <p className="text-slate-500 font-medium mb-6">Total Data Terdaftar</p>
+                        <div className="bg-white dark:bg-slate-800 p-6 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col items-center justify-center text-center">
+                            <div className="w-20 h-20 bg-emerald-50 dark:bg-emerald-950/50 rounded-2xl flex items-center justify-center mb-4 text-emerald-600 dark:text-emerald-400 text-3xl"><i className="fas fa-users"></i></div>
+                            <h3 className="text-3xl font-extrabold text-slate-800 dark:text-slate-100">{safeUsers.length}</h3>
+                            <p className="text-slate-500 dark:text-slate-400 font-medium mb-6">Total Data Terdaftar</p>
                        <button onClick={() => {
                                 setEditingUserId(null);
                                 setUserForm({ nama: '', peran: 'Siswa', nomorInduk: '', kelas: '', jk: 'L' });
@@ -2704,18 +2704,18 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                                 <i className="fas fa-user-plus"></i> Tambah Manual
                             </button>
                         </div>
-                        <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center">
-                            <div className="w-20 h-20 bg-violet-50 rounded-2xl flex items-center justify-center mb-4 text-violet-600 text-3xl"><i className="fas fa-qrcode"></i></div>
-                            <h3 className="text-2xl font-extrabold text-slate-800">Kartu Pelajar</h3>
-                            <p className="text-slate-500 font-medium mb-6 text-sm">Generate QR Code untuk setiap siswa sebagai kartu pelajar.</p>
+                        <div className="bg-white dark:bg-slate-800 p-6 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col items-center justify-center text-center">
+                            <div className="w-20 h-20 bg-violet-50 dark:bg-violet-950/50 rounded-2xl flex items-center justify-center mb-4 text-violet-600 dark:text-violet-400 text-3xl"><i className="fas fa-qrcode"></i></div>
+                            <h3 className="text-2xl font-extrabold text-slate-800 dark:text-slate-100">Kartu Pelajar</h3>
+                            <p className="text-slate-500 dark:text-slate-400 font-medium mb-6 text-sm">Generate QR Code untuk setiap siswa sebagai kartu pelajar.</p>
                             <button onClick={handleOpenCardModal} disabled={safeUsers.length === 0} className="bg-violet-600 text-white px-5 py-2.5 rounded-2xl hover:bg-violet-700 transition-all text-sm font-bold shadow-md shadow-violet-500/20 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
                                 <i className="fas fa-id-card"></i> Lihat Kartu Pelajar
                             </button>
                         </div>
-                        <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between">
+                        <div className="bg-white dark:bg-slate-800 p-6 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col justify-between">
                             <div>
-                                <h3 className="text-lg font-bold text-slate-800 flex items-center gap-2 mb-2"><i className="fas fa-file-excel text-emerald-600"></i> Upload Data Massal</h3>
-                                <p className="text-sm text-slate-500 mb-4">Unggah file Excel dari EMIS/Simpatika atau gunakan template kami. Sistem otomatis memilah kolom.</p>
+                                <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2 mb-2"><i className="fas fa-file-excel text-emerald-600 dark:text-emerald-400"></i> Upload Data Massal</h3>
+                                <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">Unggah file Excel dari EMIS/Simpatika atau gunakan template kami. Sistem otomatis memilah kolom.</p>
                             </div>
                             <input type="file" accept=".xlsx, .xls, .csv" className="hidden" ref={fileInputRef} onChange={(e) => {
                                 const file = e.target.files[0];
@@ -2817,7 +2817,7 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                                     const ws = XLSX.utils.aoa_to_sheet(templateData);
                                     const wb = XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb, ws, "Template");
                                     XLSX.writeFile(wb, "Template_Absensi.xlsx");
-                                }} className="bg-slate-100 text-slate-600 px-4 py-3 rounded-2xl font-bold hover:bg-slate-200 transition-all text-sm">
+                                }} className="bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-200 px-4 py-3 rounded-2xl font-bold hover:bg-slate-200 dark:hover:bg-slate-600 transition-all text-sm">
                                     Template
                                 </button>
                             </div>
@@ -2847,19 +2847,19 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                         </div>
                     )}
 
-                    <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
-                        <div className="p-5 border-b border-slate-100 bg-slate-50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                    <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
+                        <div className="p-5 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                             <div className="flex items-center gap-3 w-full sm:w-auto">
-                                <span className="font-bold text-slate-700">Daftar Pegawai & Siswa</span>
-                                <span className="text-xs font-bold text-slate-400 bg-white px-2 py-1 rounded-lg border border-slate-200">{safeUsers.length} total</span>
+                                <span className="font-bold text-slate-700 dark:text-slate-200">Daftar Pegawai & Siswa</span>
+                                <span className="text-xs font-bold text-slate-400 dark:text-slate-500 bg-white dark:bg-slate-700 px-2 py-1 rounded-lg border border-slate-200 dark:border-slate-600">{safeUsers.length} total</span>
                             </div>
                             <div className="flex items-center gap-2 w-full sm:w-auto">
                                 <div className="relative grow sm:grow-0">
-                                    <i className="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
-                                    <input type="text" value={direktoriSearchQuery} onChange={e => setDirektoriSearchQuery(e.target.value)} placeholder="Cari nama / induk..." className="w-full sm:w-56 bg-white border border-slate-300 rounded-xl pl-8 pr-3 py-2 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none" />
+                                    <i className="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 text-xs"></i>
+                                    <input type="text" value={direktoriSearchQuery} onChange={e => setDirektoriSearchQuery(e.target.value)} placeholder="Cari nama / induk..." className="w-full sm:w-56 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl pl-8 pr-3 py-2 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none" />
                                 </div>
-                                <label className="flex items-center gap-1.5 cursor-pointer bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs font-bold text-slate-600 hover:border-indigo-400 transition-all whitespace-nowrap">
-                                    <input type="checkbox" checked={direktoriSortByClass} onChange={e => setDirektoriSortByClass(e.target.checked)} className="w-3.5 h-3.5 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer" />
+                                <label className="flex items-center gap-1.5 cursor-pointer bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-xl px-3 py-2 text-xs font-bold text-slate-600 dark:text-slate-300 hover:border-indigo-400 dark:hover:border-indigo-500 transition-all whitespace-nowrap">
+                                    <input type="checkbox" checked={direktoriSortByClass} onChange={e => setDirektoriSortByClass(e.target.checked)} className="w-3.5 h-3.5 rounded border-slate-300 dark:border-slate-600 text-indigo-600 focus:ring-indigo-500 cursor-pointer" />
                                     Urut Kelas
                                 </label>
                                 <button onClick={() => {
@@ -2873,12 +2873,12 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                                             showToastMessage("Semua data dihapus.", "success");
                                         }
                                     });
-                                }} className="text-xs bg-rose-50 text-rose-600 px-3 py-2 rounded-xl font-bold hover:bg-rose-100 whitespace-nowrap">Hapus Semua</button>
+                                }} className="text-xs bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400 px-3 py-2 rounded-xl font-bold hover:bg-rose-100 dark:hover:bg-rose-900/60 whitespace-nowrap">Hapus Semua</button>
                             </div>
                         </div>
                         <div className="overflow-x-auto">
                             <table className="w-full text-left">
-                                <thead className="bg-slate-50 text-slate-600 text-xs uppercase">
+                                <thead className="bg-slate-50 dark:bg-slate-900/80 text-slate-600 dark:text-slate-300 text-xs uppercase">
                                     <tr>
                                         <th className="p-4 w-12 text-center"><input type="checkbox" checked={safeUsers.length > 0 && selectedDataUsers.length === safeUsers.length} onChange={(e) => setSelectedDataUsers(e.target.checked ? safeUsers.map(u => u.id) : [])} /></th>
                                         <th className="p-4">No</th>
@@ -2889,7 +2889,7 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                                         <th className="p-4 text-center">Aksi</th>
                                     </tr>
                                 </thead>
-                                <tbody className="divide-y divide-slate-100">
+                                <tbody className="divide-y divide-slate-100 dark:divide-slate-700">
                                     {(() => {
                                         let list = [...safeUsers];
                                         if (direktoriSearchQuery.trim()) {
@@ -2906,15 +2906,15 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                                             });
                                         }
                                         return list.map((u, i) => (
-                                            <tr key={u.id} className="hover:bg-slate-50">
+                                            <tr key={u.id} className="hover:bg-slate-50 dark:hover:bg-slate-700/50">
                                                 <td className="p-4 text-center"><input type="checkbox" checked={selectedDataUsers.includes(u.id)} onChange={(e) => setSelectedDataUsers(e.target.checked ? [...selectedDataUsers, u.id] : selectedDataUsers.filter(id => id !== u.id))} /></td>
-                                                <td className="p-4 text-slate-500">{i + 1}</td>
-                                                <td className="p-4 font-bold text-slate-800">{u.nama} ({u.jk})</td>
-                                                <td className="p-4 font-semibold text-slate-600">{u.kelas}</td>
-                                                <td className="p-4"><span className="px-3 py-1 rounded-full text-xs font-bold bg-indigo-50 text-indigo-700">{u.peran}</span></td>
-                                                <td className="p-4 text-slate-500">{u.nomorInduk}</td>
+                                                <td className="p-4 text-slate-500 dark:text-slate-400">{i + 1}</td>
+                                                <td className="p-4 font-bold text-slate-800 dark:text-slate-100">{u.nama} ({u.jk})</td>
+                                                <td className="p-4 font-semibold text-slate-600 dark:text-slate-300">{u.kelas}</td>
+                                                <td className="p-4"><span className="px-3 py-1 rounded-full text-xs font-bold bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300">{u.peran}</span></td>
+                                                <td className="p-4 text-slate-500 dark:text-slate-400">{u.nomorInduk}</td>
                                                 <td className="p-4 text-center">
-                                                    <button onClick={() => { setEditingUserId(u.id); setUserForm({...u}); setShowUserModal(true); }} className="text-amber-500 p-2"><i className="fas fa-edit"></i></button>
+                                                    <button onClick={() => { setEditingUserId(u.id); setUserForm({...u}); setShowUserModal(true); }} className="text-amber-500 dark:text-amber-400 p-2"><i className="fas fa-edit"></i></button>
                                                     <button onClick={() => {
                                                         setConfirmAction({
                                                             title: 'Hapus Data',
@@ -2927,7 +2927,7 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                                                                 showToastMessage("Data dihapus.", "success");
                                                             }
                                                         });
-                                                    }} className="text-rose-500 p-2"><i className="fas fa-trash"></i></button>
+                                                    }} className="text-rose-500 dark:text-rose-400 p-2"><i className="fas fa-trash"></i></button>
                                                 </td>
                                             </tr>
                                         ));
@@ -2945,10 +2945,10 @@ const [bulkEditValue, setBulkEditValue] = useState('');
 
         {showUserModal && (
             <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center z-[80] p-4">
-                <div className="bg-white rounded-[24px] shadow-2xl w-full max-w-md p-8 animate-fade-in-up text-left">
-                    <div className="flex justify-between items-center mb-6 pb-3 border-b border-slate-100">
-                        <h3 className="text-xl font-extrabold text-slate-800">{editingUserId ? 'Edit Data' : 'Tambah Data Manual'}</h3>
-                        <button onClick={() => setShowUserModal(false)} className="w-9 h-9 rounded-full bg-slate-100 text-slate-400 hover:bg-slate-200 flex items-center justify-center"><i className="fas fa-times"></i></button>
+                <div className="bg-white dark:bg-slate-800 rounded-[24px] shadow-2xl w-full max-w-md p-8 animate-fade-in-up text-left">
+                    <div className="flex justify-between items-center mb-6 pb-3 border-b border-slate-100 dark:border-slate-700">
+                        <h3 className="text-xl font-extrabold text-slate-800 dark:text-slate-100">{editingUserId ? 'Edit Data' : 'Tambah Data Manual'}</h3>
+                        <button onClick={() => setShowUserModal(false)} className="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-600 flex items-center justify-center"><i className="fas fa-times"></i></button>
                     </div>
                     <form onSubmit={(e) => {
                         e.preventDefault();
@@ -2967,35 +2967,35 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                         setShowUserModal(false);
                     }} className="space-y-4">
                         <div>
-                            <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Nama Lengkap *</label>
-                            <input type="text" value={userForm.nama} onChange={e => setUserForm({...userForm, nama: e.target.value})} className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 font-semibold" required />
+                            <label className="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Nama Lengkap *</label>
+                            <input type="text" value={userForm.nama} onChange={e => setUserForm({...userForm, nama: e.target.value})} className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-3 font-semibold text-slate-700 dark:text-slate-200" required />
                         </div>
                         <div className="grid grid-cols-2 gap-3">
                             <div>
-                                <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Jenis Kelamin</label>
-                                <select value={userForm.jk || 'L'} onChange={e => setUserForm({...userForm, jk: e.target.value})} className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 font-semibold cursor-pointer">
+                                <label className="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Jenis Kelamin</label>
+                                <select value={userForm.jk || 'L'} onChange={e => setUserForm({...userForm, jk: e.target.value})} className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-3 font-semibold cursor-pointer text-slate-700 dark:text-slate-200">
                                     <option value="L">Laki-laki (L)</option><option value="P">Perempuan (P)</option>
                                 </select>
                             </div>
                             <div>
-                                <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Peran</label>
-                                <select value={userForm.peran} onChange={e => setUserForm({...userForm, peran: e.target.value})} className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 font-semibold cursor-pointer">
+                                <label className="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Peran</label>
+                                <select value={userForm.peran} onChange={e => setUserForm({...userForm, peran: e.target.value})} className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-3 font-semibold cursor-pointer text-slate-700 dark:text-slate-200">
                                     <option value="Siswa">Siswa</option><option value="Guru">Guru</option><option value="Staff">Staff</option>
                                 </select>
                             </div>
                         </div>
                         <div className="grid grid-cols-2 gap-3">
                             <div>
-                                <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Kelas</label>
-                                <input type="text" value={userForm.kelas} onChange={e => setUserForm({...userForm, kelas: e.target.value})} placeholder="Contoh: 10-A" className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 font-semibold" />
+                                <label className="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Kelas</label>
+                                <input type="text" value={userForm.kelas} onChange={e => setUserForm({...userForm, kelas: e.target.value})} placeholder="Contoh: 10-A" className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-3 font-semibold text-slate-700 dark:text-slate-200" />
                             </div>
                             <div>
-                                <label className="block text-xs font-bold text-slate-500 uppercase mb-1">No Induk / NIP</label>
-                                <input type="text" value={userForm.nomorInduk} onChange={e => setUserForm({...userForm, nomorInduk: e.target.value})} placeholder="Nomor Induk" className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 font-semibold" />
+                                <label className="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">No Induk / NIP</label>
+                                <input type="text" value={userForm.nomorInduk} onChange={e => setUserForm({...userForm, nomorInduk: e.target.value})} placeholder="Nomor Induk" className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-3 font-semibold text-slate-700 dark:text-slate-200" />
                             </div>
                         </div>
-                        <div className="flex gap-3 pt-4 border-t border-slate-100">
-                            <button type="button" onClick={() => setShowUserModal(false)} className="flex-1 py-3 rounded-xl font-bold bg-slate-100 text-slate-600">Batal</button>
+                        <div className="flex gap-3 pt-4 border-t border-slate-100 dark:border-slate-700">
+                            <button type="button" onClick={() => setShowUserModal(false)} className="flex-1 py-3 rounded-xl font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-600">Batal</button>
                             <button type="submit" className="flex-1 py-3 rounded-xl font-bold bg-indigo-600 text-white shadow-md shadow-indigo-600/20">Simpan</button>
                         </div>
                     </form>
@@ -3005,32 +3005,32 @@ const [bulkEditValue, setBulkEditValue] = useState('');
 
         {showBulkEditModal && (
             <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center z-[80] p-4">
-                <div className="bg-white rounded-[24px] shadow-2xl w-full max-w-md p-8 animate-fade-in-up text-left">
-                    <div className="flex justify-between items-center mb-6 pb-3 border-b border-slate-100">
-                        <h3 className="text-xl font-extrabold text-slate-800">Edit Massal</h3>
-                        <button onClick={() => setShowBulkEditModal(false)} className="w-9 h-9 rounded-full bg-slate-100 text-slate-400 hover:bg-slate-200 flex items-center justify-center"><i className="fas fa-times"></i></button>
+                <div className="bg-white dark:bg-slate-800 rounded-[24px] shadow-2xl w-full max-w-md p-8 animate-fade-in-up text-left">
+                    <div className="flex justify-between items-center mb-6 pb-3 border-b border-slate-100 dark:border-slate-700">
+                        <h3 className="text-xl font-extrabold text-slate-800 dark:text-slate-100">Edit Massal</h3>
+                        <button onClick={() => setShowBulkEditModal(false)} className="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-600 flex items-center justify-center"><i className="fas fa-times"></i></button>
                     </div>
-                    <p className="text-sm text-slate-500 mb-6">Mengubah <b>{selectedDataUsers.length} data</b> terpilih secara bersamaan.</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Mengubah <b>{selectedDataUsers.length} data</b> terpilih secara bersamaan.</p>
                     <div className="space-y-4 mb-6">
                         <div>
-                            <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Pilih Atribut</label>
-                            <select value={bulkEditField} onChange={e => setBulkEditField(e.target.value)} className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 font-semibold cursor-pointer">
+                            <label className="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Pilih Atribut</label>
+                            <select value={bulkEditField} onChange={e => setBulkEditField(e.target.value)} className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-3 font-semibold cursor-pointer text-slate-700 dark:text-slate-200">
                                 <option value="peran">Peran</option><option value="kelas">Kelas</option>
                             </select>
                         </div>
                         <div>
-                            <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Nilai Baru</label>
+                            <label className="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Nilai Baru</label>
                             {bulkEditField === 'peran' ? (
-                                <select value={bulkEditValue} onChange={e => setBulkEditValue(e.target.value)} className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 font-semibold cursor-pointer">
+                                <select value={bulkEditValue} onChange={e => setBulkEditValue(e.target.value)} className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-3 font-semibold cursor-pointer text-slate-700 dark:text-slate-200">
                                     <option value="Siswa">Siswa</option><option value="Guru">Guru</option><option value="Staff">Staff</option>
                                 </select>
                             ) : (
-                                <input type="text" value={bulkEditValue} onChange={e => setBulkEditValue(e.target.value)} placeholder="Masukkan kelas baru" className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 font-semibold" />
+                                <input type="text" value={bulkEditValue} onChange={e => setBulkEditValue(e.target.value)} placeholder="Masukkan kelas baru" className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-3 font-semibold text-slate-700 dark:text-slate-200" />
                             )}
                         </div>
                     </div>
                     <div className="flex gap-3">
-                        <button onClick={() => setShowBulkEditModal(false)} className="flex-1 py-3 rounded-xl font-bold bg-slate-100 text-slate-600">Batal</button>
+                        <button onClick={() => setShowBulkEditModal(false)} className="flex-1 py-3 rounded-xl font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-600">Batal</button>
                         <button onClick={() => {
                             const newUsers = safeUsers.map(u => selectedDataUsers.includes(u.id) ? { ...u, [bulkEditField]: bulkEditValue } : u);
                             setUsers(newUsers);
@@ -3047,14 +3047,14 @@ const [bulkEditValue, setBulkEditValue] = useState('');
 
         {confirmAction && (
             <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center z-[100] p-4">
-                <div className="bg-white rounded-[24px] shadow-2xl w-full max-w-sm p-6 animate-fade-in-up text-left">
-                    <div className="flex items-center gap-3 mb-4 pb-3 border-b border-slate-100">
-                        <div className="w-10 h-10 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center font-bold text-lg"><i className="fas fa-exclamation-triangle"></i></div>
-                        <h3 className="text-lg font-extrabold text-slate-800">{String(confirmAction.title || "")}</h3>
+                <div className="bg-white dark:bg-slate-800 rounded-[24px] shadow-2xl w-full max-w-sm p-6 animate-fade-in-up text-left">
+                    <div className="flex items-center gap-3 mb-4 pb-3 border-b border-slate-100 dark:border-slate-700">
+                        <div className="w-10 h-10 rounded-2xl bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400 flex items-center justify-center font-bold text-lg"><i className="fas fa-exclamation-triangle"></i></div>
+                        <h3 className="text-lg font-extrabold text-slate-800 dark:text-slate-100">{String(confirmAction.title || "")}</h3>
                     </div>
-                    <p className="text-slate-600 mb-6 text-sm leading-relaxed">{String(confirmAction.message || "")}</p>
+                    <p className="text-slate-600 dark:text-slate-300 mb-6 text-sm leading-relaxed">{String(confirmAction.message || "")}</p>
                     <div className="flex gap-3 justify-end">
-                        <button onClick={() => setConfirmAction(null)} className="px-5 py-2.5 rounded-xl font-bold text-slate-600 bg-slate-100 hover:bg-slate-200">Batal</button>
+                        <button onClick={() => setConfirmAction(null)} className="px-5 py-2.5 rounded-xl font-bold text-slate-600 dark:text-slate-200 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600">Batal</button>
                         <button onClick={confirmAction.onConfirm} className="px-5 py-2.5 rounded-xl font-bold text-white bg-rose-600 hover:bg-rose-700 shadow-md shadow-rose-600/20">Ya, Hapus</button>
                     </div>
                 </div>
@@ -3063,24 +3063,24 @@ const [bulkEditValue, setBulkEditValue] = useState('');
 
         {showCardModal && (
             <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center z-[90] p-4 overflow-y-auto">
-                <div className="bg-white rounded-[24px] shadow-2xl w-full max-w-5xl p-8 animate-fade-in-up my-auto border border-slate-100 text-left print:shadow-none print:border-0">
+                <div className="bg-white dark:bg-slate-800 rounded-[24px] shadow-2xl w-full max-w-5xl p-8 animate-fade-in-up my-auto border border-slate-100 dark:border-slate-700 text-left print:shadow-none print:border-0">
                     <div className="flex justify-between items-center mb-8">
-                        <h3 className="text-2xl font-extrabold text-slate-800 flex items-center gap-3">
-                            <div className="w-12 h-12 rounded-2xl flex items-center justify-center bg-indigo-100 text-indigo-600"><i className="fas fa-id-card text-xl"></i></div>
+                        <h3 className="text-2xl font-extrabold text-slate-800 dark:text-slate-100 flex items-center gap-3">
+                            <div className="w-12 h-12 rounded-2xl flex items-center justify-center bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400"><i className="fas fa-id-card text-xl"></i></div>
                             Kartu Pelajar
                         </h3>
                         <div className="flex gap-2">
                             <button onClick={handlePrintCards} className="px-4 py-2 bg-indigo-600 text-white rounded-xl font-bold text-sm hover:bg-indigo-700 transition-all flex items-center gap-2 shadow-md print:hidden">
                                 <i className="fas fa-print"></i> Cetak
                             </button>
-                            <button onClick={() => setShowCardModal(false)} className="w-10 h-10 rounded-full bg-slate-100 text-slate-400 hover:bg-slate-200 hover:text-slate-600 flex items-center justify-center transition-all print:hidden"><i className="fas fa-times text-lg"></i></button>
+                            <button onClick={() => setShowCardModal(false)} className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-600 hover:text-slate-600 flex items-center justify-center transition-all print:hidden"><i className="fas fa-times text-lg"></i></button>
                         </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {safeUsers.map(user => {
                             const qrUrl = qrCodeDataUrls[user.id];
                             return (
-                                <div key={user.id} className="bg-white border-2 border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all print:break-inside-avoid">
+                                <div key={user.id} className="bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all print:break-inside-avoid">
                                     <div className="bg-gradient-to-r from-indigo-600 to-indigo-700 p-3 flex items-center gap-3">
                                         <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center p-1 overflow-hidden shrink-0">
                                             <img src={defaultLogoUrl} alt="Logo" className="w-full h-full object-contain" />
@@ -3091,25 +3091,25 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                                         </div>
                                     </div>
                                     <div className="p-5 flex flex-col items-center">
-                                        <div className="bg-white border-2 border-dashed border-slate-200 rounded-xl p-3 mb-4">
+                                        <div className="bg-white border-2 border-dashed border-slate-200 dark:border-slate-600 rounded-xl p-3 mb-4">
                                             {qrUrl ? (
                                                 <img src={qrUrl} alt="QR Code" className="w-36 h-36 object-contain" />
                                             ) : (
-                                                <div className="w-36 h-36 bg-slate-50 rounded-lg flex items-center justify-center text-slate-300 text-xs">Memuat QR...</div>
+                                                <div className="w-36 h-36 bg-slate-50 dark:bg-slate-900 rounded-lg flex items-center justify-center text-slate-300 dark:text-slate-600 text-xs">Memuat QR...</div>
                                             )}
                                         </div>
                                         <div className="text-center space-y-1.5 w-full">
-                                            <p className="font-extrabold text-slate-800 text-lg leading-tight">{String(user.nama || '-')}</p>
+                                            <p className="font-extrabold text-slate-800 dark:text-slate-100 text-lg leading-tight">{String(user.nama || '-')}</p>
                                             <div className="flex flex-wrap justify-center gap-2 text-xs font-semibold">
-                                                <span className="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-lg">{String(user.nomorInduk || '-')}</span>
-                                                <span className="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-lg">{String(user.kelas || '-')}</span>
-                                                <span className="bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-lg">{String(user.jk || 'L')}</span>
+                                                <span className="bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 px-2.5 py-1 rounded-lg">{String(user.nomorInduk || '-')}</span>
+                                                <span className="bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2.5 py-1 rounded-lg">{String(user.kelas || '-')}</span>
+                                                <span className="bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 rounded-lg">{String(user.jk || 'L')}</span>
                                             </div>
-                                            <p className="text-[10px] text-slate-400 font-medium uppercase tracking-wider mt-2">{String(user.peran || '-')}</p>
+                                            <p className="text-[10px] text-slate-400 dark:text-slate-500 font-medium uppercase tracking-wider mt-2">{String(user.peran || '-')}</p>
                                         </div>
                                     </div>
-                                    <div className="bg-slate-50 px-5 py-2.5 border-t border-slate-100">
-                                        <p className="text-[10px] text-slate-400 font-mono text-center">ID: {String(user.id || '-')}</p>
+                                    <div className="bg-slate-50 dark:bg-slate-900/50 px-5 py-2.5 border-t border-slate-100 dark:border-slate-700">
+                                        <p className="text-[10px] text-slate-400 dark:text-slate-500 font-mono text-center">ID: {String(user.id || '-')}</p>
                                     </div>
                                 </div>
                             );
@@ -3121,15 +3121,15 @@ const [bulkEditValue, setBulkEditValue] = useState('');
 
         {showScannerModal && (
             <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center z-[90] p-4">
-                <div className="bg-white rounded-[24px] shadow-2xl w-full max-w-lg p-8 animate-fade-in-up my-auto border border-slate-100 text-left">
+                <div className="bg-white dark:bg-slate-800 rounded-[24px] shadow-2xl w-full max-w-lg p-8 animate-fade-in-up my-auto border border-slate-100 dark:border-slate-700 text-left">
                     <div className="flex justify-between items-center mb-6">
-                        <h3 className="text-xl font-extrabold text-slate-800 flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-2xl flex items-center justify-center bg-emerald-100 text-emerald-600"><i className="fas fa-qrcode"></i></div>
+                        <h3 className="text-xl font-extrabold text-slate-800 dark:text-slate-100 flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-2xl flex items-center justify-center bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400"><i className="fas fa-qrcode"></i></div>
                             Scan QR Kartu Pelajar
                         </h3>
-                        <button onClick={() => { setShowScannerModal(false); setScanImage(null); setScannedResult(null); stopCamera(); }} className="w-9 h-9 rounded-full bg-slate-100 text-slate-400 hover:bg-slate-200 hover:text-slate-600 flex items-center justify-center transition-all"><i className="fas fa-times text-base"></i></button>
+                        <button onClick={() => { setShowScannerModal(false); setScanImage(null); setScannedResult(null); stopCamera(); }} className="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-600 hover:text-slate-600 flex items-center justify-center transition-all"><i className="fas fa-times text-base"></i></button>
                     </div>
-                    <p className="text-slate-500 text-sm mb-6 text-left">Arahkan kamera ke QR Code kartu pelajar untuk melakukan absensi otomatis. Hasil scan akan menandai siswa sebagai <b>Hadir</b> pada tanggal yang dipilih.</p>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm mb-6 text-left">Arahkan kamera ke QR Code kartu pelajar untuk melakukan absensi otomatis. Hasil scan akan menandai siswa sebagai <b>Hadir</b> pada tanggal yang dipilih.</p>
                     <div className="space-y-4">
                         <div className="relative bg-slate-900 rounded-2xl overflow-hidden aspect-video">
                             <video ref={videoRef} className="w-full h-full object-cover" playsInline muted />
@@ -3157,17 +3157,17 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                                     <i className="fas fa-stop"></i> Berhenti
                                 </button>
                             )}
-                            <button onClick={() => scannerFileInputRef.current.click()} className="px-4 py-3 bg-slate-100 text-slate-700 rounded-xl font-bold hover:bg-slate-200 transition-all text-sm flex items-center gap-2">
+                            <button onClick={() => scannerFileInputRef.current.click()} className="px-4 py-3 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-xl font-bold hover:bg-slate-200 dark:hover:bg-slate-600 transition-all text-sm flex items-center gap-2">
                                 <i className="fas fa-image"></i> Upload Gambar
                             </button>
                             <input type="file" accept="image/*" className="hidden" ref={scannerFileInputRef} onChange={handleScanQrImage} />
                         </div>
                         {scannedResult && (
-                            <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-4 flex items-center gap-3">
-                                <div className="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center shrink-0"><i className="fas fa-check"></i></div>
+                            <div className="bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 rounded-2xl p-4 flex items-center gap-3">
+                                <div className="w-10 h-10 bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 rounded-xl flex items-center justify-center shrink-0"><i className="fas fa-check"></i></div>
                                 <div>
-                                    <p className="font-bold text-emerald-800 text-sm">Scan Berhasil!</p>
-                                    <p className="text-emerald-600 text-xs">{String(scannedResult.nama || '')} - {String(scannedResult.nomorInduk || '')} - {String(scannedResult.kelas || '')}</p>
+                                    <p className="font-bold text-emerald-800 dark:text-emerald-300 text-sm">Scan Berhasil!</p>
+                                    <p className="text-emerald-600 dark:text-emerald-400 text-xs">{String(scannedResult.nama || '')} - {String(scannedResult.nomorInduk || '')} - {String(scannedResult.kelas || '')}</p>
                                 </div>
                             </div>
                         )}

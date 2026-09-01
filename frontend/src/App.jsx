@@ -1963,11 +1963,9 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                         <button onClick={() => setShowScannerModal(true)} className="flex-1 xl:flex-none items-center justify-center gap-2 bg-white dark:bg-slate-700 text-emerald-600 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-700/50 px-5 py-2.5 rounded-2xl hover:bg-emerald-50 dark:hover:bg-emerald-950/50 hover:border-emerald-300 dark:hover:border-emerald-600 transition-all shadow-sm font-semibold text-sm">
                             <i className="fas fa-qrcode"></i> <span>Scan QR</span>
                         </button>
-                        {isAdmin && (
-                            <button onClick={() => setShowRecapModal(true)} className="flex-1 xl:flex-none items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-5 py-2.5 rounded-2xl hover:from-emerald-600 hover:to-teal-600 transition-all shadow-md hover:shadow-lg hover:shadow-emerald-500/30 transform hover:-translate-y-0.5 font-semibold text-sm">
-                                <i className="fas fa-download"></i> <span>Unduh Rekap</span>
-                            </button>
-                        )}
+                        <button onClick={() => setShowRecapModal(true)} className="flex-1 xl:flex-none items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-5 py-2.5 rounded-2xl hover:from-emerald-600 hover:to-teal-600 transition-all shadow-md hover:shadow-lg hover:shadow-emerald-500/30 transform hover:-translate-y-0.5 font-semibold text-sm">
+                            <i className="fas fa-download"></i> <span>Unduh Rekap</span>
+                        </button>
                     </div>
               </div>
           </div>
@@ -2136,7 +2134,7 @@ const [bulkEditValue, setBulkEditValue] = useState('');
               </div>
           )}
 
-           {isAdmin && showRecapModal && (
+           {showRecapModal && (
               <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center z-[80] p-4 overflow-y-auto">
                    <div className="bg-white dark:bg-slate-800 rounded-[24px] shadow-2xl w-full max-w-4xl p-8 animate-fade-in-up my-auto border border-slate-100 dark:border-slate-700 text-left">
                        <div className="flex justify-between items-center mb-8">

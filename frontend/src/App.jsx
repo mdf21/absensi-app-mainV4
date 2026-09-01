@@ -2606,68 +2606,77 @@ const [bulkEditValue, setBulkEditValue] = useState('');
             <div className="min-h-screen bg-[#f8fafc] dark:bg-slate-950 font-sans text-slate-800 dark:text-slate-100 selection:bg-indigo-100 selection:text-indigo-900">
         <header className="bg-white/85 dark:bg-slate-900/90 backdrop-blur-xl border-b border-slate-200/80 dark:border-slate-700/80 sticky top-0 z-40 shadow-[0_4px_30px_rgba(0,0,0,0.03)]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between pt-4 pb-2 gap-4">
-                    <div className="flex items-center gap-3">
+                {/* Baris 1: Logo + Judul | Tombol (sejajar di semua ukuran layar) */}
+                <div className="flex items-center justify-between pt-3 pb-2">
+                    {/* Kiri: Logo & Judul */}
+                    <div className="flex items-center gap-3 min-w-0">
                         <div className="w-11 h-11 bg-white dark:bg-slate-800 rounded-2xl shadow-md border border-slate-100 dark:border-slate-700 flex items-center justify-center p-1.5 shrink-0 overflow-hidden">
-                              <img src={defaultLogoUrl} alt="Logo" className="w-full h-full object-contain" />
+                            <img src={defaultLogoUrl} alt="Logo" className="w-full h-full object-contain" />
                         </div>
-                        <h1 className="text-xl font-extrabold text-slate-800 dark:text-slate-100 tracking-tight">
-    {String((appSettings && appSettings.appName) || "Sistem Absensi")}
-</h1>
+                        <h1 className="text-xl font-extrabold text-slate-800 dark:text-slate-100 tracking-tight truncate">
+                            {String((appSettings && appSettings.appName) || "Sistem Absensi")}
+                        </h1>
                     </div>
-                    
-                    <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-                        <nav className="flex bg-slate-100/80 dark:bg-slate-800/80 p-1.5 rounded-2xl border border-slate-200/60 dark:border-slate-700/60 overflow-x-auto no-scrollbar shadow-inner">
-                            {[
-                                { id: 'dashboard', icon: 'fa-home', label: 'Dashboard' },                            
-                                { id: 'absensi', icon: 'fa-clipboard-check', label: 'Absensi' },
-                                ...(userRole === 'admin' ? [
-                                    { id: 'data', icon: 'fa-address-book', label: 'Direktori' },
-                                    { id: 'settings', icon: 'fa-sliders-h', label: 'Sistem' },
-                                ] : []),
-                            ].map((tab) => (
-                                <button key={tab.id} onClick={() => setActiveTab(tab.id)}
-                                    className={`flex items-center justify-center gap-2 py-2 px-5 rounded-xl font-bold text-[13px] transition-all duration-300 whitespace-nowrap ${
-                                        activeTab === tab.id
-        ? 'bg-white dark:bg-slate-700 text-indigo-700 dark:text-indigo-300 shadow-sm ring-1 ring-slate-200/50 dark:ring-slate-600'
-        : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-700/50'
-                                    }`}>
-                                    <i className={`fas ${tab.icon} text-sm ${activeTab===tab.id?'opacity-100':'opacity-60'}`}></i> {tab.label}
-                                </button>
-                            ))}
-                        </nav>
 
-                        <div className="flex items-center gap-3">
-                            <span className={`text-xs font-bold px-3 py-1.5 rounded-xl ${userRole === 'admin' ? 'bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300' : 'bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300'}`}>
-                                <i className={`fas ${userRole === 'admin' ? 'fa-user-cog' : 'fa-user'} mr-1`}></i>
-                                {userRole === 'admin' ? 'Admin' : 'Client'}
-                            </span>
+                    {/* Kanan: Role badge + Dark Mode + Keluar (sejajar dengan logo di HP maupun desktop) */}
+                    <div className="flex items-center gap-2 shrink-0 ml-3">
+                        <span className={`hidden sm:inline-flex text-xs font-bold px-3 py-1.5 rounded-xl ${userRole === 'admin' ? 'bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300' : 'bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300'}`}>
+                            <i className={`fas ${userRole === 'admin' ? 'fa-user-cog' : 'fa-user'} mr-1`}></i>
+                            {userRole === 'admin' ? 'Admin' : 'Client'}
+                        </span>
+                        {/* Di HP: tampilkan ikon role saja (tanpa teks) */}
+                        <span className={`sm:hidden inline-flex w-9 h-9 items-center justify-center rounded-xl text-sm font-bold ${userRole === 'admin' ? 'bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300' : 'bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300'}`}>
+                            <i className={`fas ${userRole === 'admin' ? 'fa-user-cog' : 'fa-user'}`}></i>
+                        </span>
 
-                            {/* Tombol Dark / Light Mode */}
-                            <button
-                                onClick={() => setDarkMode(!darkMode)}
-                                className="w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200
-                                           dark:bg-slate-700 dark:hover:bg-slate-600
-                                           text-slate-600 dark:text-yellow-300
-                                           flex items-center justify-center transition-all"
-                                title={darkMode ? 'Light Mode' : 'Dark Mode'}
-                            >
-                                <i className={`fas ${darkMode ? 'fa-sun' : 'fa-moon'} text-sm`}></i>
-                            </button>
+                        {/* Tombol Dark / Light Mode */}
+                        <button
+                            onClick={() => setDarkMode(!darkMode)}
+                            className="w-9 h-9 rounded-xl bg-slate-100 hover:bg-slate-200
+                                       dark:bg-slate-700 dark:hover:bg-slate-600
+                                       text-slate-600 dark:text-yellow-300
+                                       flex items-center justify-center transition-all"
+                            title={darkMode ? 'Light Mode' : 'Dark Mode'}
+                        >
+                            <i className={`fas ${darkMode ? 'fa-sun' : 'fa-moon'} text-sm`}></i>
+                        </button>
 
-                            {/* Tombol Keluar */}
-                            <button
-                                onClick={handleLogout}
-                                className="text-xs bg-slate-100 hover:bg-slate-200
-                                           dark:bg-slate-700 dark:hover:bg-slate-600
-                                           text-slate-600 dark:text-slate-200
-                                           px-3 py-2 rounded-xl font-bold transition-all
-                                           flex items-center gap-1"
-                            >
-                                <i className="fas fa-sign-out-alt"></i> Keluar
-                            </button>
-                        </div>
+                        {/* Tombol Keluar */}
+                        <button
+                            onClick={handleLogout}
+                            className="flex items-center gap-1 text-xs bg-slate-100 hover:bg-slate-200
+                                       dark:bg-slate-700 dark:hover:bg-slate-600
+                                       text-slate-600 dark:text-slate-200
+                                       px-3 py-2 rounded-xl font-bold transition-all"
+                        >
+                            <i className="fas fa-sign-out-alt"></i>
+                            <span className="hidden sm:inline">Keluar</span>
+                        </button>
                     </div>
+                </div>
+
+                {/* Baris 2: Nav Menu (selalu di bawah) */}
+                <div className="pb-2">
+                    <nav className="flex bg-slate-100/80 dark:bg-slate-800/80 p-1.5 rounded-2xl border border-slate-200/60 dark:border-slate-700/60 overflow-x-auto no-scrollbar shadow-inner">
+                        {[
+                            { id: 'dashboard', icon: 'fa-home', label: 'Dashboard' },
+                            { id: 'absensi', icon: 'fa-clipboard-check', label: 'Absensi' },
+                            ...(userRole === 'admin' ? [
+                                { id: 'data', icon: 'fa-address-book', label: 'Direktori' },
+                                { id: 'settings', icon: 'fa-sliders-h', label: 'Sistem' },
+                            ] : []),
+                        ].map((tab) => (
+                            <button key={tab.id} onClick={() => setActiveTab(tab.id)}
+                                className={`flex items-center justify-center gap-2 py-2 px-4 sm:px-5 rounded-xl font-bold text-[13px] transition-all duration-300 whitespace-nowrap flex-1 sm:flex-none ${
+                                    activeTab === tab.id
+                                    ? 'bg-white dark:bg-slate-700 text-indigo-700 dark:text-indigo-300 shadow-sm ring-1 ring-slate-200/50 dark:ring-slate-600'
+                                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-700/50'
+                                }`}>
+                                <i className={`fas ${tab.icon} text-sm ${activeTab===tab.id?'opacity-100':'opacity-60'}`}></i>
+                                <span>{tab.label}</span>
+                            </button>
+                        ))}
+                    </nav>
                 </div>
             </div>
         </header>

@@ -2036,9 +2036,8 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                                     <th className="p-5 font-bold text-slate-600 dark:text-slate-300 text-xs uppercase tracking-wider">Identitas Lengkap</th>
                                     <th className="p-5 font-bold text-slate-600 dark:text-slate-300 text-xs uppercase tracking-wider w-32">Kelas</th>
                                     <th className="p-5 font-bold text-slate-600 dark:text-slate-300 text-xs uppercase tracking-wider w-32">Peran</th>
-                                    {isAdmin && (
-                                        <th className="p-5 font-bold text-slate-600 dark:text-slate-300 text-xs uppercase tracking-wider text-center w-[340px]">Tandai Kehadiran</th>
-                                    )}
+                                    {/* Header kolom "Tandai Kehadiran" — ditampilkan untuk semua role */}
+                                    <th className="p-5 font-bold text-slate-600 dark:text-slate-300 text-xs uppercase tracking-wider text-center w-[340px]">Tandai Kehadiran</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-100 dark:divide-slate-700">
@@ -2071,25 +2070,18 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                                            <td className="p-5 text-left">
                                                <span className={`px-3 py-1.5 rounded-xl text-xs font-bold inline-block border ${String(user.peran).toLowerCase() === 'guru' ? 'bg-purple-50 dark:bg-purple-950/50 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-700/50' : 'bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700/50'}`}>{String(user.peran || '-')}</span>
                                            </td>
-                                            {isAdmin ? (
-                                                <td className="p-5">
-                                                    <div className="flex justify-center gap-1.5 bg-slate-100/50 dark:bg-slate-700/50 p-1 rounded-xl">
-                                                        {['Hadir', 'Izin', 'Sakit', 'Alpha'].map(opt => (
-                                                            <button key={opt} onClick={(e) => { e.stopPropagation(); handleMarkAttendance(user.id, opt); }} disabled={holidayInfo.isHoliday}
-                                                                className={`flex-1 py-2 rounded-lg text-sm transition-all duration-200 ${status === opt ? getStatusStyle(opt) : 'bg-transparent text-slate-500 dark:text-slate-400 hover:bg-white dark:hover:bg-slate-600 hover:shadow-sm hover:text-slate-700 dark:hover:text-slate-200 disabled:opacity-40 disabled:cursor-not-allowed font-medium'}`}>
-                                                                {opt}
-                                                            </button>
-                                                        ))}
-                                                    </div>
-                                                </td>
-                                            ) : (
-                                                <td className="p-5 text-center">
-                                                    <span className={`px-3 py-1.5 rounded-xl text-xs font-bold inline-block ${getStatusStyle(status)}`}>
-                                                        {status}
-                                                    </span>
-                                                </td>
-                                            )}
-                                       </tr>
+                                           {/* Kolom Tandai Kehadiran — aktif untuk Admin maupun Client */}
+                                           <td className="p-5">
+                                               <div className="flex justify-center gap-1.5 bg-slate-100/50 dark:bg-slate-700/50 p-1 rounded-xl">
+                                                   {['Hadir', 'Izin', 'Sakit', 'Alpha'].map(opt => (
+                                                       <button key={opt} onClick={(e) => { e.stopPropagation(); handleMarkAttendance(user.id, opt); }} disabled={holidayInfo.isHoliday}
+                                                           className={`flex-1 py-2 rounded-lg text-sm transition-all duration-200 ${status === opt ? getStatusStyle(opt) : 'bg-transparent text-slate-500 dark:text-slate-400 hover:bg-white dark:hover:bg-slate-600 hover:shadow-sm hover:text-slate-700 dark:hover:text-slate-200 disabled:opacity-40 disabled:cursor-not-allowed font-medium'}`}>
+                                                           {opt}
+                                                       </button>
+                                                   ))}
+                                               </div>
+                                           </td>
+                                      </tr>
                                    );
                                })}
                            </tbody>

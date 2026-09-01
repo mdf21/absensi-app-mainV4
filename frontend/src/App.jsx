@@ -6,6 +6,7 @@ import LZString from 'lz-string';
 import QRCode from 'qrcode';
 import jsQR from 'jsqr';
 import defaultLogoUrl from './assets/logo.png';
+import './darkmode.css';
 
 const Toast = ({ message, type, onClose }) => {
   useEffect(() => {
@@ -294,50 +295,93 @@ const Dashboard = ({
     1
   );
 
-  return (
-    <div className="min-h-screen bg-slate-50 p-4 md:p-6">
-
-      {/* =====================================================
-          HEADER DASHBOARD
-      ====================================================== */}
-
-      <div className="max-w-[1600px] mx-auto">
-
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
-
-          <div>
-            <h1 className="text-2xl md:text-3xl font-bold text-slate-800">
-              Dashboard Absensi
-            </h1>
-
-            <p className="text-sm text-slate-500 mt-1">
-              Ringkasan data absensi tanggal{' '}
-              <span className="font-semibold text-slate-700">
-                {formatTanggal(selectedDate)}
-              </span>
-            </p>
-          </div>
-
-          <div className="bg-white border border-slate-200 rounded-2xl px-4 py-3 shadow-sm">
-            <label className="block text-xs font-semibold text-slate-500 mb-1">
-              Tanggal Absensi
-            </label>
-
-            <div className="flex items-center gap-2">
-              <i className="fas fa-calendar-alt text-indigo-500"></i>
-
-              <input
-                type="date"
-                value={selectedDate}
-                onChange={e => setSelectedDate(e.target.value)}
-                className="border-0 outline-none text-sm font-semibold text-slate-700 bg-transparent cursor-pointer"
-              />
-            </div>
-          </div>
-
-        </div>
+return (
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 p-4 md:p-6">
 
         {/* =====================================================
+            HEADER DASHBOARD
+        ====================================================== */}
+
+        <div className="max-w-[1600px] mx-auto">
+
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+
+                <div>
+                    <h1 className="
+                        text-2xl md:text-3xl
+                        font-bold
+                        text-slate-800 dark:text-slate-100
+                    ">
+                        Dashboard Absensi
+                    </h1>
+
+                    <p className="
+                        text-sm
+                        text-slate-500 dark:text-slate-400
+                        mt-1
+                    ">
+                        Ringkasan data absensi tanggal{' '}
+
+                        <span className="
+                            font-semibold
+                            text-slate-700 dark:text-slate-200
+                        ">
+                            {formatTanggal(selectedDate)}
+                        </span>
+                    </p>
+                </div>
+
+
+                {/* =========================
+                    DATE PICKER
+                ========================== */}
+
+                <div className="
+                    bg-white dark:bg-slate-800
+                    border border-slate-200 dark:border-slate-700
+                    rounded-2xl
+                    px-4 py-3
+                    shadow-sm
+                ">
+
+                    <label className="
+                        block
+                        text-xs
+                        font-semibold
+                        text-slate-500 dark:text-slate-400
+                        mb-1
+                    ">
+                        Tanggal Absensi
+                    </label>
+
+                    <div className="flex items-center gap-2">
+
+                        <i className="
+                            fas fa-calendar-alt
+                            text-indigo-500
+                        "></i>
+
+                        <input
+                            type="date"
+                            value={selectedDate}
+                            onChange={e => setSelectedDate(e.target.value)}
+                            className="
+                                border-0
+                                outline-none
+                                text-sm
+                                font-semibold
+                                text-slate-700 dark:text-slate-200
+                                bg-transparent
+                                cursor-pointer
+                            "
+                        />
+
+                    </div>
+
+                </div>
+
+            </div>  
+      {/* =====================================================
             ROW 1 - TOTAL SISWA GURU TENDIK SELURUHNYA
         ====================================================== */}
 
@@ -778,7 +822,14 @@ const Dashboard = ({
   );
 };
 export default function App() {
+const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem('theme') === 'dark';
+  });
   const [activeTab, setActiveTab] = useState('dashboard');
+useEffect(() => {
+    document.documentElement.classList.toggle('dark', darkMode);
+    localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+  }, [darkMode]);
   const dataLoadedRef = useRef(false);
 const fileInputRef = useRef(null);
 const backupInputRef = useRef(null);
@@ -1873,10 +1924,10 @@ const [bulkEditValue, setBulkEditValue] = useState('');
 
     return (
       <div className="space-y-6 relative">
-          <div className="bg-white/90 backdrop-blur-md p-6 rounded-3xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-slate-100 flex flex-col xl:flex-row justify-between items-start xl:items-center gap-5">
+          <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-6 rounded-3xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-slate-100 flex flex-col xl:flex-row justify-between items-start xl:items-center gap-5">
               <div className="text-left">
                   <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-800 to-slate-600 tracking-tight text-left">Pencatatan Kehadiran</h2>
-                  <p className="text-slate-500 text-sm mt-1 text-left">Atur filter di bawah untuk memuat daftar peserta.</p>
+                  <p className="text-slate-700 text-sm mt-1 text-left">Atur filter di bawah untuk memuat daftar peserta.</p>
               </div>
               
                <div className="flex flex-wrap items-center gap-3 w-full xl:w-auto">
@@ -2008,7 +2059,7 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                                                </td>
                                            )}
                                            <td className="p-5 text-left" {...(isAdmin ? { onClick: () => !holidayInfo.isHoliday && document.getElementById(`chk-${user.id}`).click() } : {})}>
-                                              <div className="font-bold text-slate-800 text-[15px] cursor-pointer group-hover:text-indigo-600 transition-colors text-left">
+                                              <div className="font-bold text-slate-800 dark:text-slate-100 text-[15px] cursor-pointer group-hover:text-indigo-600 transition-colors text-left">
                                                   {String(user.nama || '')} 
                                                   <span className="inline-flex ml-2 items-center justify-center bg-slate-100 text-slate-500 rounded-full w-5 h-5 text-[10px] font-bold">
                                                       {String(user.jk || 'L')}
@@ -2027,7 +2078,7 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                                                    <div className="flex justify-center gap-1.5 bg-slate-100/50 p-1 rounded-xl">
                                                        {['Hadir', 'Izin', 'Sakit', 'Alpha'].map(opt => (
                                                            <button key={opt} onClick={(e) => { e.stopPropagation(); handleMarkAttendance(user.id, opt); }} disabled={holidayInfo.isHoliday}
-                                                               className={`flex-1 py-2 rounded-lg text-sm transition-all duration-200 ${status === opt ? getStatusStyle(opt) : 'bg-transparent text-slate-500 hover:bg-white hover:shadow-sm hover:text-slate-700 disabled:opacity-40 disabled:cursor-not-allowed font-medium'}`}>
+                                                               className={`flex-1 py-2 rounded-lg text-sm transition-all duration-200 ${status === opt ? getStatusStyle(opt) : 'bg-transparent text-slate-500 hover:bg-white hover:shadow-sm hover:text-slate-700 dark:text-slate-300 disabled:opacity-40 disabled:cursor-not-allowed font-medium'}`}>
                                                                {opt}
                                                            </button>
                                                        ))}
@@ -2327,8 +2378,8 @@ const [bulkEditValue, setBulkEditValue] = useState('');
 
     return (
         <div className="space-y-6 text-left max-w-5xl mx-auto">
-            <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
-                <h3 className="text-lg font-bold text-slate-800 flex items-center gap-2 mb-4"><i className="fas fa-lock text-indigo-500"></i> Keamanan - Ganti Password</h3>
+            <div className="bg-white dark:bg-slate-800 p-6 rounded-3xl shadow-sm border border-slate-100">
+                <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2 mb-4"><i className="fas fa-lock text-indigo-500"></i> Keamanan - Ganti Password</h3>
                 {passwordChangeMessage && (
                     <div className="mb-4 p-3 bg-emerald-50 border border-emerald-200 text-emerald-700 rounded-xl text-sm font-bold">
                         {passwordChangeMessage}
@@ -2336,7 +2387,7 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                 )}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Password Admin Baru</label>
+                        <label className="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Password Admin Baru</label>
                         <input 
                             type="password" 
                             value={newAdminPassword} 
@@ -2421,9 +2472,10 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                 <div className="md:col-span-2">
                     <div className="bg-white rounded-3xl shadow-sm border border-slate-100 h-full p-6 flex flex-col">
                         <div className="flex justify-between items-center mb-6 pb-3 border-b border-slate-100">
-                            <h3 className="text-lg font-bold text-slate-800 flex items-center gap-2">
-                                <i className="fas fa-calendar-alt text-indigo-500"></i> Daftar Hari Libur Nasional & Manual
-                            </h3>
+                            <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
+    <i className="fas fa-calendar-alt text-indigo-500"></i>
+    Daftar Hari Libur Nasional & Manual
+</h3>
                             <span className="bg-indigo-50 text-indigo-700 px-3.5 py-1.5 rounded-2xl text-xs font-extrabold">Total: {validHolidays.length} Hari</span>
                         </div>
                         
@@ -2433,14 +2485,18 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                             ) : (
                                 <div className="space-y-3">
                                     {[...validHolidays].sort((a,b)=> new Date(a.date)-new Date(b.date)).map(h => (
-                                        <div key={h.date} className="p-4 rounded-2xl bg-slate-50/80 hover:bg-slate-100/80 border border-slate-200/60 flex justify-between items-center transition-all">
+                                        <div key={h.date} className="p-4 rounded-2xl bg-slate-50/80 hover:bg-slate-100/80 dark:bg-slate-800/80 border border-slate-200/60 flex justify-between items-center transition-all">
                                             <div className="flex items-start gap-4">
                                                 <div className={`w-11 h-11 rounded-2xl flex items-center justify-center shrink-0 ${h.type === 'auto' ? 'bg-amber-100 text-amber-600' : 'bg-indigo-100 text-indigo-600'}`}>
                                                     <i className="fas fa-calendar-day text-lg"></i>
                                                 </div>
                                                 <div>
-                                                    <p className="font-extrabold text-slate-800 text-[15px]">{formatDateIndo(h.date)}</p>
-                                                    <p className="text-sm text-slate-600 font-medium mt-0.5">{String(h.name || '-')}</p>
+                                                    <p className="font-extrabold text-slate-800 dark:text-slate-100 text-[15px]">
+    {formatDateIndo(h.date)}
+</p>
+                                                    <p className="text-sm text-slate-600 dark:text-slate-300 font-medium mt-0.5">
+    {String(h.name || '-')}
+</p>
                                                     <span className={`text-[10px] uppercase tracking-wider font-extrabold px-2.5 py-0.5 rounded-full inline-block mt-1.5 ${h.type === 'auto' ? 'bg-amber-50 text-amber-700 border border-amber-200/50' : 'bg-indigo-50 text-indigo-700 border border-indigo-200/50'}`}>
                                                         {h.type === 'auto' ? 'Nasional (API)' : 'Manual'}
                                                     </span>
@@ -2521,7 +2577,7 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                                 onChange={(e) => setLoginPassword(p => ({...p, admin: e.target.value}))}
                                 onKeyDown={(e) => e.key === 'Enter' && handleLogin('admin')}
                                 placeholder="Masukkan password admin" 
-                                className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 font-semibold text-slate-700 outline-none focus:ring-2 focus:ring-indigo-500" 
+                                className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 font-semibold text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-indigo-500" 
                             />
                         </div>
                         <button onClick={() => handleLogin('admin')} className="w-full bg-gradient-to-r from-indigo-600 to-indigo-700 text-white py-3 rounded-2xl font-bold text-base shadow-lg shadow-indigo-500/30 hover:from-indigo-700 hover:to-indigo-800 transition-all flex items-center justify-center gap-2">
@@ -2549,15 +2605,17 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                 </div>
             </div>
         ) : (
-            <div className="min-h-screen bg-[#f8fafc] font-sans text-slate-800 selection:bg-indigo-100 selection:text-indigo-900">
-        <header className="bg-white/85 backdrop-blur-xl border-b border-slate-200/80 sticky top-0 z-40 shadow-[0_4px_30px_rgba(0,0,0,0.03)]">
+            <div className="min-h-screen bg-[#f8fafc] dark:bg-slate-950 font-sans text-slate-800 dark:text-slate-100 selection:bg-indigo-100 selection:text-indigo-900">
+        <header className="bg-white/85 dark:bg-slate-900/90 backdrop-blur-xl border-b border-slate-200/80 dark:border-slate-700/80 sticky top-0 z-40 shadow-[0_4px_30px_rgba(0,0,0,0.03)]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between pt-4 pb-2 gap-4">
                     <div className="flex items-center gap-3">
-                        <div className="w-11 h-11 bg-white rounded-2xl shadow-md border border-slate-100 flex items-center justify-center p-1.5 shrink-0 overflow-hidden">
+                        <div className="w-11 h-11 bg-white dark:bg-slate-800 rounded-2xl shadow-md border border-slate-100 dark:border-slate-700 flex items-center justify-center p-1.5 shrink-0 overflow-hidden">
                               <img src={defaultLogoUrl} alt="Logo" className="w-full h-full object-contain" />
                         </div>
-                        <h1 className="text-xl font-extrabold text-slate-800 tracking-tight">{String((appSettings && appSettings.appName) || "Sistem Absensi")}</h1>
+                        <h1 className="text-xl font-extrabold text-slate-800 dark:text-slate-100 tracking-tight">
+    {String((appSettings && appSettings.appName) || "Sistem Absensi")}
+</h1>
                     </div>
                     
                     <div className="flex items-center gap-3">
@@ -2565,12 +2623,33 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                             <i className={`fas ${userRole === 'admin' ? 'fa-user-cog' : 'fa-user'} mr-1`}></i>
                             {userRole === 'admin' ? 'Admin' : 'Client'}
                         </span>
-                        <button onClick={handleLogout} className="text-xs bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-2 rounded-xl font-bold transition-all flex items-center gap-1">
-                            <i className="fas fa-sign-out-alt"></i> Keluar
-                        </button>
+
+                        {/* Tombol Dark / Light Mode */}
+<button
+    onClick={() => setDarkMode(!darkMode)}
+    className="w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200
+               dark:bg-slate-700 dark:hover:bg-slate-600
+               text-slate-600 dark:text-yellow-300
+               flex items-center justify-center transition-all"
+    title={darkMode ? 'Light Mode' : 'Dark Mode'}
+>
+    <i className={`fas ${darkMode ? 'fa-sun' : 'fa-moon'} text-sm`}></i>
+</button>
+
+{/* Tombol Keluar */}
+<button
+    onClick={handleLogout}
+    className="text-xs bg-slate-100 hover:bg-slate-200
+               dark:bg-slate-700 dark:hover:bg-slate-600
+               text-slate-600 dark:text-slate-200
+               px-3 py-2 rounded-xl font-bold transition-all
+               flex items-center gap-1"
+>
+    <i className="fas fa-sign-out-alt"></i> Keluar
+</button>
                     </div>
                     
-                    <nav className="flex bg-slate-100/80 p-1.5 rounded-2xl border border-slate-200/60 overflow-x-auto no-scrollbar shadow-inner">
+                    <nav className="flex bg-slate-100/80 dark:bg-slate-800/80 p-1.5 rounded-2xl border border-slate-200/60 dark:border-slate-700/60 overflow-x-auto no-scrollbar shadow-inner">
                         {[
  { id: 'dashboard', icon: 'fa-home', label: 'Dashboard' },                            
 { id: 'absensi', icon: 'fa-clipboard-check', label: 'Absensi' },
@@ -2581,7 +2660,9 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                         ].map((tab) => (
                             <button key={tab.id} onClick={() => setActiveTab(tab.id)}
                                 className={`flex items-center justify-center gap-2 py-2 px-5 rounded-xl font-bold text-[13px] transition-all duration-300 whitespace-nowrap ${
-                                    activeTab === tab.id ? 'bg-white text-indigo-700 shadow-sm ring-1 ring-slate-200/50' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-200/50'
+                                    activeTab === tab.id
+    ? 'bg-white dark:bg-slate-700 text-indigo-700 dark:text-indigo-300 shadow-sm ring-1 ring-slate-200/50 dark:ring-slate-600'
+    : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-700/50'
                                 }`}>
                                 <i className={`fas ${tab.icon} text-sm ${activeTab===tab.id?'opacity-100':'opacity-60'}`}></i> {tab.label}
                             </button>

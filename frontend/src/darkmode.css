@@ -1,0 +1,411 @@
+/* =========================================================
+   SISTEM ABSENSI - DARK / LIGHT MODE
+   ========================================================= */
+
+/* =========================
+   DARK MODE - DASAR
+   ========================= */
+
+html.dark {
+  background: #020617 !important;
+}
+
+html.dark body {
+  background: #020617 !important;
+  color: #e2e8f0 !important;
+}
+
+/* Container utama */
+html.dark .min-h-screen {
+  background-color: #020617 !important;
+}
+
+/* Background utama aplikasi */
+html.dark .bg-\[\#f8fafc\] {
+  background-color: #020617 !important;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+html.dark header {
+  background-color: rgba(15, 23, 42, 0.94) !important;
+  border-color: #334155 !important;
+}
+
+html.dark header h1 {
+  color: #f8fafc !important;
+}
+
+/* Logo */
+html.dark header .bg-white {
+  background-color: #1e293b !important;
+  border-color: #475569 !important;
+}
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+html.dark nav {
+  background-color: rgba(30, 41, 59, 0.9) !important;
+  border-color: #475569 !important;
+}
+
+html.dark nav button {
+  color: #94a3b8;
+}
+
+html.dark nav button:hover {
+  color: #f8fafc;
+  background-color: rgba(71, 85, 105, 0.5) !important;
+}
+
+/* Tab aktif */
+html.dark nav button.bg-white {
+  background-color: #334155 !important;
+  color: #a5b4fc !important;
+  border-color: #475569 !important;
+}
+
+/* =========================
+   SEMUA CARD
+   ========================= */
+
+html.dark .bg-white {
+  background-color: #1e293b !important;
+}
+
+html.dark .bg-white\/85 {
+  background-color: rgba(15, 23, 42, 0.94) !important;
+}
+
+html.dark .bg-white\/90 {
+  background-color: rgba(15, 23, 42, 0.96) !important;
+}
+
+html.dark .bg-white\/95 {
+  background-color: rgba(15, 23, 42, 0.98) !important;
+}
+
+/* Slate backgrounds */
+html.dark .bg-slate-50 {
+  background-color: #0f172a !important;
+}
+
+html.dark .bg-slate-100 {
+  background-color: #1e293b !important;
+}
+
+html.dark .bg-slate-200 {
+  background-color: #334155 !important;
+}
+
+html.dark .bg-slate-300 {
+  background-color: #475569 !important;
+}
+
+/* Gray backgrounds */
+html.dark .bg-gray-50 {
+  background-color: #0f172a !important;
+}
+
+html.dark .bg-gray-100 {
+  background-color: #1e293b !important;
+}
+
+html.dark .bg-gray-200 {
+  background-color: #334155 !important;
+}
+
+html.dark .bg-gray-300 {
+  background-color: #475569 !important;
+}
+
+/* Transparansi slate */
+html.dark .bg-slate-50\/50 {
+  background-color: rgba(15, 23, 42, 0.5) !important;
+}
+
+html.dark .bg-slate-100\/50 {
+  background-color: rgba(30, 41, 59, 0.5) !important;
+}
+
+html.dark .bg-slate-100\/80 {
+  background-color: rgba(30, 41, 59, 0.85) !important;
+}
+
+/* =========================
+   TEXT
+   ========================= */
+
+html.dark .text-slate-900 {
+  color: #f8fafc !important;
+}
+
+html.dark .text-slate-800 {
+  color: #f1f5f9 !important;
+}
+
+html.dark .text-slate-700 {
+  color: #e2e8f0 !important;
+}
+
+html.dark .text-slate-600 {
+  color: #cbd5e1 !important;
+}
+
+html.dark .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+html.dark .text-gray-900 {
+  color: #f8fafc !important;
+}
+
+html.dark .text-gray-800 {
+  color: #f1f5f9 !important;
+}
+
+html.dark .text-gray-700 {
+  color: #e2e8f0 !important;
+}
+
+html.dark .text-gray-600 {
+  color: #cbd5e1 !important;
+}
+
+html.dark .text-gray-500 {
+  color: #94a3b8 !important;
+}
+
+html.dark .text-gray-400 {
+  color: #94a3b8 !important;
+}
+
+/* =========================
+   BORDER
+   ========================= */
+
+html.dark .border-slate-100 {
+  border-color: #334155 !important;
+}
+
+html.dark .border-slate-200 {
+  border-color: #334155 !important;
+}
+
+html.dark .border-slate-300 {
+  border-color: #475569 !important;
+}
+
+html.dark .border-gray-100 {
+  border-color: #334155 !important;
+}
+
+html.dark .border-gray-200 {
+  border-color: #334155 !important;
+}
+
+html.dark .border-gray-300 {
+  border-color: #475569 !important;
+}
+
+/* =========================
+   INPUT / SELECT / TEXTAREA
+   ========================= */
+
+html.dark input,
+html.dark select,
+html.dark textarea {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+  border-color: #475569 !important;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #64748b !important;
+}
+
+html.dark input:focus,
+html.dark select:focus,
+html.dark textarea:focus {
+  border-color: #6366f1 !important;
+  background-color: #0f172a !important;
+}
+
+/* Date input */
+html.dark input[type="date"] {
+  color-scheme: dark;
+}
+
+/* =========================
+   BUTTON ABU-ABU
+   ========================= */
+
+html.dark button.bg-slate-100 {
+  background-color: #334155 !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark button.bg-slate-100:hover {
+  background-color: #475569 !important;
+}
+
+html.dark button.bg-slate-200 {
+  background-color: #475569 !important;
+  color: #f8fafc !important;
+}
+
+/* =========================
+   PANEL / MODAL
+   ========================= */
+
+html.dark [role="dialog"],
+html.dark .modal,
+html.dark .fixed.bg-white {
+  background-color: #1e293b !important;
+  color: #e2e8f0 !important;
+}
+
+/* =========================
+   TABLE
+   ========================= */
+
+html.dark table {
+  color: #e2e8f0 !important;
+}
+
+html.dark thead,
+html.dark th {
+  background-color: #334155 !important;
+  color: #f8fafc !important;
+}
+
+html.dark td {
+  border-color: #334155 !important;
+  color: #cbd5e1 !important;
+}
+
+html.dark tbody tr:hover {
+  background-color: #334155 !important;
+}
+
+/* =========================
+   SCROLLBAR
+   ========================= */
+
+html.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 10px;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* =========================
+   SHADOW
+   ========================= */
+
+html.dark .shadow,
+html.dark .shadow-sm,
+html.dark .shadow-md,
+html.dark .shadow-lg,
+html.dark .shadow-xl,
+html.dark .shadow-2xl {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* =========================
+   HOVER
+   ========================= */
+
+html.dark .hover\:bg-slate-50:hover {
+  background-color: #334155 !important;
+}
+
+html.dark .hover\:bg-slate-100:hover {
+  background-color: #334155 !important;
+}
+
+html.dark .hover\:bg-slate-200:hover {
+  background-color: #475569 !important;
+}
+
+html.dark .hover\:bg-gray-50:hover {
+  background-color: #334155 !important;
+}
+
+html.dark .hover\:bg-gray-100:hover {
+  background-color: #334155 !important;
+}
+
+/* =========================
+   DIVIDER
+   ========================= */
+
+html.dark hr {
+  border-color: #334155 !important;
+}
+
+/* =========================
+   ICON BACKGROUND
+   Tetap mempertahankan warna
+   ========================= */
+
+html.dark .bg-indigo-50 {
+  background-color: rgba(79, 70, 229, 0.18) !important;
+}
+
+html.dark .bg-emerald-50 {
+  background-color: rgba(16, 185, 129, 0.15) !important;
+}
+
+html.dark .bg-purple-50 {
+  background-color: rgba(168, 85, 247, 0.15) !important;
+}
+
+html.dark .bg-orange-50 {
+  background-color: rgba(249, 115, 22, 0.15) !important;
+}
+
+html.dark .bg-blue-50 {
+  background-color: rgba(59, 130, 246, 0.15) !important;
+}
+
+html.dark .bg-pink-50 {
+  background-color: rgba(236, 72, 153, 0.15) !important;
+}
+
+/* =========================
+   TRANSISI
+   ========================= */
+
+html.dark body,
+html.dark header,
+html.dark nav,
+html.dark main,
+html.dark div,
+html.dark section,
+html.dark article,
+html.dark button,
+html.dark input,
+html.dark select,
+html.dark textarea {
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}

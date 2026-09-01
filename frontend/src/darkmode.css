@@ -8,6 +8,7 @@
 
 html.dark {
   background: #020617 !important;
+  color-scheme: dark;
 }
 
 html.dark body {
@@ -232,30 +233,7 @@ html.dark .border-gray-300 {
    INPUT / SELECT / TEXTAREA
    ========================= */
 
-html.dark input,
-html.dark select,
-html.dark textarea {
-  background-color: #0f172a !important;
-  color: #f8fafc !important;
-  border-color: #475569 !important;
-}
-
-html.dark input::placeholder,
-html.dark textarea::placeholder {
-  color: #64748b !important;
-}
-
-html.dark input:focus,
-html.dark select:focus,
-html.dark textarea:focus {
-  border-color: #6366f1 !important;
-  background-color: #0f172a !important;
-}
-
-/* Date input */
-html.dark input[type="date"] {
-  color-scheme: dark;
-}
+/* Removed aggressive input styles */
 
 /* =========================
    BUTTON ABU-ABU

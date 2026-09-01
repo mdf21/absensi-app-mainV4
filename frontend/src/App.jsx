@@ -189,7 +189,7 @@ const Dashboard = ({
     iconColor,
     valueColor
   }) => (
-    <div className="bg-white rounded-3xl border border-slate-200 shadow-sm p-5 hover:shadow-md transition-shadow">
+    <div className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm p-5 hover:shadow-md transition-shadow">
       <div className="flex items-center gap-4">
         <div
           className={`w-16 h-16 rounded-2xl ${iconBg} flex items-center justify-center flex-shrink-0`}
@@ -206,11 +206,11 @@ const Dashboard = ({
             {title}
           </div>
 
-          <div className="text-3xl font-bold text-slate-800 mt-1">
+          <div className="text-3xl font-bold text-slate-800 dark:text-slate-100 mt-1">
             {value}
           </div>
 
-          <div className="text-xs text-slate-500 mt-1">
+          <div className="text-xs text-slate-500 dark:text-slate-400 mt-1">
             {subtitle}
           </div>
         </div>
@@ -228,7 +228,7 @@ const Dashboard = ({
     iconColor,
     barColor
   }) => (
-    <div className="bg-white rounded-3xl border border-slate-200 shadow-sm p-5">
+    <div className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm p-5">
       <div className="flex items-center gap-4">
         <div
           className={`w-16 h-16 rounded-2xl ${iconBg} flex items-center justify-center`}
@@ -239,21 +239,21 @@ const Dashboard = ({
         </div>
 
         <div className="flex-1">
-          <div className="text-sm font-bold uppercase tracking-wide text-slate-700">
+          <div className="text-sm font-bold uppercase tracking-wide text-slate-700 dark:text-slate-200">
             {title}
           </div>
 
-          <div className="text-3xl font-bold text-slate-800 mt-1">
+          <div className="text-3xl font-bold text-slate-800 dark:text-slate-100 mt-1">
             {value}
           </div>
 
-          <div className="text-xs text-slate-500 mt-1">
+          <div className="text-xs text-slate-500 dark:text-slate-400 mt-1">
             {subtitle}
           </div>
         </div>
       </div>
 
-      <div className="mt-4 h-2 bg-slate-100 rounded-full overflow-hidden">
+      <div className="mt-4 h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
         <div
           className={`h-full ${barColor} rounded-full transition-all duration-700`}
           style={{
@@ -1926,31 +1926,31 @@ const [bulkEditValue, setBulkEditValue] = useState('');
       <div className="space-y-6 relative">
           <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-6 rounded-3xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-slate-100 flex flex-col xl:flex-row justify-between items-start xl:items-center gap-5">
               <div className="text-left">
-                  <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-800 to-slate-600 tracking-tight text-left">Pencatatan Kehadiran</h2>
-                  <p className="text-slate-700 text-sm mt-1 text-left">Atur filter di bawah untuk memuat daftar peserta.</p>
+                  <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-800 to-slate-600 dark:from-slate-100 dark:to-slate-300 tracking-tight text-left">Pencatatan Kehadiran</h2>
+                  <p className="text-slate-700 dark:text-slate-300 text-sm mt-1 text-left">Atur filter di bawah untuk memuat daftar peserta.</p>
               </div>
               
                <div className="flex flex-wrap items-center gap-3 w-full xl:w-auto">
-                   <div className="flex bg-slate-100/80 p-1.5 rounded-2xl border border-slate-200/50 shadow-sm grow xl:grow-0">
-                       <div className="flex items-center gap-2 px-3 border-r border-slate-300/50">
+                   <div className="flex bg-slate-100/80 dark:bg-slate-800/80 p-1.5 rounded-2xl border border-slate-200/50 dark:border-slate-700/50 shadow-sm grow xl:grow-0">
+                       <div className="flex items-center gap-2 px-3 border-r border-slate-300/50 dark:border-slate-600/50">
                            <i className="fas fa-search text-indigo-500"></i>
-                           <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Cari nama / induk..." className="bg-transparent border-none focus:ring-0 text-slate-700 font-semibold outline-none cursor-pointer w-full text-sm" />
+                           <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Cari nama / induk..." className="bg-transparent border-none focus:ring-0 text-slate-700 dark:text-slate-200 font-semibold outline-none cursor-pointer w-full text-sm placeholder:text-slate-400 dark:placeholder:text-slate-500" />
                        </div>
-                       <div className="flex items-center gap-2 px-3 border-r border-slate-300/50">
+                       <div className="flex items-center gap-2 px-3 border-r border-slate-300/50 dark:border-slate-600/50">
                            <i className="fas fa-user-tag text-indigo-500"></i>
-                           <select value={selectedPeran} onChange={(e) => setSelectedPeran(e.target.value)} className="bg-transparent border-none focus:ring-0 text-slate-700 font-semibold outline-none cursor-pointer w-full">
+                           <select value={selectedPeran} onChange={(e) => setSelectedPeran(e.target.value)} className="bg-transparent border-none focus:ring-0 text-slate-700 dark:text-slate-200 font-semibold outline-none cursor-pointer w-full [&>option]:text-slate-700 dark:[&>option]:bg-slate-800 dark:[&>option]:text-slate-200">
                                <option value="Semua">Semua Peran</option><option value="Siswa">Siswa</option><option value="Guru">Guru</option><option value="Staff">Staff</option>
                            </select>
                        </div>
-                       <div className="flex items-center gap-2 px-3 border-r border-slate-300/50">
+                       <div className="flex items-center gap-2 px-3 border-r border-slate-300/50 dark:border-slate-600/50">
                            <i className="fas fa-filter text-indigo-500"></i>
-                           <select value={selectedClass} onChange={(e) => setSelectedClass(e.target.value)} className="bg-transparent border-none focus:ring-0 text-slate-700 font-semibold outline-none cursor-pointer w-full">
+                           <select value={selectedClass} onChange={(e) => setSelectedClass(e.target.value)} className="bg-transparent border-none focus:ring-0 text-slate-700 dark:text-slate-200 font-semibold outline-none cursor-pointer w-full [&>option]:text-slate-700 dark:[&>option]:bg-slate-800 dark:[&>option]:text-slate-200">
                                {availableClasses.map(c => <option key={c} value={c}>{c === 'Semua' ? 'Semua Kelas' : (!String(c).toLowerCase().includes('kelas') ? `Kelas ${c}` : c)}</option>)}
                            </select>
                        </div>
                        <div className="flex items-center gap-2 px-3">
                            <i className="fas fa-calendar text-indigo-500"></i>
-                           <input type="date" value={selectedDate} onChange={(e) => setSelectedDate(e.target.value)} className="bg-transparent border-none focus:ring-0 text-slate-700 font-semibold outline-none cursor-pointer w-full" />
+                           <input type="date" value={selectedDate} onChange={(e) => setSelectedDate(e.target.value)} className="bg-transparent border-none focus:ring-0 text-slate-700 dark:text-slate-200 font-semibold outline-none cursor-pointer w-full" />
                        </div>
                    </div>
 
@@ -2856,7 +2856,7 @@ const [bulkEditValue, setBulkEditValue] = useState('');
                             <div className="flex items-center gap-2 w-full sm:w-auto">
                                 <div className="relative grow sm:grow-0">
                                     <i className="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 text-xs"></i>
-                                    <input type="text" value={direktoriSearchQuery} onChange={e => setDirektoriSearchQuery(e.target.value)} placeholder="Cari nama / induk..." className="w-full sm:w-56 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl pl-8 pr-3 py-2 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none" />
+                                    <input type="text" value={direktoriSearchQuery} onChange={e => setDirektoriSearchQuery(e.target.value)} placeholder="Cari nama / induk..." className="w-full sm:w-56 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 text-slate-800 dark:text-slate-200 rounded-xl pl-8 pr-3 py-2 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none placeholder:text-slate-400 dark:placeholder:text-slate-500" />
                                 </div>
                                 <label className="flex items-center gap-1.5 cursor-pointer bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-xl px-3 py-2 text-xs font-bold text-slate-600 dark:text-slate-300 hover:border-indigo-400 dark:hover:border-indigo-500 transition-all whitespace-nowrap">
                                     <input type="checkbox" checked={direktoriSortByClass} onChange={e => setDirektoriSortByClass(e.target.checked)} className="w-3.5 h-3.5 rounded border-slate-300 dark:border-slate-600 text-indigo-600 focus:ring-indigo-500 cursor-pointer" />
